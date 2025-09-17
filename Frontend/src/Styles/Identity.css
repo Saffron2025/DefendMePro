@@ -1,0 +1,278 @@
+/* 🧠 Identity Protection Section */
+.identity-section {
+  padding: 6rem 5%;
+  background: transparent;
+  font-family: "Orbitron", "Share Tech Mono", monospace;
+  color: #00ffea;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  user-select: none;
+}
+
+/* 🔠 Main Heading */
+.identity-heading {
+  font-size: 3.6rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 5rem;
+  background: linear-gradient(90deg, #00ffea, #00c4ff, #00ffea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px #00fffaaa, 0 0 30px #00ffea55;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🧊 Glass Block Layout */
+.identity-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+  flex-wrap: wrap;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background: rgba(0, 255, 234, 0.08);
+  border: 1.5px solid #00fffaa0;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 18px #00ffeaea,
+    inset 0 0 10px #00ffeaea;
+  position: relative;
+  transition: 0.3s ease;
+  z-index: 2;
+}
+
+.identity-block:hover {
+  box-shadow:
+    0 0 30px #00fffaae,
+    inset 0 0 18px #00fffaae;
+  transform: translateY(-5px) scale(1.015);
+  border-color: #00fffaff;
+}
+
+.identity-block.reverse {
+  flex-direction: row-reverse;
+}
+
+/* 🎥 Media Block */
+.identity-media {
+  flex: 1;
+  max-width: 460px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00ffea99, 0 0 40px #00ffea55 inset;
+  position: relative;
+  user-select: none;
+}
+
+.identity-media img,
+.identity-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: drop-shadow(0 0 6px #00ffeaaa);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.identity-media img:hover,
+.identity-video:hover {
+  transform: scale(1.06) rotate(-1deg);
+  box-shadow: 0 0 35px #00ffeaee, 0 0 50px #00ffeaee inset;
+}
+
+/* 📄 Text Block */
+.identity-text {
+  flex: 1;
+  max-width: 540px;
+  user-select: text;
+}
+
+.identity-text h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #00fffaff;
+  margin-bottom: 1rem;
+  font-family: "Orbitron", monospace;
+  letter-spacing: 1.5px;
+}
+
+.identity-text p {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #00d6c6dd;
+  margin-bottom: 1.1rem;
+  font-family: "Share Tech Mono", monospace;
+  text-align: justify;
+}
+
+/* 🔹 Bullet Points */
+.identity-points {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.identity-points li {
+  font-size: 1rem;
+  padding-left: 1.4rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  font-family: "Share Tech Mono", monospace;
+  color: #00f5e1;
+}
+
+.identity-points li::before {
+  content: "✔";
+  color: #00ffea;
+  position: absolute;
+  left: 0;
+}
+
+/* 📋 Extra Help Section */
+.identity-extra {
+  background: rgba(0, 255, 234, 0.06);
+  border: 1.5px solid #00fffaa0;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin-top: 5rem;
+  box-shadow: 0 0 20px #00ffea55, inset 0 0 15px #00ffea33;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+}
+
+.identity-extra h2 {
+  font-size: 2rem;
+  color: #00fffaff;
+  margin-bottom: 1.5rem;
+}
+
+.identity-extra p {
+  font-size: 1.05rem;
+  color: #00e7db;
+  line-height: 1.7;
+  font-family: "Share Tech Mono", monospace;
+  margin-bottom: 1.2rem;
+}
+
+/* ✅ Hardening Checklist */
+.identity-checklist {
+  margin-top: 2rem;
+}
+
+.identity-checklist h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #00fffaff;
+}
+
+.identity-checklist ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.identity-checklist li {
+  font-size: 1rem;
+  padding-left: 1.4rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  color: #00e7db;
+}
+
+.identity-checklist li::before {
+  content: "🛡️";
+  position: absolute;
+  left: 0;
+}
+
+/* 🎯 CTA */
+.identity-cta {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: rgba(0, 255, 234, 0.07);
+  border: 1.5px solid #00fffaa0;
+  border-radius: 20px;
+  box-shadow: 0 0 22px #00ffea55;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.identity-cta h2 {
+  font-size: 2.2rem;
+  color: #00fffaff;
+  margin-bottom: 1rem;
+}
+
+.identity-cta p {
+  font-size: 1.1rem;
+  color: #00d6c6dd;
+  font-family: "Share Tech Mono", monospace;
+  margin-bottom: 2rem;
+}
+
+.identity-btn {
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #00fff5;
+  color: #001f25;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px #00fff5aa;
+}
+
+.identity-btn:hover {
+  background: #00ffee;
+  box-shadow: 0 0 30px #00ffee;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .identity-block {
+    flex-direction: column !important;
+    padding: 2rem 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .identity-heading {
+    font-size: 2.8rem;
+  }
+
+  .identity-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .identity-section {
+    padding: 3rem 3%;
+  }
+
+  .identity-heading {
+    font-size: 2rem;
+  }
+
+  .identity-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .identity-text p,
+  .identity-points li,
+  .identity-extra p,
+  .identity-checklist li,
+  .identity-cta p {
+    font-size: 0.95rem;
+  }
+
+  .identity-cta h2 {
+    font-size: 1.6rem;
+  }
+}

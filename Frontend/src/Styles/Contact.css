@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.contact-wrapper {
+  padding: 5rem 1.5rem;
+  margin-top: 80px;
+  background: #f8fbfd;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-box {
+  background: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  border: 1px solid #e0ecf2;
+}
+
+.contact-heading {
+  font-size: 2.2rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 2.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 1rem;
+}
+
+.contact-icon {
+  color: #2563eb;
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.contact-text h4 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #1f2937;
+}
+
+.contact-text a {
+  font-size: 1.05rem;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.contact-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .contact-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    margin-bottom: 0.3rem;
+  }
+}

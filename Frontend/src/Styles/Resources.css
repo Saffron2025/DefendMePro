@@ -1,0 +1,102 @@
+/* 🌐 Resources Page – Clean Cyber Security Style */
+.resources-page {
+  padding: 6rem 8% 4rem;
+  background: #ffffff;
+  color: #111827;
+  font-family: "Chakra Petch", "Space Grotesk", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 🏷️ Title */
+.resources-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 4rem;
+  background: linear-gradient(90deg, #0ea5e9, #3b82f6, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 🔥 Resource Block */
+.resource-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+  gap: 3rem;
+  position: relative;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: #f9fafb;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.resource-block:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* 🔄 Alternate Layout */
+.resource-block.reverse {
+  flex-direction: row-reverse;
+}
+
+/* 🖼️ Image Styling */
+.resource-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resource-img img {
+  max-width: 95%;
+  border-radius: 16px;
+  border: 3px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease;
+}
+
+.resource-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* 📜 Text Section */
+.resource-text {
+  flex: 1;
+}
+
+.resource-text p {
+  font-size: 1.3rem;
+  line-height: 2;
+  color: #1f2937;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 4px solid #3b82f6;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.resource-text p:hover {
+  color: #0f172a;
+  border-left-color: #9333ea;
+  text-shadow: 0 2px 6px rgba(147, 51, 234, 0.1);
+}
+
+/* ❌ Not Found */
+.not-found {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ef4444;
+  margin-top: 6rem;
+}
+
+

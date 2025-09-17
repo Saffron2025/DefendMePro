@@ -1,0 +1,272 @@
+/* 📢 AlertsHub Main Container */
+.alerts-section {
+  padding: 6rem 5%;
+  background: transparent;
+  font-family: "Orbitron", "Share Tech Mono", monospace;
+  color: #00ffea;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* 🧠 Section Heading */
+.alerts-heading {
+  font-size: 3.6rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 5rem;
+  background: linear-gradient(90deg, #00ffea, #00c4ff, #00ffea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px #00fffaaa, 0 0 30px #00ffea55;
+  user-select: none;
+}
+
+/* 🧊 Glass Block Structure */
+.alerts-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+  flex-wrap: wrap;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background: rgba(0, 255, 234, 0.08);
+  border: 1.5px solid #00fffaa0;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 18px #00ffeaea, inset 0 0 10px #00ffeaea;
+  transition: 0.3s ease;
+  z-index: 2;
+}
+
+.alerts-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.alerts-block:hover {
+  box-shadow: 0 0 30px #00fffaae, inset 0 0 18px #00fffaae;
+  transform: translateY(-5px) scale(1.015);
+}
+
+/* 🖼️ Media Area */
+.alerts-media {
+  flex: 1;
+  max-width: 460px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00ffea99, 0 0 40px #00ffea55 inset;
+}
+
+.alerts-media img,
+.alerts-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: drop-shadow(0 0 6px #00ffeaaa);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alerts-media img:hover,
+.alerts-video:hover {
+  transform: scale(1.06) rotate(-1deg);
+  box-shadow: 0 0 35px #00ffeaee, 0 0 50px #00ffeaee inset;
+}
+
+/* 📝 Text Content */
+.alerts-text {
+  flex: 1;
+  max-width: 540px;
+}
+
+.alerts-text h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #00fffaff;
+  margin-bottom: 1rem;
+}
+
+.alerts-text p {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #00d6c6dd;
+  margin-bottom: 1.1rem;
+  text-align: justify;
+}
+
+/* ✔️ Bullet Points */
+.alerts-points {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.alerts-points li {
+  font-size: 1rem;
+  padding-left: 1.4rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  color: #00f5e1;
+}
+
+.alerts-points li::before {
+  content: "✔";
+  color: #00ffea;
+  position: absolute;
+  left: 0;
+}
+
+/* 📡 Alert Cards (Trending Feed) */
+.alerts-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.alert-card {
+  background: rgba(0, 255, 234, 0.07);
+  border: 1.5px solid #00fffaa0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 18px #00ffea44, inset 0 0 10px #00ffea22;
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.alert-card:hover {
+  box-shadow: 0 0 35px #00ffea88, inset 0 0 20px #00ffea55;
+  transform: translateY(-4px) scale(1.015);
+}
+
+.alert-tag {
+  display: inline-block;
+  background: #00ffeacc;
+  color: #002c2c;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.alert-card h3 {
+  font-size: 1.2rem;
+  color: #00fffaff;
+  margin-bottom: 0.6rem;
+}
+
+.alert-card p {
+  font-size: 1rem;
+  color: #00d6c6dd;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.alert-cta {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
+  background: #00fff5;
+  color: #002c2c;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 0 12px #00fff5aa;
+  transition: 0.3s ease;
+}
+
+.alert-cta:hover {
+  background: #00ffee;
+  box-shadow: 0 0 25px #00ffee;
+}
+
+/* 🎯 CTA */
+.alerts-cta {
+  margin-top: 5rem;
+  padding: 3rem 2rem;
+  background: rgba(0, 255, 234, 0.07);
+  border: 1.5px solid #00fffaa0;
+  border-radius: 20px;
+  box-shadow: 0 0 22px #00ffea55;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.alerts-cta h2 {
+  font-size: 2.2rem;
+  color: #00fffaff;
+  margin-bottom: 1rem;
+}
+
+.alerts-cta p {
+  font-size: 1.1rem;
+  color: #00d6c6dd;
+  margin-bottom: 2rem;
+}
+
+/* 🌐 CTA Button */
+.alerts-btn {
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #00fff5;
+  color: #001f25;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px #00fff5aa;
+}
+
+.alerts-btn:hover {
+  background: #00ffee;
+  box-shadow: 0 0 30px #00ffee;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .alerts-block {
+    flex-direction: column !important;
+    padding: 2rem 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .alerts-heading {
+    font-size: 2.8rem;
+  }
+
+  .alerts-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .alerts-section {
+    padding: 3rem 3%;
+  }
+
+  .alerts-heading {
+    font-size: 2rem;
+  }
+
+  .alerts-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .alerts-text p,
+  .alerts-points li,
+  .alert-card p,
+  .alerts-cta p {
+    font-size: 0.95rem;
+  }
+
+  .alerts-cta h2 {
+    font-size: 1.6rem;
+  }
+}

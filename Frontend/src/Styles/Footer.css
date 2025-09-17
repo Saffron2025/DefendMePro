@@ -1,0 +1,105 @@
+/* Import hacking font */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+.cyber-footer {
+  position: relative;
+  background: #0a0f1c;
+  color: #e2e8f0;
+  padding: 4rem 2rem 2rem;
+  font-family: "Share Tech Mono", monospace;
+  overflow: hidden;
+}
+
+/* Overlay cyber grid */
+.footer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,255,136,0.05) 1px, transparent 1px),
+              linear-gradient(rgba(0,255,136,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 20s linear infinite;
+  z-index: 0;
+}
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 60px 60px; }
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Titles */
+.footer-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #00e0ff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer-col h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin: 0.5rem 0;
+}
+.footer-col ul li a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-col ul li a:hover {
+  color: #00e0ff;
+  text-shadow: 0 0 8px rgba(0,224,255,0.8);
+}
+
+/* Contact */
+.footer-col p {
+  margin: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Bottom strip */
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Socials */
+.socials a {
+  color: #00ff88;
+  margin-left: 1rem;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.socials a:hover {
+  color: #00e0ff;
+  transform: scale(1.2);
+}

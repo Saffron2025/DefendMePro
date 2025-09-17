@@ -1,0 +1,250 @@
+/* 🚨 Scam Protection Section */
+.scam-section {
+  padding: 6rem 5%;
+  background: transparent;
+  font-family: "Orbitron", "Share Tech Mono", monospace;
+  color: #00ffea;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  user-select: none;
+}
+
+/* 🔠 Heading */
+.scam-heading {
+  font-size: 3.6rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 5rem;
+  background: linear-gradient(90deg, #00ffea, #00c4ff, #00ffea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px #00fffaaa, 0 0 30px #00ffea55;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🧊 Glass Card */
+.scam-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+  flex-wrap: wrap;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background: rgba(0, 255, 234, 0.08);
+  border: 1.5px solid #00fffaa0;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 18px #00ffeaea,
+    inset 0 0 10px #00ffeaea;
+  position: relative;
+  transition: 0.3s ease;
+  cursor: default;
+  z-index: 2;
+}
+
+.scam-block:hover {
+  box-shadow:
+    0 0 30px #00fffaae,
+    inset 0 0 18px #00fffaae;
+  transform: translateY(-5px) scale(1.015);
+  border-color: #00fffaff;
+}
+
+.scam-block.reverse {
+  flex-direction: row-reverse;
+}
+
+/* 📽️ Media (Image/Video) */
+.scam-media {
+  flex: 1;
+  max-width: 460px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00ffea99, 0 0 40px #00ffea55 inset;
+  position: relative;
+  user-select: none;
+}
+
+.scam-media img,
+.scam-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: drop-shadow(0 0 6px #00ffeaaa);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scam-media img:hover,
+.scam-video:hover {
+  transform: scale(1.06) rotate(-1deg);
+  box-shadow: 0 0 35px #00ffeaee, 0 0 50px #00ffeaee inset;
+}
+
+/* ✏️ Text Column */
+.scam-text {
+  flex: 1;
+  max-width: 540px;
+  user-select: text;
+}
+
+.scam-text h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #00fffaff;
+  margin-bottom: 1rem;
+  font-family: "Orbitron", monospace;
+  letter-spacing: 1.5px;
+}
+
+.scam-points {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+}
+
+.scam-points li {
+  position: relative;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  padding-left: 1.4rem;
+  color: #00f5e1;
+  font-family: "Share Tech Mono", monospace;
+}
+
+.scam-points li::before {
+  content: "✔";
+  color: #00ffea;
+  position: absolute;
+  left: 0;
+}
+
+/* Body Paragraphs */
+.scam-text p {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #00d6c6dd;
+  margin-bottom: 1.1rem;
+  font-family: "Share Tech Mono", monospace;
+  text-align: justify;
+}
+
+/* 🧊 Grid Cards */
+.scam-extra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 5rem 0;
+  z-index: 2;
+  position: relative;
+}
+
+.scam-card {
+  background: rgba(0, 255, 234, 0.06);
+  border: 1.5px solid #00fffaa0;
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 20px #00ffea55, inset 0 0 15px #00ffea33;
+  transition: 0.3s ease;
+}
+
+.scam-card h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #00fffaff;
+  margin-bottom: 1rem;
+}
+
+.scam-card p {
+  font-size: 1rem;
+  font-family: "Share Tech Mono", monospace;
+  color: #00e7db;
+  line-height: 1.6;
+}
+
+/* 📣 CTA Section */
+.scam-cta {
+  margin-top: 5rem;
+  padding: 3rem 2rem;
+  background: rgba(0, 255, 234, 0.07);
+  border: 1.5px solid #00fffaa0;
+  border-radius: 20px;
+  box-shadow: 0 0 22px #00ffea55;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.scam-cta h2 {
+  font-size: 2.2rem;
+  color: #00fffaff;
+  margin-bottom: 1rem;
+}
+
+.scam-cta p {
+  font-size: 1.1rem;
+  color: #00d6c6dd;
+  font-family: "Share Tech Mono", monospace;
+  margin-bottom: 2rem;
+}
+
+/* 🚀 CTA Button */
+.scam-btn {
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #00fff5;
+  color: #001f25;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px #00fff5aa;
+}
+
+.scam-btn:hover {
+  background: #00ffee;
+  box-shadow: 0 0 30px #00ffee;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .scam-block {
+    flex-direction: column !important;
+    padding: 2rem 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .scam-heading {
+    font-size: 2.8rem;
+  }
+  .scam-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scam-section {
+    padding: 3rem 3%;
+  }
+  .scam-heading {
+    font-size: 2rem;
+  }
+  .scam-text h2 {
+    font-size: 1.5rem;
+  }
+  .scam-text p,
+  .scam-card p,
+  .scam-points li,
+  .scam-cta p {
+    font-size: 0.95rem;
+  }
+  .scam-cta h2 {
+    font-size: 1.6rem;
+  }
+}

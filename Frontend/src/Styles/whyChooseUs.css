@@ -1,0 +1,133 @@
+/* 🔒 Why Section — Hacker Neon Cyber Style */
+
+.why-section {
+  padding: 4rem 2rem;
+  font-family: 'Orbitron', 'Share Tech Mono', monospace;
+  color: #00e5ff;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #0a0a0a;
+  border-radius: 16px;
+  box-shadow: 0 0 30px #00ffffcc;
+  position: relative;
+  user-select: none;
+}
+
+.why-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* 🚀 Left Image = Core Power of Features */
+.why-image {
+  flex: 1;
+  min-width: 320px;
+  min-height: 400px;
+  background-image: url("/Images/Digital.avif");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  background-color: #001f22;
+  box-shadow:
+    0 0 20px #00e5ff88,
+    inset 0 0 30px #00e5ff44;
+  animation: floatLogo 6s ease-in-out infinite alternate;
+  border: 2px solid #00e5ff66;
+  filter: drop-shadow(0 0 12px #00e5ff);
+}
+
+/* ✨ Floating Animation */
+@keyframes floatLogo {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.why-content {
+  flex: 1.5;
+  position: relative;
+}
+
+/* ⚡ Title */
+.why-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  color: #00e5ff;
+  text-shadow: 0 0 5px #00e5ff, 0 0 12px #00ffff;
+  animation: flicker 3s infinite;
+  user-select: none;
+}
+
+/* Flicker animation */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.85;
+  }
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.why-card {
+  background: #001f22;
+  border-radius: 12px;
+  padding: 2rem 1.8rem;
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 12px #00e5ff66, inset 0 0 10px #00ffff33;
+  transition: 0.3s ease;
+}
+
+.why-card:hover {
+  background-color: #00343e;
+  border-color: #00ffff;
+  box-shadow: 0 0 18px #00ffffaa, inset 0 0 12px #00ffffaa;
+}
+
+.why-icon {
+  font-size: 3rem;
+  color: #00e5ff;
+  margin-bottom: 1.2rem;
+  filter: drop-shadow(0 0 8px #00ffff);
+}
+
+.why-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #00ffff;
+  text-shadow: 0 0 4px #00ffffaa;
+}
+
+.why-card p {
+  font-size: 1.15rem;
+  color: #a0f0ff;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .why-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .why-image {
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}

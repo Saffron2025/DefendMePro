@@ -1,0 +1,196 @@
+/* ✅ Section */
+.pricing-section {
+  padding: 6rem 2rem;
+  background: #050b16; /* darker cyber bg */
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✅ subtle cyber grid bg */
+.pricing-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(90deg, rgba(0,255,136,0.08) 1px, transparent 1px),
+    linear-gradient(rgba(0,255,136,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.2;
+  z-index: 0;
+  animation: gridMove 20s linear infinite;
+}
+@keyframes gridMove {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 40px 40px, 40px 40px; }
+}
+
+/* ✅ Title */
+.pricing-title {
+  font-size: 2.6rem;
+  margin-bottom: 4rem;
+  font-family: "Orbitron", sans-serif;
+  background: linear-gradient(90deg, #00e0ff, #00ff88, #0077ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cyberGlow 5s linear infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes cyberGlow {
+  0% { text-shadow: 0 0 10px #00e0ff; }
+  50% { text-shadow: 0 0 25px #00ff88; }
+  100% { text-shadow: 0 0 10px #00e0ff; }
+}
+
+/* ✅ Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ Card */
+.pricing-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(0, 224, 255, 0.2);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+}
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(from 180deg, #00e0ff44, transparent 70%);
+  animation: rotateBorder 6s linear infinite;
+  z-index: 0;
+}
+@keyframes rotateBorder {
+  100% { transform: rotate(360deg); }
+}
+.pricing-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 0 30px rgba(0, 224, 255, 0.6);
+  border-color: #00ff88;
+}
+
+/* ✅ Highlighted Middle Card */
+.pricing-card.highlight {
+  background: rgba(0, 255, 136, 0.08);
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 40px rgba(0, 255, 136, 0.7);
+  transform: scale(1.05);
+}
+
+/* ✅ Headings */
+.pricing-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #00e0ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ✅ Price */
+.price {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0.5rem 0 1.5rem;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0,255,136,0.7);
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* ✅ Description */
+.desc {
+  font-size: 1rem;
+  margin-bottom: 1.8rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+}
+
+/* ✅ Features */
+.pricing-card ul {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+.pricing-card ul li {
+  margin: 0.7rem 0;
+  font-size: 1rem;
+  color: #e2e8f0;
+  font-family: "Share Tech Mono", monospace;
+  position: relative;
+  padding-left: 1.6rem;
+}
+.pricing-card ul li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: #00e0ff;
+  font-weight: bold;
+  animation: blink 1.5s infinite;
+}
+@keyframes blink {
+  50% { opacity: 0.4; }
+}
+
+/* ✅ Button */
+.pricing-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #00e0ff, #00ff88);
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.25);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.pricing-btn:hover::after {
+  transform: scaleX(1);
+}
+.pricing-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 22px rgba(0, 224, 255, 0.7);
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .pricing-title {
+    font-size: 2rem;
+  }
+  .pricing-card {
+    text-align: center;
+  }
+}

@@ -1,0 +1,204 @@
+/* 🌌 FallsShort Section - Cyber Reality Style */
+.falls-section {
+  padding: 6rem 5%;
+  /* background: #010a13; */
+  background: transparent;
+  font-family: "Orbitron", "Share Tech Mono", monospace;
+  color: #00ffea;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  min-height: 100vh;
+  user-select: none;
+}
+
+/* Optional scanline FX */
+.falls-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 234, 0.04),
+    rgba(0, 255, 234, 0.04) 2px,
+    transparent 4px,
+    transparent 6px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ✨ Heading */
+.falls-heading {
+  font-size: 3.6rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 5rem;
+  background: linear-gradient(90deg, #00ffea, #00c4ff, #00ffea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px #00fffaaa, 0 0 30px #00ffea55;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🔳 Grid */
+.falls-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🧊 Glass Card */
+.falls-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding: 2.5rem;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  background: rgba(0, 255, 234, 0.1);
+  border: 1.5px solid #00fffaa0;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 18px #00ffeaea, inset 0 0 10px #00ffeaea;
+  transition: 0.3s ease;
+  cursor: default;
+}
+
+.falls-card:hover {
+  box-shadow: 0 0 30px #00fffaae, inset 0 0 18px #00fffaae;
+  transform: translateY(-5px) scale(1.015);
+  border-color: #00fffaff;
+}
+
+.falls-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image Section */
+.falls-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-width: 420px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00ffea99, 0 0 40px #00ffea55 inset;
+  user-select: none;
+}
+
+.falls-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 15px;
+  filter: drop-shadow(0 0 5px #00ffeaaa);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.falls-img img:hover {
+  transform: scale(1.06) rotate(-1deg);
+  box-shadow: 0 0 35px #00ffeaee, 0 0 50px #00ffeaee inset;
+}
+
+/* Content Section */
+.falls-content {
+  flex: 1;
+  max-width: 520px;
+  user-select: text;
+}
+
+.falls-content h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: #00fffaff;
+  font-family: "Orbitron", monospace;
+  letter-spacing: 1.5px;
+  user-select: text;
+}
+
+.falls-content p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #00d6c6dd;
+  margin-bottom: 1.2rem;
+  font-family: "Share Tech Mono", monospace;
+  user-select: text;
+  text-align: justify;
+}
+
+/* ⚠️ Warning Box */
+.falls-warning {
+  margin-top: 6rem;
+  padding: 3rem;
+  background: rgba(0, 255, 234, 0.08);
+  border: 2px solid rgba(0, 255, 234, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 255, 234, 0.2);
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 2;
+}
+.falls-warning h2 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: #00fffaff;
+  text-transform: uppercase;
+}
+.falls-warning p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-weight: 500;
+  text-align: justify;
+  color: #00e7db;
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .falls-card {
+    flex-direction: column !important;
+    padding: 2rem 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .falls-img,
+  .falls-content {
+    max-width: 100%;
+  }
+  .falls-heading {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+  }
+  .falls-content h2 {
+    font-size: 1.9rem;
+  }
+  .falls-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .falls-section {
+    padding: 3rem 3%;
+  }
+  .falls-heading {
+    font-size: 2rem;
+  }
+  .falls-content h2 {
+    font-size: 1.5rem;
+  }
+  .falls-content p {
+    font-size: 0.9rem;
+  }
+  .falls-img {
+    max-width: 100%;
+  }
+}

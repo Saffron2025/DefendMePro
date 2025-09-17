@@ -1,0 +1,279 @@
+/* Import cyber fonts */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700&display=swap');
+
+/* Hero Section */
+.solutions-hero {
+  position: relative;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: url("/Images/Powerful.webp") no-repeat center center/cover;
+  filter: brightness(0.85); /* slightly dim for text clarity */
+  border-radius: 20px;
+  margin-bottom: 3rem;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+  filter: brightness(0.55) contrast(1.2);
+  border-radius: 20px;
+}
+.solutions-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: -2;
+  border-radius: 20px;
+}
+.hero-content h1 {
+  font-size: 3.8rem;
+  font-family: "Orbitron", sans-serif;
+  background: linear-gradient(90deg, #0099cc, #00cc99, #0066cc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 8s ease-in-out infinite;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.1;
+  max-width: 700px;
+  margin: 0 auto;
+  user-select: none;
+}
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero-content p {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  font-family: "Share Tech Mono", monospace;
+  color: #c0d6e4;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  user-select: none;
+}
+
+/* Zig-Zag Sections */
+.solution-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  border-radius: 20px;
+  background: #f9fbfc;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+.solution-block.reverse {
+  flex-direction: row-reverse;
+}
+.solution-img {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 24px rgba(0, 153, 204, 0.2);
+}
+.solution-img img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid rgba(0, 153, 204, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  user-select: none;
+}
+.solution-img img:hover,
+.solution-img img:focus {
+  transform: scale(1.04) rotate(-0.8deg);
+  box-shadow: 0 0 35px rgba(0, 153, 204, 0.5);
+  border-color: rgba(0, 153, 204, 0.7);
+  outline: none;
+}
+.solution-text {
+  flex: 1;
+  max-width: 550px;
+  font-family: "Share Tech Mono", monospace;
+  color: #222222;
+  user-select: text;
+}
+.solution-icon {
+  font-size: 3.5rem;
+  color: #0077bb;
+  margin-bottom: 1.3rem;
+  filter: drop-shadow(0 0 6px rgba(0, 119, 187, 0.6));
+}
+.solution-text h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0077bb;
+  text-shadow: 0 0 10px rgba(0, 119, 187, 0.6);
+  line-height: 1.1;
+}
+.solution-text p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #444444;
+  margin: 0;
+}
+
+/* Timeline Section */
+.solutions-timeline {
+  padding: 6rem 2rem;
+  background: #e9f2f8;
+  text-align: center;
+  color: #004466;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 0 auto 5rem;
+  box-shadow: 0 6px 18px rgba(0, 68, 102, 0.15);
+}
+.solutions-timeline h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2.8rem;
+  color: #0077bb;
+  margin-bottom: 3rem;
+}
+.timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.timeline .step {
+  background: #d6e6f2;
+  padding: 1.5rem 3rem;
+  border-radius: 18px;
+  border: 2px solid #0077bb;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 1.4rem;
+  letter-spacing: 1.2px;
+  color: #004466;
+  box-shadow: 0 0 15px rgba(0, 119, 187, 0.3);
+  user-select: none;
+}
+.timeline .line {
+  height: 3px;
+  width: 90px;
+  background: #0077bb;
+  box-shadow: 0 0 14px rgba(0, 119, 187, 0.7);
+  border-radius: 2px;
+}
+@media (max-width: 640px) {
+  .timeline {
+    flex-direction: column;
+  }
+  .timeline .line {
+    width: 3px;
+    height: 60px;
+    margin: 1rem 0;
+  }
+}
+
+/* CTA Section with Background Img */
+.solutions-cta {
+  position: relative;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: #00334d;
+  overflow: hidden;
+  background: url("/Images/cta-bg.webp") no-repeat center center/cover;
+  border-radius: 20px;
+  box-shadow: inset 0 0 50px rgba(0, 51, 77, 0.6);
+  margin-bottom: 4rem;
+}
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 119, 187, 0.65), rgba(0, 204, 153, 0.65));
+  mix-blend-mode: overlay;
+  z-index: 0;
+  border-radius: 20px;
+}
+.solutions-cta h2,
+.solutions-cta .cta-btn {
+  position: relative;
+  z-index: 1;
+  user-select: none;
+}
+.solutions-cta h2 {
+  font-size: 2.8rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 15px rgba(0, 255, 170, 0.8);
+}
+.cta-btn {
+  background: #004466;
+  color: white;
+  border: none;
+  padding: 1.2rem 3.2rem;
+  border-radius: 14px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  font-family: "Share Tech Mono", monospace;
+  box-shadow: 0 0 20px rgba(0, 68, 102, 0.5);
+}
+.cta-btn:hover,
+.cta-btn:focus {
+  transform: scale(1.15);
+  box-shadow: 0 0 40px rgba(0, 255, 170, 0.8);
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .solution-block {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  .solution-block.reverse {
+    flex-direction: column;
+  }
+  .solution-img img {
+    height: 280px;
+  }
+}
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  .hero-content p {
+    font-size: 1.4rem;
+  }
+  .solution-text h2 {
+    font-size: 2rem;
+  }
+  .solution-text p {
+    font-size: 1.2rem;
+  }
+  .timeline .step {
+    font-size: 1.2rem;
+  }
+  .cta-btn {
+    font-size: 1.3rem;
+    padding: 1rem 2.5rem;
+  }
+}

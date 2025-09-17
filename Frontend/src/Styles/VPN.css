@@ -1,0 +1,271 @@
+/* 🌐 VPN Main Section */
+.vpn-section {
+  padding: 6rem 5%;
+  background: transparent;
+  font-family: "Orbitron", "Share Tech Mono", monospace;
+  color: #00fff2;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* 🧱 Heading */
+.vpn-heading {
+  font-size: 3.6rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 5rem;
+  background: linear-gradient(90deg, #00fff2, #00b9e8, #00fff2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px #00fff2aa, 0 0 25px #00fff244;
+}
+
+/* 🔐 Content Blocks */
+.vpn-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(0, 255, 242, 0.07);
+  border: 1.5px solid #00fffaa0;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 18px #00fff299, inset 0 0 10px #00fff299;
+  transition: 0.3s ease;
+}
+
+.vpn-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.vpn-block:hover {
+  box-shadow: 0 0 28px #00fff2cc, inset 0 0 18px #00fff2cc;
+  transform: scale(1.015);
+}
+
+/* 🎥 Media Block */
+.vpn-media {
+  flex: 1;
+  max-width: 460px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #00fff2aa, 0 0 40px #00fff255 inset;
+}
+
+.vpn-media img,
+.vpn-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  filter: drop-shadow(0 0 6px #00fff2aa);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vpn-media img:hover,
+.vpn-video:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 30px #00fff2ee, 0 0 60px #00fff2ee inset;
+}
+
+/* 📝 Text Block */
+.vpn-text {
+  flex: 1;
+  max-width: 540px;
+}
+
+.vpn-text h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #00fffaff;
+  margin-bottom: 1rem;
+}
+
+.vpn-text p {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: #00d6e9dd;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* ✅ Points List */
+.vpn-points {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.vpn-points li {
+  font-size: 1rem;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  color: #00f5f1;
+}
+
+.vpn-points li::before {
+  content: "✔";
+  color: #00fff2;
+  position: absolute;
+  left: 0;
+}
+
+/* ☑️ Checklist */
+.vpn-extra {
+  background: rgba(0, 255, 242, 0.07);
+  border: 1.5px solid #00fffaa0;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+  box-shadow: 0 0 20px #00fff255, inset 0 0 10px #00fff233;
+  backdrop-filter: blur(10px);
+}
+
+.vpn-extra h2 {
+  font-size: 2rem;
+  color: #00fffaff;
+  margin-bottom: 1.2rem;
+}
+
+.vpn-checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vpn-checklist li {
+  font-size: 1rem;
+  padding-left: 1.5rem;
+  margin-bottom: 0.7rem;
+  color: #00e6e6;
+  position: relative;
+}
+
+.vpn-checklist li::before {
+  content: "✔";
+  color: #00fff2;
+  position: absolute;
+  left: 0;
+}
+
+/* ❓ FAQ Section */
+.vpn-faqs {
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  background: rgba(0, 255, 242, 0.07);
+  border: 1.5px solid #00fffaa0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 22px #00fff255;
+}
+
+.vpn-faqs h2 {
+  font-size: 2rem;
+  color: #00fffaff;
+  margin-bottom: 1.5rem;
+}
+
+.vpn-faq h3 {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #00fffaff;
+  margin-bottom: 0.5rem;
+}
+
+.vpn-faq p {
+  font-size: 1.05rem;
+  color: #00d6e9dd;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+/* 🚨 CTA Section */
+.vpn-cta {
+  margin-top: 5rem;
+  padding: 3rem 2rem;
+  background: rgba(0, 255, 242, 0.07);
+  border: 1.5px solid #00fffaa0;
+  border-radius: 20px;
+  box-shadow: 0 0 22px #00fff255;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.vpn-cta h2 {
+  font-size: 2.2rem;
+  color: #00fffaff;
+  margin-bottom: 1rem;
+}
+
+.vpn-cta p {
+  font-size: 1.1rem;
+  color: #00d6e9dd;
+  margin-bottom: 2rem;
+}
+
+/* 🔘 CTA Button */
+.vpn-btn {
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #00fff5;
+  color: #001f25;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px #00fff5aa;
+}
+
+.vpn-btn:hover {
+  background: #00ffee;
+  box-shadow: 0 0 30px #00ffee;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 900px) {
+  .vpn-block {
+    flex-direction: column !important;
+    padding: 2rem 1.5rem;
+  }
+
+  .vpn-heading {
+    font-size: 2.8rem;
+  }
+
+  .vpn-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vpn-section {
+    padding: 3rem 3%;
+  }
+
+  .vpn-heading {
+    font-size: 2rem;
+  }
+
+  .vpn-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .vpn-text p,
+  .vpn-points li,
+  .vpn-checklist li,
+  .vpn-faq p,
+  .vpn-cta p {
+    font-size: 0.95rem;
+  }
+
+  .vpn-cta h2 {
+    font-size: 1.6rem;
+  }
+}

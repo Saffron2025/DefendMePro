@@ -1,0 +1,321 @@
+/* ------------------------------
+   🚨 Hacker/Fraud/Scam Vibe Navbar (Blue Neon)
+------------------------------- */
+
+.navbar-redesign {
+  background-color: #0a0a0a; /* darker background */
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 15px #00ffffaa; /* neon cyan glow */
+  font-family: 'Orbitron', 'Share Tech Mono', monospace;
+  font-size: 1.1rem;
+  color: #00e5ff; /* neon cyan text */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #00e5ff;
+  user-select: none;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* Navbar when scrolled */
+.navbar-redesign.scrolled {
+  background-color: #001f22; /* slight dark cyan on scroll */
+  box-shadow: 0 0 25px #00ffffcc;
+}
+
+/* Container */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.nav-logo img {
+  filter: drop-shadow(0 0 8px #00ffff);
+  height: 40px;
+  width: auto;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.nav-logo img:hover {
+  filter: drop-shadow(0 0 15px #00ccff);
+}
+
+/* Nav links wrapper */
+.nav-links-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav item base styles */
+.nav-links a,
+.nav-links button,
+.cta-btn {
+  text-decoration: none;
+  color: #00e5ff;
+  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
+  font-weight: 600;
+  border: none;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+}
+
+/* Hover glitch effect */
+.nav-links a:hover,
+.nav-links button:hover,
+.cta-btn:hover {
+  color: #00ffff;
+  text-shadow:
+    1px 0 #00ffff,
+    -1px 0 #00ffff,
+    0 1px #00ffff,
+    0 -1px #00ffff;
+  animation: glitch 0.3s infinite;
+  background: transparent;
+  border-bottom: 1px solid #00ffff;
+}
+
+/* Glitch animation */
+@keyframes glitch {
+  0% {
+    text-shadow: 1px 0 #00ffff, -1px 0 #00ffff, 0 1px #00ffff, 0 -1px #00ffff;
+  }
+  50% {
+    text-shadow: 2px 0 #66ffff, -2px 0 #66ffff, 0 2px #66ffff, 0 -2px #66ffff;
+  }
+  100% {
+    text-shadow: 1px 0 #00ffff, -1px 0 #00ffff, 0 1px #00ffff, 0 -1px #00ffff;
+  }
+}
+
+/* Active NavLink styling - NO infinite animation, just glow and underline */
+.nav-links a.active {
+  color: #00ffff;
+  border-bottom: 1px solid #00ffff;
+  text-shadow:
+    1px 0 #00ffff,
+    -1px 0 #00ffff,
+    0 1px #00ffff,
+    0 -1px #00ffff;
+}
+
+/* CTA Button */
+.cta-btn {
+  background-color: transparent;
+  border: 1.5px solid #00e5ff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-weight: 700;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* CTA Button hover glitch */
+.cta-btn:hover {
+  background-color: #00e5ff;
+  color: #0a0a0a;
+  animation: glitch 0.3s infinite;
+}
+
+/* CTA Button active styling - no infinite animation, just glow */
+.nav-links a.cta-btn.active {
+  background-color: #00e5ff;
+  color: #0a0a0a;
+  text-shadow:
+    1px 0 #00ffff,
+    -1px 0 #00ffff,
+    0 1px #00ffff,
+    0 -1px #00ffff;
+  border: none;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  width: auto;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  justify-content: space-between;
+  color: #00e5ff;
+  font-weight: 600;
+  border-radius: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+  color: #00ffff;
+  animation: glitch 0.3s infinite;
+}
+
+.chevron {
+  font-size: 0.8rem;
+}
+
+/* Mega Menu */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #001f22;
+  border: 1px solid #00e5ff;
+  box-shadow: 0 0 15px #00ffffaa;
+  border-radius: 6px;
+  padding: 1rem;
+  color: #66ffff;
+  display: none;
+  flex-direction: column;
+  width: 300px;
+  z-index: 1000;
+}
+
+.dropdown.active .mega-menu {
+  display: flex;
+}
+
+/* Mega links */
+.mega-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mega-links a {
+  font-size: 0.95rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  color: #66ffff;
+  user-select: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mega-links a:hover {
+  background-color: #00343e;
+  color: #00ffff;
+  animation: glitch 0.3s infinite;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger svg {
+  color: #00e5ff;
+  transition: color 0.3s ease;
+}
+
+.hamburger:hover svg {
+  color: #00ffff;
+  animation: glitch 0.3s infinite;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links-wrapper {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: #0a0a0a;
+    flex-direction: column;
+    padding-top: 4rem;
+    transition: right 0.3s ease;
+    align-items: flex-start;
+    padding-left: 1.5rem;
+    overflow-y: auto;
+    z-index: 1001;
+  }
+
+  .nav-links-wrapper.open {
+    right: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+    color: #00e5ff;
+  }
+
+  .mega-menu {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: #00343e;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    display: none;
+  }
+
+  .dropdown.active .mega-menu {
+    display: block;
+  }
+
+  .mega-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mega-links a {
+    color: #66ffff;
+  }
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 900;
+}
