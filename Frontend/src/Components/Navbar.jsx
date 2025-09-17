@@ -50,7 +50,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
 
-        {/* Logo Wrapper for fixed left corner */}
+        {/* Logo Wrapper fixed on left */}
         <div className="logo-wrapper">
           <Link to="/" className="nav-logo" onClick={closeAllMenus}>
             <img src="/Images/Logo.webp" alt="Logo" />
@@ -102,7 +102,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Hamburger menu */}
+        {/* Hamburger menu fixed on right */}
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
         </div>
