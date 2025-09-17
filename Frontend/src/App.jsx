@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import NavbarComp from "./Components/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import Contact from "./Pages/Contact";
+import Contact from './Pages/contact'
 import Resources from "./Pages/Resources";
 import Footer from "./Components/Footer";
 import ScrollToTopWithHash from "./ScrollToTopWithHash";
