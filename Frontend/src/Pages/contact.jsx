@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail } from 'lucide-react';
-import '../styles/Contact.css';
+import '../Styles/Contact.css';
 
 export default function Contact() {
   return (

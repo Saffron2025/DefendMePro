@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Solutions.css";
+import "../Styles/Solutions.css";
 import { motion } from "framer-motion";
 import { ShieldCheck, LockKeyhole, AlertTriangle, Headphones } from "lucide-react";
 

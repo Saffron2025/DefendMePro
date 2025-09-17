@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Resources.css";
+import "../Styles/Resources.css";
 
 export default function ResourceSection({ id, title, blocks }) {
   return (

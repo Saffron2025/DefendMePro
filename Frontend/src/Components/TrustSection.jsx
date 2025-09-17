@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/TrustSection.css";
+import "../Styles/TrustSection.css";
 import { motion } from "framer-motion";
 
 export default function TrustSection() {

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Footer.css";
+import "../Styles/Footer.css";
 import ScrollReveal from "./ScrollReveal";
 import { ShieldCheck, Lock, Phone, Mail } from "lucide-react";
 

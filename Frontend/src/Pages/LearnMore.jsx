@@ -1,7 +1,7 @@
 // src/pages/LearnMore.jsx
 
 import React from "react";
-import "../styles/LearnMore.css";
+import "../Styles/LearnMore.css";
 
 export default function LearnMore() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/WhyChooseUs.css";
+import "../Styles/WhyChooseUs.css";
 import { motion } from "framer-motion";
 import { ShieldCheck, AlertTriangle, GlobeLock, Headphones } from "lucide-react";
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ScrollReveal from "./ScrollReveal";
-import "../styles/Hero.css";
+import "../Styles/Hero.css";
 
 export default function Hero() {
   const subtitle =

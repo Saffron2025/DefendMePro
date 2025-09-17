@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Pricing.css";
+import "../Styles/Pricing.css";
 import ScrollReveal from "./ScrollReveal";
 
 export default function Pricing() {

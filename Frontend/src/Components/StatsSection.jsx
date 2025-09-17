@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/StatsSection.css";
+import "../Styles/StatsSection.css";
 import { motion } from "framer-motion";
 
 export default function StatsSection() {

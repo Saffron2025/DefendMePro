@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "../styles/Resources.css";
+import "../Styles/Resources.css";
 
 export default function Resources() {
   const location = useLocation();
