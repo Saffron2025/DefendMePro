@@ -50,14 +50,14 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
 
-        {/* Logo Wrapper fixed on left */}
+        {/* Logo fixed left */}
         <div className="logo-wrapper">
           <Link to="/" className="nav-logo" onClick={closeAllMenus}>
             <img src="/Images/Logo.webp" alt="Logo" />
           </Link>
         </div>
 
-        {/* Nav Links centered */}
+        {/* Nav links centered */}
         <div className={`nav-links-wrapper ${menuOpen ? "open" : ""}`}>
           <ul className="nav-links">
             <li><NavLink to="/" end onClick={closeAllMenus}>Home</NavLink></li>
@@ -102,7 +102,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Hamburger menu fixed on right */}
+        {/* Hamburger fixed right */}
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
         </div>

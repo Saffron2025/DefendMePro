@@ -1,14 +1,20 @@
+/* Global fix: prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+}
+
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Mono&display=swap');
 
 .navbar {
-  position: fixed !important; /* sticky se fixed */
+  position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   z-index: 1100 !important;
   backdrop-filter: saturate(180%) blur(12px);
   font-family: 'Poppins', sans-serif;
+  /* background-color: #001a1fcc; */
 }
 .navbar.scrolled {
   box-shadow: 0 2px 10px rgb(0 255 255 / 0.25);
@@ -26,9 +32,9 @@
   position: relative;
 }
 
-/* Logo on left */
+/* Logo on left fixed */
 .logo-wrapper {
-  position: fixed; /* fixed on left corner */
+  position: fixed;
   left: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
@@ -60,6 +66,8 @@
   display: flex;
   gap: 2rem;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links a,
@@ -180,7 +188,7 @@
   box-shadow: 0 0 6px #00ffffaa;
 }
 
-/* Hamburger menu - FIXED position on right */
+/* Hamburger menu - fixed right */
 .hamburger {
   position: fixed;
   top: 50%;
@@ -200,6 +208,25 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  /* Navbar container adjustments */
+  .navbar-container {
+    max-width: 100%;
+    padding: 0 0.75rem;
+    justify-content: space-between; /* logo left, hamburger right */
+  }
+
+  /* Logo left position adjust */
+  .logo-wrapper {
+    left: 0.75rem;
+  }
+
+  /* Hamburger right position adjust and show */
+  .hamburger {
+    right: 0.75rem;
+    display: block;
+  }
+
+  /* Slide-in nav menu */
   .nav-links-wrapper {
     position: fixed;
     top: 0;
@@ -215,6 +242,8 @@
     transition: transform 0.3s ease;
     z-index: 1150;
     box-shadow: -4px 0 16px #00ffffaa;
+    box-sizing: border-box;
+    overflow-y: auto;
   }
 
   .nav-links-wrapper.open {
@@ -231,6 +260,7 @@
     font-size: 1.1rem;
   }
 
+  /* Dropdown mega-menu mobile fix */
   .mega-menu {
     position: relative;
     top: auto;
@@ -239,6 +269,8 @@
     background: transparent;
     max-height: none;
     padding-left: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .dropdown.active .mega-menu {
@@ -246,12 +278,7 @@
     animation: none;
   }
 
-  /* Show hamburger on mobile */
-  .hamburger {
-    display: block;
-  }
-
-  /* Hide nav-links when not open */
+  /* Disable pointer events on closed menu */
   .nav-links-wrapper:not(.open) {
     pointer-events: none;
   }
