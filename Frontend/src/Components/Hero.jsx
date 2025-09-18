@@ -71,7 +71,7 @@ export default function Hero() {
         <ScrollReveal delay={0.5} direction="up">
           <div className="d-flex gap-3 justify-content-center">
             <Link to="/contact">
-              <Button className="hero-btn primary">Start Free Trial</Button>
+              <Button className="primary">Start Free Trial</Button>
             </Link>
             <Link to="/learn-more">
               <Button className="hero-btn secondary">Learn More</Button>
