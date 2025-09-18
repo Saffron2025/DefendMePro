@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="about-container">
       <h1>About Saffron Shield</h1>
-      
+
       <p>
         Welcome to <strong>Saffron Shield</strong>, your reliable partner in IT support, scam protection, and digital safety — especially tailored for senior citizens, home-based businesses, and small enterprises. With over <strong>a decade of hands-on experience</strong> in cybersecurity and tech support, our mission is simple: <em>"To protect people from digital dangers, and make technology easy for everyone."</em>
       </p>
@@ -64,8 +64,8 @@ const About = () => {
 
       <h2>Contact Us</h2>
       <ul>
-        <li>Email: support@saffronshield.com</li>
-        <li>WhatsApp: +91-XXXXXXXXXX</li>
+        <li>CustomerSupport@SaffronGuru.com</li>
+        <li>WhatsApp: +1 844-313-4987</li>
         <li>Main Site: <a href="https://saffronguru.com" target="_blank" rel="noopener noreferrer">saffronguru.com</a></li>
       </ul>
 

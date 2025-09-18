@@ -17,6 +17,8 @@ html, body {
   /* background-color: #001a1fcc; */
 }
 
+
+
 .nav-links a,
 .nav-links button {
   display: inline-flex;       /* make them flex containers */
@@ -49,6 +51,17 @@ html, body {
   transform: translateY(-50%);
   z-index: 1100;
 }
+
+.nav-links a,
+.nav-links button {
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  text-decoration: none; /* no underline on hover */
+}
+
 
 .nav-logo img {
   max-height: 200px;
@@ -312,4 +325,47 @@ html, body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+/* 🔲 Dark Navbar for About Page */
+.navbar.dark-nav .nav-links a,
+.navbar.dark-nav .nav-links button,
+.navbar.dark-nav .dropdown-toggle,
+.navbar.dark-nav .hamburger {
+  color: #000 !important;
+}
+
+.navbar.dark-nav .nav-links a:hover,
+.navbar.dark-nav .nav-links button:hover {
+  color: #222;
+  background-color: rgba(0, 0, 0, 0.08);
+  text-shadow: none;
+  transform: scale(1.05);
+}
+
+.navbar.dark-nav .chevron {
+  color: #000;
+}
+
+/* CTA Button on dark nav */
+.navbar.dark-nav .cta-btn {
+  border-color: #000;
+  color: #000;
+}
+
+.navbar.dark-nav .cta-btn:hover {
+  background: #000;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+/* ✅ Force white text on dropdown inside about (or dark-nav) pages */
+.mega-menu.white-dropdown .mega-links a {
+  color: #ffffff !important;
+}
+
+.mega-menu.white-dropdown .mega-links a:hover {
+  color: #aaffff !important;
+  background-color: #003344;
+  box-shadow: 0 0 6px #00ffffaa;
 }

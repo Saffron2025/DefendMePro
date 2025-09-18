@@ -9,6 +9,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
+const darkNavRoutes = ["/about", "/learn-more"];
+const isDarkNavbar = darkNavRoutes.includes(location.pathname);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -53,7 +55,9 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+<nav className={`navbar ${scrolled ? "scrolled" : ""} ${isDarkNavbar ? "dark-nav" : ""}`}>
+
+
       <div className="navbar-container">
 
         {/* Logo fixed left */}
@@ -81,7 +85,8 @@ const Navbar = () => {
               >
                 Resources <FaChevronDown className="chevron" />
               </button>
-              <div className={`mega-menu ${activeDropdown === "resources" ? "show" : ""}`}>
+<div className={`mega-menu ${activeDropdown === "resources" ? "show" : ""} ${isDarkNavbar ? "white-dropdown" : ""}`}>
+
                 <div className="mega-links">
                   {[
                     { to: "/reality", label: "📊 Reality in Numbers" },
