@@ -46,6 +46,12 @@ const Navbar = () => {
     setActiveDropdown(null);
   };
 
+  const handleHomeClick = () => {
+  closeAllMenus();  // close menus if open
+  window.scrollTo({ top: 0, behavior: "smooth" });  // scroll to top smoothly
+};
+
+
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
@@ -60,8 +66,11 @@ const Navbar = () => {
         {/* Nav links centered */}
         <div className={`nav-links-wrapper ${menuOpen ? "open" : ""}`}>
           <ul className="nav-links">
-            <li><NavLink to="/" end onClick={closeAllMenus}>Home</NavLink></li>
+  <NavLink to="/" end onClick={handleHomeClick}>
+    Home
+  </NavLink>
             <li><NavLink to="/#solutions" onClick={closeAllMenus}>Solutions</NavLink></li>
+            <li><NavLink to="/#Pricing" onClick={closeAllMenus}>Pricing</NavLink></li>
             <li
               ref={dropdownRef}
               className={`dropdown ${activeDropdown === "resources" ? "active" : ""}`}

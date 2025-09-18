@@ -104,7 +104,14 @@ export default function AlertsHub() {
                 preload="metadata"
               />
             ) : (
-              <img src={s.media.img} alt={s.title} />
+              <img
+                src={s.media.img}
+                alt={s.title}
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+              />
             )}
           </div>
 

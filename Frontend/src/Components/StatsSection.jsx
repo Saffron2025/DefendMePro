@@ -13,63 +13,87 @@ export default function StatsSection() {
   const [counters, setCounters] = useState(stats.map(() => 0));
 
   useEffect(() => {
+    const duration = 2000;
+    const interval = 30;
+
     const timers = stats.map((stat, i) => {
-      let start = 0;
-      const end = stat.number;
-      const duration = 2000;
-      const stepTime = Math.abs(Math.floor(duration / end));
+      const steps = Math.ceil(duration / interval);
+      const increment = stat.number / steps;
+      let current = 0;
 
       const timer = setInterval(() => {
-        start += 1;
-        if (start >= end) {
+        current += increment;
+        if (current >= stat.number) {
+          current = stat.number;
           clearInterval(timer);
         }
+
         setCounters((prev) => {
-          const copy = [...prev];
-          copy[i] = start;
-          return copy;
+          const updated = [...prev];
+          updated[i] = parseFloat(current.toFixed(0));
+          return updated;
         });
-      }, stepTime);
+      }, interval);
+
       return timer;
     });
 
-    return () => timers.forEach((t) => clearInterval(t));
+    return () => timers.forEach(clearInterval);
   }, []);
 
   return (
-    <section className="stats-section">
-      {/* ✅ Background Video (scoped to this section only) */}
-      <video autoPlay loop muted playsInline className="bg-video">
+    <section className="stats-section" aria-labelledby="stats-heading">
+      {/* ✅ Background video (optimized) */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        className="bg-video"
+        aria-hidden="true"
+      >
         <source src="/Videos/DMPVideos.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
-      <div className="overlay"></div>
 
+      {/* Overlay */}
+      <div className="overlay" aria-hidden="true" />
+
+      {/* Content */}
       <div className="stats-content">
         <motion.h2
+          id="stats-heading"
           className="stats-title"
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           📊 The Reality in Numbers
         </motion.h2>
 
-        <div className="stats-grid">
+        <div className="stats-grid" role="list">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
               className="stat-card"
+              role="listitem"
+              tabIndex={0}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+                ease: "easeOut",
+              }}
             >
-              <h3>
+              <h3 className="stat-number" aria-label={`${stat.number}${stat.suffix}`}>
                 {counters[index]}
                 {stat.suffix}
               </h3>
-              <p>{stat.label}</p>
+              <p className="stat-label">{stat.label}</p>
             </motion.div>
           ))}
         </div>

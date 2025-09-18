@@ -148,7 +148,19 @@ export default function LiveSupport() {
                 preload="metadata"
               />
             ) : (
-              <img src={s.media.img} alt={s.title} />
+              <img
+                src={s.media.img}
+                alt={s.title}
+                loading="lazy"
+                width="600"
+                height="400"
+                srcSet={`
+                  ${s.media.img.replace(".webp", "-small.webp")} 400w,
+                  ${s.media.img.replace(".webp", "-medium.webp")} 800w,
+                  ${s.media.img} 1200w
+                `}
+                sizes="(max-width: 600px) 100vw, 600px"
+              />
             )}
           </div>
 

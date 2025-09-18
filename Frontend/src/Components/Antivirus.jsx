@@ -118,35 +118,41 @@ export default function Antivirus() {
         🖥️ Antivirus & Device Security
       </h1>
 
-      {sections.map((s, idx) => (
+      {sections.map((section, idx) => (
         <div
           key={idx}
           className={`av-block ${idx % 2 === 0 ? "normal" : "reverse"}`}
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="av-media" data-aos="zoom-in-up">
-            {s.media.video ? (
+            {section.media.video ? (
               <video
                 className="av-video"
-                src={s.media.video}
-                poster={s.media.poster}
+                src={section.media.video}
+                poster={section.media.poster}
                 controls
                 playsInline
                 preload="metadata"
               />
             ) : (
-              <img src={s.media.img} alt={s.title} />
+              <img
+                src={section.media.img}
+                alt={section.title}
+                loading="lazy"
+                decoding="async"
+                style={{ width: "100%", height: "auto" }}
+              />
             )}
           </div>
 
           <div className="av-text" data-aos="fade-up">
-            <h2>{s.title}</h2>
-            {s.body.map((p, i) => (
-              <p key={i}>{p}</p>
+            <h2>{section.title}</h2>
+            {section.body.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
             ))}
             <ul className="av-points">
-              {s.points.map((pt, j) => (
-                <li key={j}>{pt}</li>
+              {section.points.map((point, j) => (
+                <li key={j}>{point}</li>
               ))}
             </ul>
           </div>
@@ -157,8 +163,8 @@ export default function Antivirus() {
       <div className="av-extra" data-aos="fade-up">
         <h2>✅ Quick Hardening Checklist</h2>
         <ul className="av-checklist">
-          {checklist.map((c, i) => (
-            <li key={i}>{c}</li>
+          {checklist.map((item, i) => (
+            <li key={i}>{item}</li>
           ))}
         </ul>
       </div>
@@ -166,10 +172,10 @@ export default function Antivirus() {
       {/* FAQs */}
       <div className="av-faqs" data-aos="fade-up">
         <h2>❓ FAQs</h2>
-        {faqs.map((f, i) => (
+        {faqs.map((faq, i) => (
           <div className="av-faq" key={i}>
-            <h3>{f.q}</h3>
-            <p>{f.a}</p>
+            <h3>{faq.q}</h3>
+            <p>{faq.a}</p>
           </div>
         ))}
       </div>

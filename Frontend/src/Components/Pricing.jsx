@@ -3,7 +3,7 @@ import "../Styles/Pricing.css";
 import ScrollReveal from "./ScrollReveal";
 
 export default function Pricing() {
-  const plans = [
+  const plans = React.useMemo(() => [
     {
       name: "Basic Shield",
       price: "$9.99 /mo",
@@ -40,28 +40,35 @@ export default function Pricing() {
         "Custom Integrations",
       ],
     },
-  ];
+  ], []);
 
   return (
-    <section className="pricing-section">
+    <section className="pricing-section" aria-label="Pricing Plans">
       <ScrollReveal direction="up">
         <h2 className="pricing-title">💎 Choose Your Protection Plan</h2>
       </ScrollReveal>
 
-      <div className="pricing-grid">
+      <div className="pricing-grid" role="list">
         {plans.map((plan, i) => (
-          <ScrollReveal key={i} delay={i * 0.2} direction="up">
-            <div className={`pricing-card ${plan.highlight ? "highlight" : ""}`}>
-              <h3>{plan.name}</h3>
-              <p className="price">{plan.price}</p>
+          <ScrollReveal key={plan.name} delay={i * 0.2} direction="up">
+            <article
+              className={`pricing-card ${plan.highlight ? "highlight" : ""}`}
+              role="listitem"
+              tabIndex={0}
+              aria-labelledby={`plan-title-${i}`}
+            >
+              <h3 id={`plan-title-${i}`}>{plan.name}</h3>
+              <p className="price" aria-label={`Price: ${plan.price}`}>{plan.price}</p>
               <p className="desc">{plan.desc}</p>
               <ul>
-                {plan.features.map((f, idx) => (
-                  <li key={idx}>✔ {f}</li>
+                {plan.features.map((feature, idx) => (
+                  <li key={idx}>✔ {feature}</li>
                 ))}
               </ul>
-              <button className="pricing-btn">Get Started</button>
-            </div>
+              <button className="pricing-btn" type="button" aria-label={`Get started with the ${plan.name} plan`}>
+                Get Started
+              </button>
+            </article>
           </ScrollReveal>
         ))}
       </div>

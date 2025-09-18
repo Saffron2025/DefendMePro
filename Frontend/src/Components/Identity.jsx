@@ -36,7 +36,10 @@ export default function Identity() {
       ],
     },
     {
-      media: { video: "/Videos/IdentityWalkthrough.mp4", poster: "/Images/WalkThrough.webp" },
+      media: {
+        video: "/Videos/IdentityWalkthrough.mp4",
+        poster: "/Images/WalkThrough.webp",
+      },
       title: "🎥 Walkthrough: From Leak → Lockdown",
       body: [
         "Watch how a leaked password triggers a cascade of protections: you’re alerted, auto-generated replacements are suggested, high-risk accounts are flagged for 2FA upgrade, and optional credit freeze is guided step-by-step.",
@@ -94,7 +97,14 @@ export default function Identity() {
                 preload="metadata"
               />
             ) : (
-              <img src={s.media.img} alt={s.title} />
+              <img
+                src={s.media.img}
+                alt={s.title}
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+              />
             )}
           </div>
 
@@ -139,7 +149,7 @@ export default function Identity() {
       <div className="identity-cta" data-aos="zoom-in">
         <h2>Lock down your identity—before scammers try.</h2>
         <p>
-          Turn on breach monitoring, upgrade 2FA, and enable decision guardrails. 
+          Turn on breach monitoring, upgrade 2FA, and enable decision guardrails.
           One weekend of setup saves years of headaches.
         </p>
         <button className="identity-btn">Enable Identity Protection</button>

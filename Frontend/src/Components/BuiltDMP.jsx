@@ -15,7 +15,7 @@ export default function BuiltDMP() {
       text: [
         "Traditional security only looks for malware. DefendMePro was built to stop real-world scams that antivirus completely misses.",
         "We block fake websites, refund scams, phishing login pages, and full-screen pop-ups designed to trick you into calling fake support numbers.",
-        "Our protection adapts weekly to new scam trends, because scammers evolve faster than signature updates."
+        "Our protection adapts weekly to new scam trends, because scammers evolve faster than signature updates.",
       ],
     },
     {
@@ -24,7 +24,7 @@ export default function BuiltDMP() {
       text: [
         "When you’re unsure, you don’t need a bot — you need a real expert. Our team of specialists is available 7 days a week.",
         "From suspicious phone calls and strange pop-ups to risky emails, we guide you in real-time so you never face scammers alone.",
-        "Smart security means protecting people, not just files."
+        "Smart security means protecting people, not just files.",
       ],
     },
     {
@@ -33,7 +33,7 @@ export default function BuiltDMP() {
       text: [
         "Every week, DefendMePro delivers a fresh Scam Playbook directly inside the app and by email.",
         "We track the latest fraud trends across the country and explain them in simple language, so you know what to watch for before it hits your inbox or phone.",
-        "No jargon. Just practical advice to stay safe against evolving scams."
+        "No jargon. Just practical advice to stay safe against evolving scams.",
       ],
     },
     {
@@ -42,7 +42,7 @@ export default function BuiltDMP() {
       text: [
         "98% of modern scams bypass antivirus because they don’t rely on malware. They exploit human trust, urgency, and fear.",
         "DefendMePro is designed for the psychological side of cybercrime — the fake Microsoft call, the fraudulent bank email, the urgent pop-up warning.",
-        "By combining technology with education and human guidance, we deliver protection where old models fail."
+        "By combining technology with education and human guidance, we deliver protection where old models fail.",
       ],
     },
   ];
@@ -60,7 +60,14 @@ export default function BuiltDMP() {
           data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="built-img" data-aos="zoom-in-up">
-            <img src={item.img} alt={item.title} />
+            <img
+              src={item.img}
+              alt={item.title}
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="400"
+            />
           </div>
           <div className="built-text" data-aos="fade-up">
             <h2>{item.title}</h2>
@@ -71,7 +78,6 @@ export default function BuiltDMP() {
         </div>
       ))}
 
-      {/* Extra mission section for page length */}
       <div className="built-extra" data-aos="fade-up">
         <h2>🚀 Our Mission</h2>
         <p>

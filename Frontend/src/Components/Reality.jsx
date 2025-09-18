@@ -10,6 +10,7 @@ export default function Reality() {
 
   return (
     <section className="reality-section" aria-labelledby="reality-heading">
+      {/* Background FX */}
       <span className="fx fx-grid" aria-hidden="true" />
       <span className="fx fx-aurora aurora-1" aria-hidden="true" />
       <span className="fx fx-aurora aurora-2" aria-hidden="true" />
@@ -20,12 +21,14 @@ export default function Reality() {
         💻 The Reality in Numbers
       </h1>
 
+      {/* Block 1 - Cybercrime Losses */}
       <article className="reality-block glass" data-aos="fade-right">
         <div className="reality-media">
           <img
             src="/Images/CyberCrime.webp"
             alt="Global cybercrime losses illustration"
-            loading="lazy"
+            loading="eager" // 👈 Load this image immediately
+            decoding="async" // 👈 Allow browser to decode asynchronously
             width="900"
             height="600"
           />
@@ -47,10 +50,8 @@ export default function Reality() {
         </div>
       </article>
 
-      <article
-        className="reality-block glass reverse highlight"
-        data-aos="fade-left"
-      >
+      {/* Block 2 - FBI IC3 */}
+      <article className="reality-block glass reverse highlight" data-aos="fade-left">
         <div className="reality-media">
           <video
             src="/Videos/Complaints.mp4"
@@ -83,12 +84,14 @@ export default function Reality() {
         </div>
       </article>
 
+      {/* Block 3 - Seniors Loss */}
       <article className="reality-block glass" data-aos="fade-right">
         <div className="reality-media">
           <img
             src="/Images/oldAmerican.webp"
             alt="Older American looking at a device"
-            loading="lazy"
+            loading="lazy" // 👈 Lazy load
+            decoding="async"
             width="900"
             height="600"
           />
@@ -110,12 +113,14 @@ export default function Reality() {
         </div>
       </article>
 
+      {/* Block 4 - Antivirus Bypass */}
       <article className="reality-block glass reverse" data-aos="fade-left">
         <div className="reality-media">
           <img
             src="/Images/Antivirus.webp"
             alt="Traditional antivirus interface"
             loading="lazy"
+            decoding="async"
             width="900"
             height="600"
           />

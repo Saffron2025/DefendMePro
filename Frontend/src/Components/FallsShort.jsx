@@ -50,7 +50,14 @@ export default function FallsShort() {
             data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
           >
             <div className="falls-img" data-aos="zoom-in-up">
-              <img src={item.img} alt={item.title} />
+              <img
+                src={item.img}
+                alt={item.title}
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+              />
             </div>
             <div className="falls-content" data-aos="fade-up">
               <h2>{item.title}</h2>

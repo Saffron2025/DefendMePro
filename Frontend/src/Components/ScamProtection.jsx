@@ -108,7 +108,14 @@ export default function ScamProtection() {
                 preload="metadata"
               />
             ) : (
-              <img src={s.media.img} alt={s.title} />
+              <img
+                src={s.media.img}
+                alt={s.title}
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+              />
             )}
           </div>
 
@@ -128,7 +135,12 @@ export default function ScamProtection() {
 
       <div className="scam-extra-grid">
         {extras.map((e, i) => (
-          <div className="scam-card" key={i} data-aos="fade-up" data-aos-delay={i * 120}>
+          <div
+            className="scam-card"
+            key={i}
+            data-aos="fade-up"
+            data-aos-delay={i * 120}
+          >
             <h3>{e.title}</h3>
             {e.text.map((t, k) => (
               <p key={k}>{t}</p>
@@ -140,8 +152,8 @@ export default function ScamProtection() {
       <div className="scam-cta" data-aos="zoom-in">
         <h2>Stay two steps ahead of scammers.</h2>
         <p>
-          Enable Scam Protection, turn on Alerts Hub, and add one-tap Expert Help.
-          Small guardrails at the right moment prevent big losses.
+          Enable Scam Protection, turn on Alerts Hub, and add one-tap Expert
+          Help. Small guardrails at the right moment prevent big losses.
         </p>
         <button className="scam-btn">Enable Protection</button>
       </div>

@@ -33,17 +33,26 @@ export default function Solutions() {
 
   return (
     <div className="solutions-page">
-      {/* ✅ Hero with video + background */}
-      <section className="solutions-hero">
-        <video autoPlay muted loop playsInline className="hero-video">
+      {/* ✅ Hero Section with Background Video */}
+      <section className="solutions-hero" aria-label="DefendMePro Hero Section">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="hero-video"
+          aria-hidden="true"
+        >
           <source src="/Videos/solution-hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
-        <div className="overlay"></div>
+        <div className="overlay" aria-hidden="true"></div>
         <div className="hero-content">
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             🛡️ Powerful Solutions Against Digital Threats
           </motion.h1>
@@ -51,53 +60,60 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* ✅ Zig-Zag Solutions */}
+      {/* ✅ Zig-Zag Solutions Section */}
       {solutions.map((s, i) => (
         <section
           key={i}
           className={`solution-block ${i % 2 === 0 ? "normal" : "reverse"}`}
+          aria-labelledby={`solution-title-${i}`}
         >
           <motion.div
             className="solution-img"
             initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            <img src={s.img} alt={s.title} />
+            <img
+              src={s.img}
+              alt={s.title}
+              loading="lazy"
+              width="100%"
+              height="auto"
+            />
           </motion.div>
 
           <motion.div
             className="solution-text"
             initial={{ opacity: 0, x: i % 2 === 0 ? 100 : -100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
             <div className="solution-icon">{s.icon}</div>
-            <h2>{s.title}</h2>
+            <h2 id={`solution-title-${i}`}>{s.title}</h2>
             <p>{s.desc}</p>
           </motion.div>
         </section>
       ))}
 
-      {/* ✅ Timeline Strip */}
-      <section className="solutions-timeline">
+      {/* ✅ Timeline Section */}
+      <section className="solutions-timeline" aria-label="How DefendMePro Works">
         <h2>How DefendMePro Works</h2>
-        <div className="timeline">
-          <div className="step">🔍 Detect</div>
-          <div className="line"></div>
-          <div className="step">⚡ Alert</div>
-          <div className="line"></div>
-          <div className="step">🛡️ Protect</div>
+        <div className="timeline" role="list">
+          <div className="step" role="listitem">🔍 Detect</div>
+          <div className="line" aria-hidden="true"></div>
+          <div className="step" role="listitem">⚡ Alert</div>
+          <div className="line" aria-hidden="true"></div>
+          <div className="step" role="listitem">🛡️ Protect</div>
         </div>
       </section>
 
-      {/* ✅ CTA with background img */}
-      <section className="solutions-cta">
-        <div className="cta-overlay"></div>
+      {/* ✅ CTA Section */}
+      <section className="solutions-cta" aria-label="Call to Action Section">
+        <div className="cta-overlay" aria-hidden="true"></div>
         <h2>🚀 Stay Ahead of Scams</h2>
-        <button className="cta-btn">Start Free Trial</button>
+        <button className="cta-btn" type="button">Start Free Trial</button>
       </section>
     </div>
   );

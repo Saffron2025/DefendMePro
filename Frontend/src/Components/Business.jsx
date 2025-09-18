@@ -200,9 +200,16 @@ export default function Business() {
                 controls
                 playsInline
                 preload="metadata"
+                loading="lazy"
               />
             ) : (
-              <img src={s.media.img} alt={s.title} />
+              <img
+                src={s.media.img}
+                alt={s.title}
+                loading="lazy"
+                width="480"
+                height="300"
+              />
             )}
           </div>
 
@@ -220,7 +227,6 @@ export default function Business() {
         </div>
       ))}
 
-      {/* Onboarding */}
       <div className="biz-extra" data-aos="fade-up">
         <h2>🚀 Onboarding in Four Steps</h2>
         <ol className="biz-steps">
@@ -230,7 +236,6 @@ export default function Business() {
         </ol>
       </div>
 
-      {/* Pricing */}
       <div className="biz-pricing" data-aos="zoom-in">
         <h2>💳 Pricing</h2>
         <div className="biz-tiers">
@@ -251,7 +256,6 @@ export default function Business() {
         </div>
       </div>
 
-      {/* Checklist */}
       <div className="biz-check" data-aos="fade-up">
         <h2>✅ Minimum Viable Business Safety</h2>
         <ul className="biz-checklist">
@@ -261,7 +265,6 @@ export default function Business() {
         </ul>
       </div>
 
-      {/* FAQs */}
       <div className="biz-faqs" data-aos="fade-up">
         <h2>❓ FAQs</h2>
         {faqs.map((f, i) => (
@@ -272,7 +275,6 @@ export default function Business() {
         ))}
       </div>
 
-      {/* CTA */}
       <div className="biz-cta" data-aos="zoom-in">
         <h2>Give your business a safer default.</h2>
         <p>

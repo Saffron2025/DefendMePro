@@ -18,7 +18,9 @@ export default function Home() {
       <section id="solutions">
         <Solutions />
       </section>
+      <section id="Pricing">
       <Pricing />
+      </section>
       {/* <Footer /> */}
     </>
   );
