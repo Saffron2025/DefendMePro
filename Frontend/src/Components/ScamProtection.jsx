@@ -48,7 +48,7 @@ export default function ScamProtection() {
       ],
     },
     {
-      media: { video: "/Videos/ScamDemo.mp4", poster: "/Images/LIveDemo.webp" },
+      media: { img: "/Images/LIveDemo.webp" }, // changed from video to image only
       title: "🎥 Live Demo: How a Refund Scam Tries to Hook You",
       points: [
         "Fake refund overpayment → pressure to ‘return’ money via gift cards/crypto.",
@@ -98,25 +98,15 @@ export default function ScamProtection() {
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="scam-media" data-aos="zoom-in-up">
-            {s.media.video ? (
-              <video
-                className="scam-video"
-                src={s.media.video}
-                poster={s.media.poster}
-                controls
-                playsInline
-                preload="metadata"
-              />
-            ) : (
-              <img
-                src={s.media.img}
-                alt={s.title}
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-              />
-            )}
+            {/* Only image now, no video */}
+            <img
+              src={s.media.img}
+              alt={s.title}
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="400"
+            />
           </div>
 
           <div className="scam-text" data-aos="fade-up">

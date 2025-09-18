@@ -36,7 +36,8 @@ export default function Antivirus() {
       ]
     },
     {
-      media: { video: "/Videos/DeviceShieldDemo.mp4", poster: "/Password/LiveFileGuard.webp" },
+      // Removed video, only poster image used now
+      media: { img: "/Password/LiveFileGuard.webp" },
       title: "🎥 Live: File Guard + Ransomware Throttle",
       body: [
         "Watch Defender+File Guard catch a suspicious process that starts bulk writes in user folders and probes VSS. The throttle kicks in, the process is isolated, and you get a one-tap recovery checklist."
@@ -125,24 +126,14 @@ export default function Antivirus() {
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="av-media" data-aos="zoom-in-up">
-            {section.media.video ? (
-              <video
-                className="av-video"
-                src={section.media.video}
-                poster={section.media.poster}
-                controls
-                playsInline
-                preload="metadata"
-              />
-            ) : (
-              <img
-                src={section.media.img}
-                alt={section.title}
-                loading="lazy"
-                decoding="async"
-                style={{ width: "100%", height: "auto" }}
-              />
-            )}
+            {/* Show image only; no videos */}
+            <img
+              src={section.media.img}
+              alt={section.title}
+              loading="lazy"
+              decoding="async"
+              style={{ width: "100%", height: "auto" }}
+            />
           </div>
 
           <div className="av-text" data-aos="fade-up">

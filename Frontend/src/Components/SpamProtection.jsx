@@ -36,7 +36,7 @@ export default function SpamProtection() {
       ]
     },
     {
-      media: { video: "/Videos/PopupTrapDemo.mp4", poster: "/Spam/PopUpTrap.webp" },
+      media: { img: "/Spam/PopUpTrap.webp" },  // Changed from video to img
       title: "🪤 Pop-Up Trap & Screen-Locker Breaker",
       body: [
         "‘Your PC is infected—call now!’ type full-screen popups? We kill their event-traps, unlock cursor/keyboard, aur safe exit provide karte hain.",
@@ -152,30 +152,20 @@ export default function SpamProtection() {
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="sp-media" data-aos="zoom-in-up">
-            {s.media.video ? (
-              <video
-                className="sp-video"
-                src={s.media.video}
-                poster={s.media.poster}
-                controls
-                playsInline
-                preload="metadata"
-              />
-            ) : (
-              <img
-                src={s.media.img}
-                alt={s.title}
-                loading="lazy"
-                width="600"
-                height="400"
-                srcSet={`
-                  ${s.media.img.replace(".webp", "-small.webp")} 400w,
-                  ${s.media.img.replace(".webp", "-medium.webp")} 800w,
-                  ${s.media.img} 1200w
-                `}
-                sizes="(max-width: 600px) 100vw, 600px"
-              />
-            )}
+            {/* Removed video check, just use image */}
+            <img
+              src={s.media.img}
+              alt={s.title}
+              loading="lazy"
+              width="600"
+              height="400"
+              srcSet={`
+                ${s.media.img.replace(".webp", "-small.webp")} 400w,
+                ${s.media.img.replace(".webp", "-medium.webp")} 800w,
+                ${s.media.img} 1200w
+              `}
+              sizes="(max-width: 600px) 100vw, 600px"
+            />
           </div>
 
           <div className="sp-text" data-aos="fade-up">

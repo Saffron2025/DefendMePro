@@ -23,7 +23,7 @@ export default function Business() {
       ]
     },
     {
-      media: { video: "/DefendPro/BusinessOverview.mp4", poster: "/DefendPro/BusinessOverview.webp" },
+      media: { img: "/DefendPro/BusinessOverview.webp" },
       title: "🎥 See It in Action: BEC + Fake Vendor Play",
       body: [
         "Live demo: attacker spoofs a vendor, submits urgent bank details change, pushes finance for wire. Our Safe-Pay overlays flag the request, validate IBAN/UPI beneficiary, and require a second person approval.",
@@ -192,25 +192,13 @@ export default function Business() {
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="biz-media" data-aos="zoom-in-up">
-            {s.media.video ? (
-              <video
-                className="biz-video"
-                src={s.media.video}
-                poster={s.media.poster}
-                controls
-                playsInline
-                preload="metadata"
-                loading="lazy"
-              />
-            ) : (
-              <img
-                src={s.media.img}
-                alt={s.title}
-                loading="lazy"
-                width="480"
-                height="300"
-              />
-            )}
+            <img
+              src={s.media.img}
+              alt={s.title}
+              loading="lazy"
+              width="480"
+              height="300"
+            />
           </div>
 
           <div className="biz-text" data-aos="fade-up">

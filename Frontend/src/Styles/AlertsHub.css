@@ -2,7 +2,7 @@
 .alerts-section {
   padding: 6rem 5%;
   background: transparent;
-  font-family: "Orbitron", "Share Tech Mono", monospace;
+  font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
   color: #00ffea;
   position: relative;
   z-index: 10;

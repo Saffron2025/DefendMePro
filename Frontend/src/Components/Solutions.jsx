@@ -2,8 +2,11 @@ import React from "react";
 import "../Styles/Solutions.css";
 import { motion } from "framer-motion";
 import { ShieldCheck, LockKeyhole, AlertTriangle, Headphones } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 export default function Solutions() {
+    const navigate = useNavigate();
+
   const solutions = [
     {
       icon: <ShieldCheck size={60} />,
@@ -113,7 +116,7 @@ export default function Solutions() {
       <section className="solutions-cta" aria-label="Call to Action Section">
         <div className="cta-overlay" aria-hidden="true"></div>
         <h2>🚀 Stay Ahead of Scams</h2>
-        <button className="cta-btn" type="button">Start Free Trial</button>
+        <button className="cta-btn" type="button" onClick={() => navigate('/contact')}>Start Free Trial</button>
       </section>
     </div>
   );

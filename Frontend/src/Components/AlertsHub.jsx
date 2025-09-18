@@ -36,7 +36,8 @@ export default function AlertsHub() {
       ],
     },
     {
-      media: { video: "/Videos/AlertsWalkthrough.mp4", poster: "/Images/LiveWalk.webp" },
+      // Video replaced by image here
+      media: { img: "/Images/LiveWalk.webp" },
       title: "🎥 See It in Action: Alert → Action",
       body: [
         "A live walk-through of a trending refund scam wave: you’ll see the alert, the context, and the safe action sequence.",
@@ -94,25 +95,15 @@ export default function AlertsHub() {
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="alerts-media" data-aos="zoom-in-up">
-            {s.media.video ? (
-              <video
-                className="alerts-video"
-                src={s.media.video}
-                poster={s.media.poster}
-                controls
-                playsInline
-                preload="metadata"
-              />
-            ) : (
-              <img
-                src={s.media.img}
-                alt={s.title}
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-              />
-            )}
+            {/* Only image now */}
+            <img
+              src={s.media.img}
+              alt={s.title}
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="400"
+            />
           </div>
 
           <div className="alerts-text" data-aos="fade-up">

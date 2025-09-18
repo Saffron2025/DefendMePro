@@ -36,7 +36,8 @@ export default function ZeroDay() {
       ],
     },
     {
-      media: { video: "/Videos/ZeroDayWalkthrough.mp4", poster: "/Images/ZeroDayWalkthrough.webp" },
+      // Video replaced by image here
+      media: { img: "/Images/ZeroDayWalkthrough.webp" },
       title: "🎥 Live Walkthrough: Unknown File → Blocked Behavior",
       body: [
         "Watch a fresh loader attempt to run from Downloads. It’s unsigned, tries to kick off a living-off-the-land chain, and probes credential stores.",
@@ -98,25 +99,15 @@ export default function ZeroDay() {
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="zeroday-media" data-aos="zoom-in-up">
-            {s.media.video ? (
-              <video
-                className="zeroday-video"
-                src={s.media.video}
-                poster={s.media.poster}
-                controls
-                playsInline
-                preload="metadata"
-              />
-            ) : (
-              <img
-                src={s.media.img}
-                alt={s.title}
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-              />
-            )}
+            {/* Only image now */}
+            <img
+              src={s.media.img}
+              alt={s.title}
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="400"
+            />
           </div>
 
           <div className="zeroday-text" data-aos="fade-up">

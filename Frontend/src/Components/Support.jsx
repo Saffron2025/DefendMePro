@@ -23,7 +23,7 @@ export default function LiveSupport() {
       ]
     },
     {
-      media: { video: "/DefendPro/SupportWalkthrough.mp4", poster: "/DefendPro/Watch3Days.webp" },
+      media: { img: "/DefendPro/Watch3Days.webp" },  // replaced video with image here
       title: "🎥 Watch: 3-Min Incident Triage",
       body: [
         "Is walkthrough me dekho kaise ham ‘possible scam’ call ko triage karte hain: identity checks, device sanity scan, aur calm-by-default script jo pressure remove karta hai.",
@@ -138,30 +138,19 @@ export default function LiveSupport() {
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="ls-media" data-aos="zoom-in-up">
-            {s.media.video ? (
-              <video
-                className="ls-video"
-                src={s.media.video}
-                poster={s.media.poster}
-                controls
-                playsInline
-                preload="metadata"
-              />
-            ) : (
-              <img
-                src={s.media.img}
-                alt={s.title}
-                loading="lazy"
-                width="600"
-                height="400"
-                srcSet={`
-                  ${s.media.img.replace(".webp", "-small.webp")} 400w,
-                  ${s.media.img.replace(".webp", "-medium.webp")} 800w,
-                  ${s.media.img} 1200w
-                `}
-                sizes="(max-width: 600px) 100vw, 600px"
-              />
-            )}
+            <img
+              src={s.media.img}
+              alt={s.title}
+              loading="lazy"
+              width="600"
+              height="400"
+              srcSet={`
+                ${s.media.img.replace(".webp", "-small.webp")} 400w,
+                ${s.media.img.replace(".webp", "-medium.webp")} 800w,
+                ${s.media.img} 1200w
+              `}
+              sizes="(max-width: 600px) 100vw, 600px"
+            />
           </div>
 
           <div className="ls-text" data-aos="fade-up">

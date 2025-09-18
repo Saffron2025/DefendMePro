@@ -36,10 +36,8 @@ export default function Identity() {
       ],
     },
     {
-      media: {
-        video: "/Videos/IdentityWalkthrough.mp4",
-        poster: "/Images/WalkThrough.webp",
-      },
+      // Video replaced by image here
+      media: { img: "/Images/WalkThrough.webp" },
       title: "🎥 Walkthrough: From Leak → Lockdown",
       body: [
         "Watch how a leaked password triggers a cascade of protections: you’re alerted, auto-generated replacements are suggested, high-risk accounts are flagged for 2FA upgrade, and optional credit freeze is guided step-by-step.",
@@ -87,25 +85,15 @@ export default function Identity() {
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="identity-media" data-aos="zoom-in-up">
-            {s.media.video ? (
-              <video
-                className="identity-video"
-                src={s.media.video}
-                poster={s.media.poster}
-                controls
-                playsInline
-                preload="metadata"
-              />
-            ) : (
-              <img
-                src={s.media.img}
-                alt={s.title}
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="400"
-              />
-            )}
+            {/* Only image now */}
+            <img
+              src={s.media.img}
+              alt={s.title}
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="400"
+            />
           </div>
 
           <div className="identity-text" data-aos="fade-up">

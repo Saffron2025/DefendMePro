@@ -35,19 +35,7 @@ export default function VPN() {
         "Audit-ready configurations & transparent policies",
       ],
     },
-    {
-      media: { video: "/Videos/VPNWalkthrough.mp4", poster: "/VPN/OneTapConnect.webp" },
-      title: "🎥 Live: One-Tap Connect + Leak Tests",
-      body: [
-        "See the app connect to the nearest low-latency server, then auto-run IP/DNS/WebRTC leak tests.",
-        "If anything fails, the kill switch engages and the app suggests fixes (adapter priority, firewall rules).",
-      ],
-      points: [
-        "Auto best-server selection < 100ms",
-        "Built-in IP/DNS/WebRTC leak check",
-        "Kill switch on failure or sleep/wake",
-      ],
-    },
+    // Video section removed here
     {
       media: { img: "/VPN/Spilt.webp" },
       title: "🧭 Split Tunneling & App Rules",
@@ -152,24 +140,13 @@ export default function VPN() {
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="vpn-media" data-aos="zoom-in-up">
-            {section.media.video ? (
-              <video
-                className="vpn-video"
-                src={section.media.video}
-                poster={section.media.poster}
-                controls
-                playsInline
-                preload="metadata"
-              />
-            ) : (
-              <img
-                src={section.media.img}
-                alt={section.title}
-                loading="lazy"
-                decoding="async"
-                style={{ width: "100%", height: "auto" }}
-              />
-            )}
+            <img
+              src={section.media.img}
+              alt={section.title}
+              loading="lazy"
+              decoding="async"
+              style={{ width: "100%", height: "auto" }}
+            />
           </div>
 
           <div className="vpn-text" data-aos="fade-up">
