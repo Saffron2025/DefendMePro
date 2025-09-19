@@ -1,3 +1,270 @@
-html, body {
-  overflow-x: hidden;
+/* 🌐 GLOBAL FONT SETUP */
+body {
+  font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
+  color: #00ffea;
+  background: #000; /* Optional */
+}
+
+/* ✨ SECTION-WISE FONT CONSISTENCY */
+.reality-section,
+.alerts-section {
+  font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
+}
+
+/* 🎯 HEADINGS (Orbitron) */
+.reality-heading,
+.alerts-heading,
+.reality-text h2,
+.alerts-text h2,
+.alerts-cta h2 {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* 📄 PARAGRAPHS & BODY TEXT (Share Tech Mono) */
+.reality-text p,
+.alerts-text p,
+.alerts-cta p,
+.alert-card p,
+.alerts-points li {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* ✅ BUTTONS & TAGS (Optional - Consistency) */
+.alert-cta,
+.alerts-btn,
+.alert-tag,
+.reality-text .chip {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* 🔁 Optional fallback to ensure cross-browser rendering */
+.reality-text p,
+.alerts-text p {
+  font-weight: 500;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* BONUS: TEXT SMOOTHING (optional for neon fonts) */
+body,
+.reality-section,
+.alerts-section {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 👨‍🚀 ZERODAY FONT FIXES */
+
+/* Section-wide font (just in case) */
+.zeroday-section {
+  font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
+}
+
+/* Headings use Orbitron */
+.zeroday-heading,
+.zeroday-text h2,
+.zeroday-extra h2,
+.zeroday-cta h2,
+.zeroday-checklist h3 {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Paragraphs, list items, body text use Share Tech Mono */
+.zeroday-text p,
+.zeroday-extra p,
+.zeroday-cta p,
+.zeroday-points li,
+.zeroday-checklist li {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* Buttons consistent font */
+.zeroday-btn {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* 🔐 PASSWORDS SECTION FONT FIXES */
+
+/* Section-wide fallback (already there, but reinforce) */
+.pw-section {
+  font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
+}
+
+/* Headings use Orbitron */
+.pw-heading,
+.pw-text h2,
+.pw-extra h2,
+.pw-faqs h2,
+.pw-faq h3,
+.pw-cta h2 {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Paragraphs & detailed text use Share Tech Mono */
+.pw-text p,
+.pw-points li,
+.pw-checklist li,
+.pw-faq p,
+.pw-cta p {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* Buttons too (optional, for consistency) */
+.pw-btn {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* 🛡️ ANTIVIRUS SECTION FONT FIXES */
+
+.av-section {
+  font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
+}
+
+/* Headings use Orbitron */
+.av-heading,
+.av-text h2,
+.av-extra h2,
+.av-faqs h2,
+.av-faq h3,
+.av-cta h2 {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Body text, list items, etc. use Share Tech Mono */
+.av-text p,
+.av-points li,
+.av-checklist li,
+.av-faq p,
+.av-cta p {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* Button font for consistency */
+.av-btn {
+  font-family: "Share Tech Mono", monospace;
+}
+/* 🌐 VPN SECTION FONT FIXES */
+
+.vpn-section {
+  font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
+}
+
+/* Headings use Orbitron */
+.vpn-heading,
+.vpn-text h2,
+.vpn-extra h2,
+.vpn-faqs h2,
+.vpn-faq h3,
+.vpn-cta h2 {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Body text and list items use Share Tech Mono */
+.vpn-text p,
+.vpn-points li,
+.vpn-checklist li,
+.vpn-faq p,
+.vpn-cta p {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* CTA button font */
+.vpn-btn {
+  font-family: "Share Tech Mono", monospace;
+}
+/* 🔐 SP SECTION FONT FIXES */
+
+.sp-section {
+  font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
+}
+
+/* Headings use Orbitron */
+.sp-heading,
+.sp-text h2,
+.sp-extra h2,
+.sp-faqs h2,
+.sp-faq h3,
+.sp-cta h2 {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Body text and list items use Share Tech Mono */
+.sp-text p,
+.sp-points li,
+.sp-checklist li,
+.sp-faq p,
+.sp-cta p {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* CTA button font */
+.sp-btn {
+  font-family: "Share Tech Mono", monospace;
+}
+/* BUSINESS SECTION FONT FIXES */
+
+/* Main font families */
+.biz-section {
+  font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
+}
+
+/* Headings (Orbitron) */
+.biz-heading,
+.biz-text h2,
+.biz-extra h2,
+.biz-pricing h2,
+.biz-tier h3,
+.biz-check h2,
+.biz-faqs h2,
+.biz-faq h3,
+.biz-cta h2 {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Body text & lists (Share Tech Mono) */
+.biz-text p,
+.biz-points li,
+.biz-steps,
+.biz-tier ul,
+.biz-tier ul li,
+.biz-checklist li,
+.biz-faq p,
+.biz-cta p {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* Buttons */
+.biz-btn {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* LIVE SUPPORT SECTION FONT FIXES */
+
+/* Main font families */
+.ls-section {
+  font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
+}
+
+/* Headings (Orbitron) */
+.ls-heading,
+.ls-text h2,
+.ls-extra h2,
+.ls-faqs h2,
+.ls-faq h3,
+.ls-cta h2 {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Body text & lists (Share Tech Mono) */
+.ls-text p,
+.ls-points li,
+.ls-checklist li,
+.ls-faq p,
+.ls-cta p {
+  font-family: "Share Tech Mono", monospace;
+}
+
+/* Buttons */
+.ls-btn {
+  font-family: "Share Tech Mono", monospace;
 }

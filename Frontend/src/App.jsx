@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import OneSignal from 'react-onesignal';
-
+import './index.css'
 import NavbarComp from "./Components/Navbar";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
