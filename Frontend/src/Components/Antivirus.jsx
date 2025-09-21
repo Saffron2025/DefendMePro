@@ -11,112 +11,111 @@ export default function Antivirus() {
   const sections = [
     {
       media: { img: "/Password/Antivirus.webp" },
-      title: "🛡️ Beyond ‘Just Antivirus’",
+      title: "🛡️ Advanced Antivirus Beyond Traditional Protection",
       body: [
-        "Modern attacks rarely look like old-school viruses. They blend signed loaders, LOLBins, macros, and remote tools. We layer behavioral defenses on top of your AV to block stealthy tactics.",
-        "Think of it as a ‘device firewall for behavior’: if a process tries something risky (mass encryption, shadow copy tamper, silent PowerShell), we step in instantly."
+        "Modern cyberattacks rarely resemble traditional viruses. Attackers use signed loaders, living-off-the-land binaries (LOLBins), malicious macros, and remote access tools to evade detection.",
+        "Our antivirus software adds a powerful behavioral defense layer that acts as a device firewall for suspicious activities, instantly blocking risky processes like mass encryption attempts, shadow copy tampering, and stealthy PowerShell commands."
       ],
       points: [
-        "Behavior shields over signature engines",
-        "Process policy: restrict unknowns, allow known-good",
-        "Ransomware heuristics & rollback guidance"
+        "Behavioral shields layered over signature-based detection",
+        "Custom process policies: restrict unknown, allow trusted",
+        "Ransomware heuristics with automated rollback guidance"
       ]
     },
     {
       media: { img: "/Password/SystemHardening.webp" },
-      title: "🔧 System Hardening Presets",
+      title: "🔧 One-Click System Hardening for Endpoint Security",
       body: [
-        "One-click presets lock down common abuse paths without breaking daily work. You can start with ‘Balanced’, then tighten to ‘Strict’ as you get comfortable.",
-        "Admins can tune per-role presets (Creator, Dev, Finance) so tools you trust stay fast, while risky behaviors remain fenced."
+        "Secure your device effortlessly with system hardening presets designed to close common attack vectors without interrupting productivity.",
+        "Start with a balanced preset and progressively tighten security to strict mode. IT admins can customize role-based presets ensuring trusted developer and finance tools function smoothly while blocking risky behaviors."
       ],
       points: [
-        "Disable legacy scripting (WScript/CScript) by default",
-        "PowerShell Constrained Language Mode for untrusted",
-        "Office/PDF macro-isolation & intent prompts"
+        "Disable legacy scripting hosts (WScript/CScript) by default",
+        "Enforce PowerShell Constrained Language Mode for untrusted scripts",
+        "Isolate Office and PDF macros with user intent prompts"
       ]
     },
     {
-      // Removed video, only poster image used now
       media: { img: "/Password/LiveFileGuard.webp" },
-      title: "🎥 Live: File Guard + Ransomware Throttle",
+      title: "🎥 Real-Time File Guard & Ransomware Throttle",
       body: [
-        "Watch Defender+File Guard catch a suspicious process that starts bulk writes in user folders and probes VSS. The throttle kicks in, the process is isolated, and you get a one-tap recovery checklist."
+        "Monitor live Defender and File Guard protection in action as it detects suspicious bulk file writes and probes of Volume Shadow Copy Service (VSS). The ransomware throttle isolates malicious processes and provides guided recovery steps with a single click."
       ],
       points: [
-        "Bulk-write & extension-cascade detection",
-        "Shadow copy tamper alerts",
-        "Auto-isolation & guided recovery"
+        "Detect bulk writes and extension-based attack cascades",
+        "Alert on shadow copy tampering attempts",
+        "Automatic process isolation with step-by-step recovery guidance"
       ]
     },
     {
       media: { img: "/Password/RemoteAccess.webp" },
-      title: "🔌 Remote Access & USB Controls",
+      title: "🔌 Secure Remote Access & USB Device Controls",
       body: [
-        "Remote tools are powerful—and commonly abused. We allow known, verified support sessions while blocking rogue agents and screen-stealers.",
-        "Removable media can be set to read-only by default; autorun is disabled; suspect binaries can’t execute from USB roots."
+        "Remote support tools are powerful but often abused by attackers. We allow only verified sessions from trusted applications like AnyDesk or TeamViewer, requiring explicit user consent.",
+        "Enhance USB security by enforcing read-only access for unknown devices, disabling autorun, and blocking execution of suspicious binaries from USB drives."
       ],
       points: [
-        "AnyDesk/TeamViewer policy + session consent",
-        "USB read-only for unknown drives",
-        "Block EXE/MSI/Script from removable roots"
+        "Policy controls for remote access with session consent",
+        "USB device read-only mode by default for unknown devices",
+        "Block execution of EXE, MSI, and script files from removable media"
       ]
     },
     {
       media: { img: "/Password/BrowserDefence.webp" },
-      title: "🌐 Browser & Network Defenses",
+      title: "🌐 Browser Security & Network Protection",
       body: [
-        "Your browser is the new OS. We filter dangerous downloads, warn on lookalike domains, and fence off credential pages until verified.",
-        "Unknown apps can’t beacon out silently; suspicious egress is throttled or denied until you approve."
+        "Browsers are the new operating system for many users. Our security suite filters dangerous downloads, warns about phishing and lookalike domains, and protects sensitive credential entry pages.",
+        "Unknown applications are prevented from silently communicating over the network, with suspicious outbound traffic throttled or blocked until explicitly approved."
       ],
       points: [
-        "Download sandbox for EXE/MSI/JS/VBS",
-        "Phishing lookalike domain warnings",
-        "Egress policies for unknown processes"
+        "Sandboxing for downloaded executables and scripts (EXE, MSI, JS, VBS)",
+        "Phishing detection with lookalike domain warnings",
+        "Egress network policies for unknown processes"
       ]
     },
     {
       media: { img: "/Password/AV.webp" },
-      title: "🧩 Works with Your Existing AV/EDR",
+      title: "🧩 Seamless Integration with Existing Antivirus & EDR",
       body: [
-        "We don’t replace your AV—we enhance it. Events are correlated to reduce noise yet surface true risk fast.",
-        "For teams, logs export cleanly to SIEM/SOC; per-app allowlists keep dev and IT tooling smooth."
+        "Our solution complements your existing antivirus and Endpoint Detection and Response (EDR) tools by correlating events to reduce false positives while surfacing true threats quickly.",
+        "For enterprise teams, logs export cleanly to SIEM/SOC platforms, with role-based allowlists for developer and IT tools to maintain workflow efficiency."
       ],
       points: [
-        "Low false-positive policy sets",
-        "Role-based allowlists (VSCode, Git, Docker, Node)",
-        "SIEM-friendly event export"
+        "Low false-positive security policies",
+        "Role-based allowlists for common dev and IT applications (VSCode, Git, Docker, Node.js)",
+        "SIEM-compatible event export for centralized monitoring"
       ]
     }
   ];
 
   const checklist = [
-    "Turn on ‘Balanced’ hardening preset (then move to ‘Strict’).",
-    "Enable macro isolation for Office & PDF readers.",
-    "Constrain PowerShell; disable legacy script hosts.",
-    "Force download sandbox for executables/scripts.",
-    "Make USB unknown devices read-only by default.",
-    "Keep OS/driver/firmware updates auto-applied."
+    "Enable ‘Balanced’ system hardening preset, then escalate to ‘Strict’ as confidence grows.",
+    "Activate macro isolation for Office and PDF readers to block malicious macros.",
+    "Enforce PowerShell Constrained Language Mode and disable legacy script hosts.",
+    "Require sandboxed downloads for all executable files and scripts.",
+    "Set unknown USB devices to read-only by default to prevent malware spread.",
+    "Keep your operating system, drivers, and firmware up to date automatically."
   ];
 
   const faqs = [
     {
-      q: "Kya yeh meri existing antivirus ko replace karta hai?",
-      a: "Nahi—hum enhance karte hain. Signatures + behavior = stronger defense. Existing AV detections ke saath hum suspicious behavior ko bhi block karte hain."
+      q: "Does this replace my existing antivirus software?",
+      a: "No, this solution enhances your current antivirus by combining signature-based detection with advanced behavioral shields. It detects suspicious activity that traditional AV may miss, providing stronger overall protection."
     },
     {
-      q: "Strict preset se apps tootenge to nahi?",
-      a: "Start with ‘Balanced’. Agar koi dev/IT tool break ho, usko allowlist me add karo. Presets role-aware hain, isliye daily kaam smooth rahega."
+      q: "Will strict presets break my daily applications?",
+      a: "Start with the ‘Balanced’ preset to maintain productivity. If any developer or IT tools malfunction, add them to the allowlist. Our presets are role-aware to ensure daily workflows remain smooth."
     },
     {
-      q: "Recovery kaise hoti hai ransomware attempt me?",
-      a: "Process isolate hota hai, shadow tamper detect hota hai, aur guided checklist milti hai: network cutoff, restore points, cloud file versions, aur credentials rotate."
+      q: "How does ransomware recovery work with this system?",
+      a: "Malicious processes are automatically isolated, shadow copy tampering is detected, and you receive a guided recovery checklist including network disconnection, restoring shadow copies or cloud versions, and rotating compromised credentials."
     }
   ];
 
   return (
     <div className="av-section">
       <h1 className="av-heading" data-aos="zoom-in">
-        🖥️ Antivirus & Device Security
+        🖥️ Comprehensive Antivirus & Endpoint Security
       </h1>
 
       {sections.map((section, idx) => (
@@ -126,7 +125,6 @@ export default function Antivirus() {
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
           <div className="av-media" data-aos="zoom-in-up">
-            {/* Show image only; no videos */}
             <img
               src={section.media.img}
               alt={section.title}
@@ -150,9 +148,8 @@ export default function Antivirus() {
         </div>
       ))}
 
-      {/* Checklist */}
       <div className="av-extra" data-aos="fade-up">
-        <h2>✅ Quick Hardening Checklist</h2>
+        <h2>✅ Quick Device Hardening Checklist</h2>
         <ul className="av-checklist">
           {checklist.map((item, i) => (
             <li key={i}>{item}</li>
@@ -160,9 +157,8 @@ export default function Antivirus() {
         </ul>
       </div>
 
-      {/* FAQs */}
       <div className="av-faqs" data-aos="fade-up">
-        <h2>❓ FAQs</h2>
+        <h2>❓ Frequently Asked Questions (FAQs)</h2>
         {faqs.map((faq, i) => (
           <div className="av-faq" key={i}>
             <h3>{faq.q}</h3>
@@ -171,12 +167,10 @@ export default function Antivirus() {
         ))}
       </div>
 
-      {/* CTA */}
       <div className="av-cta" data-aos="zoom-in">
-        <h2>Harden your device. Kill stealth tactics.</h2>
+        <h2>Harden Your Device and Defend Against Advanced Threats</h2>
         <p>
-          Behavior shields + system guardrails + browser/network controls—sab ek jagah.
-          Switch on Device Security and relax.
+          Activate our behavior-based shields, system hardening presets, and browser/network defenses all in one place. Enable Device Security now and enjoy peace of mind.
         </p>
         <button className="av-btn">Enable Device Security</button>
       </div>

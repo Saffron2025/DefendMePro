@@ -33,12 +33,16 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="why-section" aria-label="Why Choose DefendMePro">
+    <section
+      className="why-section"
+      aria-label="Reasons to choose DefendMePro's scam protection services"
+    >
       <div className="why-container">
-        {/* Background image (decorative) */}
+        {/* Background image (purely visual) */}
         <div className="why-image" aria-hidden="true" />
 
         <div className="why-content">
+          {/* ✅ Semantic h2 heading */}
           <motion.h2
             className="why-title"
             initial={{ opacity: 0, y: -20 }}
@@ -49,6 +53,7 @@ export default function WhyChooseUs() {
             ⚡ Why Choose DefendMePro
           </motion.h2>
 
+          {/* ✅ Feature Grid with ARIA roles */}
           <div className="why-grid" role="list">
             {features.map((item, index) => {
               const Icon = item.icon;
@@ -68,9 +73,16 @@ export default function WhyChooseUs() {
                     type: "tween",
                   }}
                 >
-                  <div className="why-icon" aria-hidden="true">
+                  {/* ✅ Decorative Icon */}
+                  <div
+                    className="why-icon"
+                    aria-hidden="true"
+                    role="presentation"
+                  >
                     <Icon size={60} strokeWidth={1.5} />
                   </div>
+
+                  {/* ✅ Proper heading structure */}
                   <h3 className="why-card-title">{item.title}</h3>
                   <p className="why-card-desc">{item.desc}</p>
                 </motion.div>

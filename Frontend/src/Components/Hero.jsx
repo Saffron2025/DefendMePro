@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import ScrollReveal from "./ScrollReveal";
 import "../Styles/Hero.css";
 
 export default function Hero() {
-  const subtitle =
-    "DefendMePro shields you from scams, identity theft, fraud, and digital traps that traditional security misses.";
+  const subtitleText =
+    "DefendMePro shield from scams, identity theft, fraud, and digital traps that traditional security misses.";
 
   const [displayedText, setDisplayedText] = useState("");
   const indexRef = useRef(0);
@@ -14,22 +15,51 @@ export default function Hero() {
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
-      if (indexRef.current < subtitle.length) {
-        setDisplayedText((prev) => prev + subtitle.charAt(indexRef.current));
+      if (indexRef.current < subtitleText.length) {
+        setDisplayedText((prev) => prev + subtitleText.charAt(indexRef.current));
         indexRef.current += 1;
       } else {
         clearInterval(intervalRef.current);
       }
     }, 50);
 
-    return () => {
-      clearInterval(intervalRef.current);
-    };
+    return () => clearInterval(intervalRef.current);
   }, []);
 
   return (
     <section className="hero-section">
-      {/* Background Video */}
+      {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>DefendMePro | Real-World Scam & Fraud Protection</title>
+        <meta
+          name="description"
+          content="DefendMePro shields you from scams, identity theft, fraud, and digital traps that traditional security misses."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.defendmepro.com/" />
+
+        {/* ✅ Open Graph / Social Media Tags */}
+        <meta property="og:title" content="DefendMePro | Real-World Protection" />
+        <meta
+          property="og:description"
+          content="Protect yourself from scams, fraud, and identity theft with DefendMePro."
+        />
+        <meta property="og:image" content="https://www.defendmepro.com/og-image.jpg" />
+        <meta property="og:url" content="https://www.defendmepro.com/" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        {/* ✅ Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "DefendMePro",
+            url: "https://www.defendmepro.com",
+          })}
+        </script>
+      </Helmet>
+
+      {/* ✅ Background Video with Poster */}
       <video
         autoPlay
         loop
@@ -38,13 +68,13 @@ export default function Hero() {
         preload="auto"
         className="bg-video"
         aria-hidden="true"
+        poster="/Images/hero-poster.jpg" // 👈 Add a relevant image in public folder
       >
         <source src="/Videos/HeroVideo.mp4" type="video/mp4" />
-        {/* Fallback for older browsers */}
         Your browser does not support the video tag.
       </video>
 
-      {/* Dark overlay */}
+      {/* Overlay */}
       <div className="overlay" aria-hidden="true"></div>
 
       {/* Main Content */}
@@ -59,15 +89,25 @@ export default function Hero() {
           </h1>
         </ScrollReveal>
 
-        {/* Typing subtitle */}
+        {/* Subtitle with SEO-friendly content */}
         <ScrollReveal delay={0.3} direction="up">
-          <p className="hero-subtitle">
+          <p
+            className="hero-subtitle"
+            aria-label={subtitleText} // 👈 For screen readers & bots
+          >
             {displayedText}
             <span className="cursor" aria-hidden="true">|</span>
           </p>
+
+          {/* 👇 Non-JS fallback for crawlers */}
+          <noscript>
+            <p className="hero-subtitle">
+              {subtitleText}
+            </p>
+          </noscript>
         </ScrollReveal>
 
-        {/* Action Buttons */}
+        {/* Buttons */}
         <ScrollReveal delay={0.5} direction="up">
           <div className="d-flex gap-3 justify-content-center">
             <Link to="/contact">

@@ -1,18 +1,35 @@
-import React from 'react';
-import '../Styles/About.css'; // CSS for styling
+import React from "react";
+import "../Styles/About.css";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   return (
-    <div className="about-container">
-      <h1>About Saffron Shield</h1>
+    <main className="about-container" aria-labelledby="about-heading">
+      {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>About Us | Saffron Shield - Scam Protection for Seniors & Small Businesses</title>
+        <meta
+          name="description"
+          content="Learn about Saffron Shield – your trusted digital protection partner for seniors, families, and small businesses. Backed by 10+ years of experience."
+        />
+        <link rel="canonical" href="https://www.saffronguru.com/about" />
+      </Helmet>
+
+      {/* ✅ Page Title */}
+      <h1 id="about-heading">About Saffron Shield</h1>
 
       <p>
-        Welcome to <strong>Saffron Shield</strong>, your reliable partner in IT support, scam protection, and digital safety — especially tailored for senior citizens, home-based businesses, and small enterprises. With over <strong>a decade of hands-on experience</strong> in cybersecurity and tech support, our mission is simple: <em>"To protect people from digital dangers, and make technology easy for everyone."</em>
+        Welcome to <strong>Saffron Shield</strong>, your reliable partner in IT support, scam protection, and digital safety — especially tailored for senior citizens, home-based businesses, and small enterprises. With over <strong>a decade of hands-on experience</strong> in cybersecurity and tech support, our mission is simple:{" "}
+        <em>"To protect people from digital dangers, and make technology easy for everyone."</em>
       </p>
 
       <h2>Who We Are</h2>
       <p>
-        Saffron Shield is a <strong>subsidiary of <a href="https://saffronguru.com" target="_blank" rel="noopener noreferrer">SaffronGuru.com</a></strong> — a respected name in ethical digital guidance. While SaffronGuru focuses on digital growth and training, we specialize in security, trust, and protection.
+        Saffron Shield is a <strong>subsidiary of{" "}
+        <a href="https://saffronguru.com" target="_blank" rel="noopener noreferrer">
+          SaffronGuru.com
+        </a>
+        </strong>{" "}— a respected name in ethical digital guidance. While SaffronGuru focuses on digital growth and training, we specialize in security, trust, and protection.
       </p>
 
       <p>
@@ -49,7 +66,10 @@ const About = () => {
 
       <h2>Part of the SaffronGuru Family</h2>
       <p>
-        We share the values of <a href="https://saffronguru.com" target="_blank" rel="noopener noreferrer">SaffronGuru.com</a>: honesty, simplicity, and user empowerment. While they focus on growth, we focus on protection — making us a perfect team.
+        We share the values of{" "}
+        <a href="https://saffronguru.com" target="_blank" rel="noopener noreferrer">
+          SaffronGuru.com
+        </a>: honesty, simplicity, and user empowerment. While they focus on growth, we focus on protection — making us a perfect team.
       </p>
 
       <h2>Our Vision</h2>
@@ -64,15 +84,15 @@ const About = () => {
 
       <h2>Contact Us</h2>
       <ul>
-        <li>CustomerSupport@SaffronGuru.com</li>
-        <li>WhatsApp: +1 844-313-4987</li>
+        <li>Email: <a href="mailto:CustomerSupport@SaffronGuru.com">CustomerSupport@SaffronGuru.com</a></li>
+        <li>WhatsApp: <a href="https://wa.me/18443134987" target="_blank" rel="noopener noreferrer">+1 844-313-4987</a></li>
         <li>Main Site: <a href="https://saffronguru.com" target="_blank" rel="noopener noreferrer">saffronguru.com</a></li>
       </ul>
 
-      <p style={{ fontStyle: 'italic', marginTop: '30px' }}>
+      <blockquote style={{ fontStyle: "italic", marginTop: "30px" }}>
         “Technology should feel like a friend — not a fear. Let us help you make that happen.”
-      </p>
-    </div>
+      </blockquote>
+    </main>
   );
 };
 

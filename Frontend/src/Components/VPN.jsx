@@ -11,126 +11,125 @@ export default function VPN() {
   const sections = [
     {
       media: { img: "/VPN/Tunnels.webp" },
-      title: "🔐 End-to-End Encrypted Tunnels",
+      title: "🔐 End-to-End Encrypted VPN Tunnels",
       body: [
-        "Your internet traffic is wrapped in strong encryption from your device to our exit gateway—so public Wi-Fi snoops, ISPs, and hotspot owners can’t peek.",
-        "We prioritize modern protocols for both speed and security, while gracefully falling back when networks are picky.",
+        "Protect your internet traffic with strong end-to-end encryption from your device to our secure exit gateways. This ensures your data stays private on public Wi-Fi, home networks, and everywhere in between.",
+        "We use modern VPN protocols optimized for both blazing speed and robust security, with fallback options for restrictive or unstable networks.",
       ],
       points: [
-        "WireGuard® for speed + efficiency",
-        "OpenVPN (UDP/TCP) for compatibility",
-        "ChaCha20/Poly1305 & AES-GCM ciphers",
+        "WireGuard® protocol for fast, efficient VPN connections",
+        "OpenVPN (UDP/TCP) for maximum compatibility",
+        "Industry-standard ChaCha20/Poly1305 and AES-GCM encryption ciphers",
       ],
     },
     {
       media: { img: "/VPN/Private.webp" },
-      title: "🕵️ Private by Default: No-Logs Architecture",
+      title: "🕵️ Zero-Logs VPN with Privacy by Design",
       body: [
-        "We designed the service to operate without retaining activity logs or DNS queries tied to you.",
-        "Crash/health metrics are aggregate-only and can be disabled. Keys rotate; metadata minimization is the rule.",
+        "Our VPN operates with a strict no-logs policy—meaning we never record your browsing activity, connection timestamps, or DNS queries.",
+        "Aggregate-only crash and health data keep the service reliable without compromising your privacy. Session keys rotate frequently to minimize metadata retention.",
       ],
       points: [
-        "No traffic logs / no DNS query logging tied to users",
-        "Key rotation + ephemeral session IDs",
-        "Audit-ready configurations & transparent policies",
+        "No traffic or DNS query logs tied to individual users",
+        "Ephemeral session IDs and key rotation for enhanced privacy",
+        "Audit-ready, transparent privacy policies and configurations",
       ],
     },
-    // Video section removed here
     {
       media: { img: "/VPN/Spilt.webp" },
-      title: "🧭 Split Tunneling & App Rules",
+      title: "🧭 Split Tunneling & App-Based VPN Rules",
       body: [
-        "Route sensitive apps through the VPN (banking, email), while keeping gaming/video calls outside for lowest ping.",
-        "Per-domain exclusions let you keep local devices (printers/CCTV/NAS) reachable on your home LAN.",
+        "Customize which apps route through the VPN to optimize performance and security. Protect sensitive apps like banking and email while keeping latency-critical apps like gaming and video calls outside the tunnel.",
+        "Set per-domain exclusions to maintain access to local devices like printers, CCTV, and NAS on your home network.",
       ],
       points: [
-        "App-based include/exclude lists",
-        "Per-domain and per-subnet rules",
-        "LAN discovery exemptions (printer/NAS)",
+        "App-level include and exclude VPN rules",
+        "Domain and subnet-specific routing configurations",
+        "Local network discovery exemptions for seamless device access",
       ],
     },
     {
       media: { img: "/VPN/MultiHop.webp" },
-      title: "🛰️ Multi-Hop, Obfuscation & Censorship Bypass",
+      title: "🛰️ Multi-Hop VPN & Traffic Obfuscation for Censorship Resistance",
       body: [
-        "When networks throttle or censor, obfuscation disguises VPN traffic as regular HTTPS.",
-        "Multi-hop routes your traffic via two regions for added metadata privacy (more hops, more work for adversaries).",
+        "Bypass network throttling, censorship, and VPN blocks with obfuscation techniques that disguise VPN traffic as regular HTTPS.",
+        "Multi-hop routing sends your traffic through two or more VPN servers, significantly increasing metadata privacy and making it harder for adversaries to trace.",
       ],
       points: [
-        "TLS-based obfuscation on restrictive networks",
-        "Configurable double-hop routes",
-        "Resilient ports (443/80) to blend in",
+        "TLS-based traffic obfuscation on restrictive networks",
+        "Configurable double-hop and multi-hop VPN routes",
+        "Use resilient VPN ports (443/80) to blend into normal traffic",
       ],
     },
     {
       media: { img: "/VPN/Tracker.webp" },
-      title: "🧼 Tracker/DNS Shield & SafeSearch Options",
+      title: "🧼 Tracker & DNS Shield with SafeSearch Filters",
       body: [
-        "Block ad-tech trackers, known malware domains, and phishing domains at the DNS layer, before they even resolve.",
-        "Parental/SafeSearch profiles optionally force kid-safe results on major engines and platforms.",
+        "Prevent tracking and malware infections by blocking ad-tech trackers, phishing domains, and malicious sites at the DNS level before they can load.",
+        "Enable parental and SafeSearch profiles to enforce kid-friendly search results and browsing experiences across popular platforms.",
       ],
       points: [
-        "DNS-level blocklists (malware/phishing/tracker)",
-        "Per-profile DNS (Family, Strict, Developer)",
-        "DoH/DoT with private resolvers",
+        "DNS-level blocking for malware, phishing, and trackers",
+        "Custom DNS profiles: Family, Strict, Developer modes",
+        "Encrypted DNS via DoH/DoT with private resolvers for privacy",
       ],
     },
     {
       media: { img: "/VPN/PublicWiFi.webp" },
-      title: "📶 Public Wi-Fi Shield",
+      title: "📶 Automatic Protection on Public Wi-Fi Networks",
       body: [
-        "Untrusted networks are auto-detected: we flip on the kill switch, enable strict firewall, and connect to the nearest safe gateway.",
-        "The app warns on rogue APs, weak encryption, and ‘Evil Twin’ SSIDs that mimic trusted hotspots.",
+        "Automatically detect untrusted or insecure Wi-Fi networks and activate the kill switch and strict firewall to prevent data leaks.",
+        "Get alerts about rogue access points, weak encryption, and Evil Twin hotspots that impersonate trusted networks.",
       ],
       points: [
-        "Auto-connect on untrusted SSIDs",
-        "ARP spoof/Rogue AP heuristics",
-        "Firewall hardening on captive portals",
+        "Auto-connect on untrusted Wi-Fi SSIDs",
+        "Heuristics for ARP spoofing and rogue access point detection",
+        "Firewall hardening to protect against captive portal attacks",
       ],
     },
     {
       media: { img: "/VPN/Switching.webp" },
-      title: "🌍 Region Switching (With Sense)",
+      title: "🌍 Intelligent Region Switching with Real-Time Metrics",
       body: [
-        "Choose regions for latency or content portability while staying mindful of legal constraints.",
-        "We surface real-time load/latency and suggest privacy-friendly jurisdictions where it makes sense.",
+        "Choose VPN server locations based on latency, load, and privacy considerations.",
+        "Our app suggests privacy-friendly jurisdictions and helps you manage favorites and recently used regions for quick switching.",
       ],
       points: [
-        "Per-region latency & load indicators",
-        "Privacy-forward jurisdiction tips",
-        "Favorites & last-used quick tiles",
+        "Real-time latency and server load indicators",
+        "Privacy-aware jurisdiction recommendations",
+        "Favorites and last-used servers for fast access",
       ],
     },
   ];
 
   const checklist = [
-    "Enable kill switch + auto-connect on untrusted Wi-Fi.",
-    "Use WireGuard by default; fall back to OpenVPN if blocked.",
-    "Turn on DNS Shield (malware/phishing/trackers).",
-    "Add split tunneling rules for latency-sensitive apps.",
-    "Use multi-hop + obfuscation on restrictive networks.",
-    "Review region list; pin 2–3 low-latency favorites.",
+    "Enable the kill switch and auto-connect on untrusted Wi-Fi networks.",
+    "Use WireGuard as the default VPN protocol; fall back to OpenVPN if needed.",
+    "Turn on DNS Shield to block malware, phishing, and trackers.",
+    "Configure split tunneling rules for latency-sensitive apps.",
+    "Activate multi-hop and traffic obfuscation on restrictive networks.",
+    "Review the server list and pin 2–3 low-latency favorites.",
   ];
 
   const faqs = [
     {
-      q: "Kya VPN se main 100% anonymous ho jata hoon?",
-      a: "VPN aapka IP/ISP se privacy deta hai, lekin 100% anonymity nahi. Browser fingerprinting, cookies, account logins abhi bhi identify kar sakte hain. VPN + good hygiene = best results.",
+      q: "Does using a VPN guarantee 100% anonymity online?",
+      a: "While a VPN hides your IP address and encrypts your traffic, it doesn't provide complete anonymity. Browser fingerprinting, cookies, and account logins can still identify you. Combining VPN use with good privacy practices offers the best protection.",
     },
     {
-      q: "Kill switch kyu zaroori hai?",
-      a: "Agar VPN drop ho gaya to traffic plain me chala jaayega. Kill switch ensure karta hai ki jab tak tunnel up nahi hota, data bahar na nikle.",
+      q: "Why is a VPN kill switch important?",
+      a: "If your VPN connection drops unexpectedly, your internet traffic might be exposed. The kill switch prevents any data from leaking outside the VPN tunnel until the connection is securely re-established.",
     },
     {
-      q: "Tracker/DNS Shield kya block karta hai?",
-      a: "Known malware, phishing, C2 domains, ad-tech trackers, aur kuch aggressive analytics endpoints ko DNS par hi drop karta hai—page load se pehle.",
+      q: "What does the Tracker and DNS Shield block?",
+      a: "It blocks access to known malware sites, phishing domains, command and control servers, ad trackers, and some aggressive analytics endpoints at the DNS level—before the content even loads.",
     },
   ];
 
   return (
     <div className="vpn-section">
       <h1 className="vpn-heading" data-aos="zoom-in">
-        🌐 VPN & Online Privacy
+        🌐 VPN & Online Privacy Protection
       </h1>
 
       {sections.map((section, idx) => (
@@ -163,9 +162,8 @@ export default function VPN() {
         </div>
       ))}
 
-      {/* Checklist */}
       <div className="vpn-extra" data-aos="fade-up">
-        <h2>✅ Privacy Setup Checklist</h2>
+        <h2>✅ Essential VPN Privacy Setup Checklist</h2>
         <ul className="vpn-checklist">
           {checklist.map((item, i) => (
             <li key={i}>{item}</li>
@@ -173,9 +171,8 @@ export default function VPN() {
         </ul>
       </div>
 
-      {/* FAQs */}
       <div className="vpn-faqs" data-aos="fade-up">
-        <h2>❓ FAQs</h2>
+        <h2>❓ Frequently Asked Questions (FAQs)</h2>
         {faqs.map((faq, i) => (
           <div className="vpn-faq" key={i}>
             <h3>{faq.q}</h3>
@@ -184,11 +181,10 @@ export default function VPN() {
         ))}
       </div>
 
-      {/* CTA */}
       <div className="vpn-cta" data-aos="zoom-in">
-        <h2>Browse privately. Everywhere.</h2>
+        <h2>Browse Securely and Privately Everywhere</h2>
         <p>
-          Fast WireGuard tunnels, kill switch, tracker blocking, multi-hop, and obfuscation—ek tap me online privacy upgrade.
+          Experience fast WireGuard tunnels, kill switch protection, tracker blocking, multi-hop VPN, and obfuscation—all in one easy setup.
         </p>
         <button className="vpn-btn">Enable VPN Protection</button>
       </div>

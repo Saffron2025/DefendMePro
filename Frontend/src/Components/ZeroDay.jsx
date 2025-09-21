@@ -11,98 +11,97 @@ export default function ZeroDay() {
   const sections = [
     {
       media: { img: "/Images/zero.webp" },
-      title: "🛡️ Lockdown Beyond Signatures",
+      title: "Advanced Protection Against Zero-Day Threats",
       body: [
-        "Zero-day attacks don’t wait for definitions or patch cycles. They abuse unknown bugs, novel loaders, and living-off-the-land techniques.",
-        "DefendMePro adds a hard barrier at the process level—policy-driven execution control that blocks suspicious behavior even if the file looks ‘clean’.",
+        "Zero-day attacks exploit unknown vulnerabilities, bypassing traditional signature-based defenses and patch cycles.",
+        "DefendMePro provides a robust process-level lockdown with policy-driven execution controls that block suspicious behaviors—even when files appear legitimate.",
       ],
       points: [
-        "Policy-based execution (allow known-good, restrict unknowns)",
-        "Child-process spawning rules & LOLBins throttling",
-        "Memory allocation + script engine guardrails",
+        "Policy-based execution: allow trusted processes, restrict unknowns",
+        "Control of child-process spawning and living-off-the-land binaries (LOLBins)",
+        "Memory management and script engine guardrails to prevent exploitation",
       ],
     },
     {
       media: { img: "/Images/CriticalApps.webp" },
-      title: "🏰 Application Containment & Isolation",
+      title: "Application Containment and Isolation",
       body: [
-        "Critical apps (browser, mail, docs) run with tightened policies: no silent macro spawns, no unsolicited PowerShell, no dropper chains.",
-        "If a document tries to detonate a script, we sandbox, log, and require explicit user intent.",
+        "Critical applications like browsers, email clients, and document editors run under strict policies to prevent silent macro execution, unauthorized PowerShell use, and malicious dropper chains.",
+        "Scripts triggered by documents are sandboxed, logged, and require explicit user approval before running.",
       ],
       points: [
-        "Macro isolation for Office & PDF workflows",
-        "Scriptable hosts (wscript/cscript) under policy gates",
-        "Network egress watch: unknowns can’t beacon out",
+        "Macro isolation for Office and PDF workflows",
+        "Policy enforcement on script hosts such as wscript and cscript",
+        "Network egress monitoring to block unknown outbound connections",
       ],
     },
     {
-      // Video replaced by image here
       media: { img: "/Images/ZeroDayWalkthrough.webp" },
-      title: "🎥 Live Walkthrough: Unknown File → Blocked Behavior",
+      title: "Live Demonstration: Blocking Unknown Malicious Behavior",
       body: [
-        "Watch a fresh loader attempt to run from Downloads. It’s unsigned, tries to kick off a living-off-the-land chain, and probes credential stores.",
-        "Our policy stops it at the first suspicious step, before ransomware staging or data exfiltration begins.",
+        "See how DefendMePro stops an unsigned loader from running in the Downloads folder. The loader attempts living-off-the-land techniques and probes for credentials.",
+        "Our policies intervene early—blocking ransomware staging and preventing data exfiltration.",
       ],
       points: [
-        "Unsigned + untrusted origin → limited privileges",
-        "Suspicious child-process (powershell.exe) → denied",
-        "Anomalous file-ops (shadow copy tamper) → hard block",
+        "Unsigned files from untrusted sources receive limited privileges",
+        "Suspicious child processes like powershell.exe are denied",
+        "Hard blocks on anomalous file operations such as shadow copy tampering",
       ],
     },
     {
       media: { img: "/Images/PlayNice.webp" },
-      title: "🧩 Plays Nice with Your AV/EDR",
+      title: "Seamless Integration with Existing Antivirus and EDR",
       body: [
-        "We don’t replace your antivirus/EDR—we reinforce it. Think of DefendMePro as a behavior firewall that catches what signature engines miss.",
-        "Zero-day layers are tuned to reduce noise while keeping kill-switches ready for real threats.",
+        "DefendMePro complements your existing antivirus and endpoint detection systems by acting as a behavioral firewall, catching threats that signature-based engines may miss.",
+        "Our zero-day defenses are finely tuned to minimize false positives while maintaining readiness for real threats.",
       ],
       points: [
-        "Low false-positive policy sets with safe learning mode",
-        "Granular allow-listing for dev tools & IT utilities",
-        "Exportable logs for SIEM/SOC workflows",
+        "Low false-positive policies with a safe learning mode",
+        "Granular allow-listing for trusted developer and IT tools",
+        "Exportable logs compatible with SIEM and SOC workflows",
       ],
     },
     {
       media: { img: "/Images/Ransomware.webp" },
-      title: "⚡ Ransomware Kill-Switch & Recovery Aids",
+      title: "Ransomware Kill-Switch and Recovery Assistance",
       body: [
-        "If a process shows ransomware traits—mass file-writes, shadow delete, extension cascade—we pull the plug.",
-        "You get immediate guidance to cut lateral movement, plus a recovery checklist tailored to what was touched.",
+        "When ransomware-like behavior is detected—such as mass file writes, shadow copy deletion, or rapid file extension changes—DefendMePro immediately halts the process.",
+        "You receive actionable guidance to prevent lateral spread and a customized recovery checklist based on affected files.",
       ],
       points: [
-        "Heuristic bulk-write throttling",
-        "Shadow copy tamper detection",
-        "Auto-isolation of suspect processes",
+        "Heuristic throttling of bulk file writes",
+        "Detection of shadow copy tampering",
+        "Automatic isolation of suspicious processes",
       ],
     },
   ];
 
   const checklist = [
     "Enable ‘Restrict unknown binaries’ in Lockdown Mode.",
-    "Harden Office/PDF: disable auto-macros, require intent prompts.",
-    "Block script engines from launching network tools by default.",
-    "Turn on browser download sandbox for EXE, MSI, JS, VBS.",
-    "Disable PowerShell v2; restrict untrusted PowerShell to Constrained Language Mode.",
-    "USB guard: allow read-only for unknown removable drives.",
+    "Harden Office and PDF workflows by disabling auto-macros and enforcing user prompts.",
+    "Block script engines from launching unauthorized network tools by default.",
+    "Activate browser download sandbox for EXE, MSI, JS, and VBS files.",
+    "Disable PowerShell v2 and restrict untrusted PowerShell to Constrained Language Mode.",
+    "Enable USB guard: allow read-only access for unknown removable drives.",
   ];
 
   return (
-    <div className="zeroday-section">
-      <h1 className="zeroday-heading" data-aos="zoom-in">
-        🔒 Zero-Day Threat Defense
+    <main className="zeroday-section" role="main" aria-labelledby="zeroday-heading">
+      <h1 id="zeroday-heading" className="zeroday-heading" data-aos="zoom-in">
+        Zero-Day Threat Defense
       </h1>
 
-      {sections.map((s, idx) => (
-        <div
+      {sections.map((section, idx) => (
+        <article
           key={idx}
           className={`zeroday-block ${idx % 2 === 0 ? "normal" : "reverse"}`}
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+          aria-labelledby={`section-title-${idx}`}
         >
           <div className="zeroday-media" data-aos="zoom-in-up">
-            {/* Only image now */}
             <img
-              src={s.media.img}
-              alt={s.title}
+              src={section.media.img}
+              alt={`${section.title} illustration`}
               loading="lazy"
               decoding="async"
               width="600"
@@ -111,52 +110,52 @@ export default function ZeroDay() {
           </div>
 
           <div className="zeroday-text" data-aos="fade-up">
-            <h2>{s.title}</h2>
-            {s.body.map((p, i) => (
-              <p key={i}>{p}</p>
+            <h2 id={`section-title-${idx}`}>{section.title}</h2>
+            {section.body.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
             ))}
             <ul className="zeroday-points">
-              {s.points.map((pt, j) => (
-                <li key={j}>{pt}</li>
+              {section.points.map((point, j) => (
+                <li key={j}>{point}</li>
               ))}
             </ul>
           </div>
-        </div>
+        </article>
       ))}
 
-      {/* Long-form helper area */}
-      <div className="zeroday-extra" data-aos="fade-up">
-        <h2>🧠 Why Behavior Lockdown Beats Waiting for Patches</h2>
+      <section className="zeroday-extra" data-aos="fade-up" aria-label="Why behavior lockdown is effective">
+        <h2>Why Behavior-Based Lockdown Outperforms Patch-Only Strategies</h2>
         <p>
-          Patches are essential—but they’re reactive. Zero-day actors hit before CVEs go public
-          and long before signatures arrive. A behavior-first model prevents unknown payloads from
-          gaining the privileges they need to detonate. Even if a doc opens and a script spawns,
-          containment rules and child-process policies keep the blast radius near-zero.
+          While software patches are vital, they are inherently reactive. Zero-day attackers exploit
+          vulnerabilities before they are publicly disclosed and before signatures are created.
+          A behavior-based security model proactively restricts unknown payloads from executing critical actions.
         </p>
         <p>
-          For power users and IT teams, DefendMePro offers progressive hardening: start with guided
-          prompts, review what would be blocked, and tighten over time. Developers and admins can
-          allow-list trusted toolchains without weakening guardrails for everything else.
+          Even if a malicious script is triggered, containment policies and child-process restrictions
+          keep damage confined. DefendMePro allows IT teams and advanced users to progressively
+          harden defenses with guided controls and trusted allow-list configurations.
         </p>
 
-        <div className="zeroday-checklist">
-          <h3>✅ Quick Hardening Checklist</h3>
+        <div className="zeroday-checklist" aria-label="Quick hardening checklist">
+          <h3>Quick Hardening Checklist</h3>
           <ul>
-            {checklist.map((c, i) => (
-              <li key={i}>{c}</li>
+            {checklist.map((item, i) => (
+              <li key={i}>{item}</li>
             ))}
           </ul>
         </div>
-      </div>
+      </section>
 
-      <div className="zeroday-cta" data-aos="zoom-in">
-        <h2>Stop unknowns before they start.</h2>
+      <section className="zeroday-cta" data-aos="zoom-in" aria-label="Call to action to enable zero-day defense">
+        <h2>Stop Unknown Threats Before They Start</h2>
         <p>
-          Turn on Zero-Day Lockdown, sandbox risky downloads, and restrict script abuse.
-          Prevention beats remediation—every single time.
+          Activate Zero-Day Lockdown to sandbox risky downloads and restrict malicious script behavior.
+          Prevention is always better than remediation.
         </p>
-        <button className="zeroday-btn">Enable Zero-Day Defense</button>
-      </div>
-    </div>
+        <button className="zeroday-btn" aria-label="Enable Zero-Day Threat Defense">
+          Enable Zero-Day Defense
+        </button>
+      </section>
+    </main>
   );
 }

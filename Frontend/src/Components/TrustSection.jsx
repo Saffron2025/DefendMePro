@@ -1,6 +1,7 @@
 import React from "react";
 import "../Styles/TrustSection.css";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async"; // ✅ Optional
 
 export default function TrustSection() {
   const logos = [
@@ -12,7 +13,14 @@ export default function TrustSection() {
   ];
 
   return (
-    <section className="trust-section">
+    <section className="trust-section" aria-label="Trusted by major news and review platforms">
+      {/* ✅ Helmet only if this is a standalone page */}
+      {/* <Helmet>
+        <title>Trusted & Recognized | DefendMePro</title>
+        <meta name="description" content="DefendMePro is trusted and recognized by Fox News, CBS, ABC11, and BBB." />
+      </Helmet> */}
+
+      {/* ✅ Semantic Heading for SEO */}
       <motion.h2
         className="trust-title"
         initial={{ opacity: 0, y: -30 }}
@@ -23,6 +31,7 @@ export default function TrustSection() {
         🔒 Trusted & Recognized By
       </motion.h2>
 
+      {/* ✅ Logos with alt, lazy load, width/height */}
       <div className="trust-logos">
         {logos.map((logo, index) => (
           <motion.div
@@ -41,6 +50,7 @@ export default function TrustSection() {
               decoding="async"
               width="150"
               height="60"
+              fetchpriority="low" // Optional: helps LCP if not in viewport
             />
           </motion.div>
         ))}

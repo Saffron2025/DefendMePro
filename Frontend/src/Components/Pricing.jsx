@@ -1,6 +1,7 @@
 import React from "react";
 import "../Styles/Pricing.css";
 import ScrollReveal from "./ScrollReveal";
+import { Helmet } from "react-helmet-async"; // ✅ SEO meta support
 
 export default function Pricing() {
   const plans = React.useMemo(() => [
@@ -43,11 +44,23 @@ export default function Pricing() {
   ], []);
 
   return (
-    <section className="pricing-section" aria-label="Pricing Plans">
+    <section className="pricing-section" aria-label="Pricing Plans Section">
+      {/* ✅ Meta Tags */}
+      <Helmet>
+        <title>Affordable Scam Protection Plans | DefendMePro Pricing</title>
+        <meta
+          name="description"
+          content="Compare DefendMePro's pricing plans. Choose from Basic, Pro, or Business Shield and stay protected from fraud, scams, and identity theft."
+        />
+        <link rel="canonical" href="https://www.defendmepro.com/pricing" />
+      </Helmet>
+
+      {/* ✅ Section Heading */}
       <ScrollReveal direction="up">
         <h2 className="pricing-title">💎 Choose Your Protection Plan</h2>
       </ScrollReveal>
 
+      {/* ✅ Plans List */}
       <div className="pricing-grid" role="list">
         {plans.map((plan, i) => (
           <ScrollReveal key={plan.name} delay={i * 0.2} direction="up">
@@ -57,15 +70,28 @@ export default function Pricing() {
               tabIndex={0}
               aria-labelledby={`plan-title-${i}`}
             >
-              <h3 id={`plan-title-${i}`}>{plan.name}</h3>
-              <p className="price" aria-label={`Price: ${plan.price}`}>{plan.price}</p>
+              <header>
+                <h3 id={`plan-title-${i}`}>{plan.name}</h3>
+                <p className="price" aria-label={`Price: ${plan.price}`}>{plan.price}</p>
+              </header>
+
               <p className="desc">{plan.desc}</p>
-              <ul>
+
+              {/* ✅ Semantic List */}
+              <ul className="feature-list">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx}>✔ {feature}</li>
+                  <li key={idx}>
+                    <span role="img" aria-hidden="true">✔</span> {feature}
+                  </li>
                 ))}
               </ul>
-              <button className="pricing-btn" type="button" aria-label={`Get started with the ${plan.name} plan`}>
+
+              {/* ✅ Accessible CTA */}
+              <button
+                className="pricing-btn"
+                type="button"
+                aria-label={`Get started with the ${plan.name} plan`}
+              >
                 Get Started
               </button>
             </article>

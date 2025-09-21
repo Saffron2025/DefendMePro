@@ -11,152 +11,151 @@ export default function Passwords() {
   const sections = [
     {
       media: { img: "/Password/LockdownBeyond.webp" },
-      title: "🧩 Generate Strong, Unique Passwords",
+      title: "Generate Strong, Unique Passwords",
       body: [
-        "Reused passwords are the #1 reason for account takeovers. Our generator creates long, random, unique passwords that resist brute force and dictionary attacks.",
-        "You choose the profile: length, symbols, passphrases with separators, or compliance presets for banking/work apps.",
+        "Password reuse is the leading cause of account takeovers. Our password generator creates long, random, and unique passwords that resist brute force and dictionary attacks.",
+        "Customize your password profiles with length, symbols, passphrases with separators, or compliance presets for banking and work applications.",
       ],
       points: [
-        "Presets: 16–24 chars, symbols/ambiguous toggle",
-        "Memorable passphrases (diceware-style) when needed",
-        "Per-site rules (no spaces, must include symbol, etc.)",
+        "Presets ranging from 16 to 24 characters with symbol and ambiguous character toggles",
+        "Memorable diceware-style passphrases for easier recall",
+        "Per-site rules enforcing no spaces, mandatory symbols, and more",
       ],
     },
     {
       media: { img: "/Password/Encrypted.webp" },
-      title: "🔐 Encrypted Vault with Zero-Knowledge",
+      title: "Encrypted Vault with Zero-Knowledge Security",
       body: [
-        "Your vault is end-to-end encrypted. We can’t read your passwords—only you can. Keys are derived locally from your master passphrase.",
-        "Biometrics unlock on trusted devices. Clipboard clears automatically to reduce shoulder-surfing and malware risk.",
+        "Your vault is secured with end-to-end encryption. Only you hold the keys—derived locally from your master passphrase—ensuring zero-knowledge privacy.",
+        "Unlock quickly with biometrics on trusted devices, and enjoy automatic clipboard clearing to prevent shoulder surfing and malware exposure.",
       ],
       points: [
-        "Local encryption/decryption; syncs only ciphertext",
-        "Biometric unlock + auto-lock timers",
-        "Clipboard auto-clear & masked reveal",
+        "Local encryption and decryption; only ciphertext syncs with our servers",
+        "Biometric unlock combined with configurable auto-lock timers",
+        "Clipboard auto-clear and masked password reveal for enhanced security",
       ],
     },
     {
-      // Video replaced by image here
       media: { img: "/Password/AutoFill.webp" },
-      title: "⚡ One-Tap Autofill Everywhere",
+      title: "One-Tap Autofill Across Browsers and Apps",
       body: [
-        "Autofill works across browsers and apps: URLs are verified to avoid lookalike phishing domains before we offer credentials.",
-        "App logins, 2FA prompts, and rotating passwords—seamlessly handled with minimal clicks.",
+        "Autofill works seamlessly across browsers and applications. URLs are verified to block phishing lookalikes before credentials are suggested.",
+        "Supports app logins, two-factor authentication prompts, and rotating passwords with minimal user interaction.",
       ],
       points: [
-        "Domain-matching + phishing lookalike warnings",
-        "Per-account notes (security Qs, recovery codes)",
-        "App-level autofill on mobile + desktop extensions",
+        "Domain matching with phishing detection warnings",
+        "Per-account notes support, including security questions and recovery codes",
+        "App-level autofill for mobile and desktop via browser extensions",
       ],
     },
     {
       media: { img: "/Password/BreachWatch.webp" },
-      title: "🛰️ Breach Watch & Health Score",
+      title: "Continuous Breach Monitoring & Vault Health Score",
       body: [
-        "We continuously check your logins against known breach dumps. If a service is breached, you’ll see impacted items and quick rotate actions.",
-        "Your vault health score guides you: weak, reused, or old passwords get prioritized fixes.",
+        "We monitor your saved logins against known data breaches. If an account is compromised, you receive alerts with actionable steps to rotate affected credentials.",
+        "A vault health score highlights weak, reused, or outdated passwords for prioritized remediation.",
       ],
       points: [
-        "Breach alerts with first-seen info & risk level",
-        "Weak/reused/old password detection",
-        "‘Fix all’ flows with batch rotation where supported",
+        "Real-time breach alerts with detailed risk levels and first-seen dates",
+        "Detection of weak, reused, or aged passwords",
+        "Batch password rotation flows where supported for quick fixes",
       ],
     },
     {
       media: { img: "/Password/2FA.webp" },
-      title: "🔑 2FA & Passkeys First",
+      title: "2FA and Passkeys Support for Stronger Authentication",
       body: [
-        "Wherever possible, we push you toward stronger auth: TOTPs stored securely, recovery codes saved safely, and passkey support for passwordless logins.",
-        "You’ll see per-account guidance: upgrade to 2FA, save backup codes, or switch to passkeys if the site supports them.",
+        "Encourages stronger authentication methods by securely storing time-based one-time passcodes (TOTPs), saving recovery codes safely, and supporting passwordless passkeys.",
+        "Account-specific guidance prompts you to enable 2FA, save backup codes, or adopt passkeys where supported.",
       ],
       points: [
-        "Built-in TOTP (time-based one-time passcodes)",
-        "Recovery code safe-storage & labels",
-        "Passkey (WebAuthn) support & hints",
+        "Built-in TOTP generator for secure second-factor authentication",
+        "Secure storage and labeling of recovery codes",
+        "WebAuthn passkey support with user-friendly hints",
       ],
     },
     {
       media: { img: "/Password/SecureSharing.webp" },
-      title: "🤝 Secure Sharing & Emergency Access",
+      title: "Secure Credential Sharing & Emergency Access",
       body: [
-        "Share credentials with family or team without revealing the raw secret—access can be read-only, masked, or time-limited.",
-        "Set a trusted contact for emergency access with a wait period; you’ll be notified and can cancel any request.",
+        "Share passwords safely with family or team members without exposing raw credentials. Access can be read-only, masked, or limited by time.",
+        "Set trusted emergency contacts with configurable wait periods—you’ll receive notifications and retain control to cancel access if needed.",
       ],
       points: [
-        "Masked or full-view sharing, revoke anytime",
-        "Audit trail: who viewed, when, and from where",
-        "Emergency access with configurable wait timer",
+        "Masked or full-access sharing, with instant revocation",
+        "Comprehensive audit trails showing who accessed what and when",
+        "Emergency access workflows with configurable approval delays",
       ],
     },
     {
       media: { img: "/Password/Migration.webp" },
-      title: "📦 Easy Migration from Other Managers",
+      title: "Simple Migration from Other Password Managers",
       body: [
-        "Import from Chrome/Edge/Firefox, iCloud Keychain, 1Password, LastPass, Bitwarden, and CSV exports. We auto-sanitize weird fields and map notes/URLs.",
-        "During import, we can de-duplicate and merge variants of the same site (m.com vs www).",
+        "Import passwords from Chrome, Edge, Firefox, iCloud Keychain, 1Password, LastPass, Bitwarden, or CSV files. We automatically sanitize unusual fields and map notes and URLs.",
+        "During import, duplicates and variants of the same domain (e.g., m.example.com vs www.example.com) are merged for a cleaner vault.",
       ],
       points: [
-        "CSV/JSON import with validation",
-        "De-dupe, merge, and normalize domains",
-        "Optional auto-tag by category (bank, social, work)",
+        "Validated CSV and JSON import with error checking",
+        "Duplicate detection and domain normalization",
+        "Optional automatic tagging by categories like banking, social, or work",
       ],
     },
     {
       media: { img: "/Password/AdminOrder.webp" },
-      title: "🏢 Admin Controls for Teams (Optional)",
+      title: "Enterprise Admin Controls (Optional)",
       body: [
-        "For business plans, admins get policy templates: minimum length, rotation cadence for critical apps, 2FA requirement, and breach enforcement.",
-        "Off-boarding flows safely transfer or revoke shared credentials without exposing secrets.",
+        "Business plans include admin policy templates covering minimum password length, rotation schedules, mandatory 2FA, and breach enforcement.",
+        "Off-boarding processes allow secure transfer or revocation of shared credentials without exposing plaintext passwords.",
       ],
       points: [
-        "Org-wide password policies & reports",
-        "Role-based vaults (Personal, Team, Admin)",
-        "Off-boarding handover without plaintext exposure",
+        "Organization-wide password policies and compliance reports",
+        "Role-based vaults for Personal, Team, and Admin users",
+        "Secure off-boarding without exposing raw secrets",
       ],
     },
   ];
 
   const checklist = [
-    "Use a unique, long master passphrase (and enable biometrics).",
-    "Turn on 2FA for email, banking, payments, and social.",
-    "Migrate reused passwords—start with high-value accounts first.",
-    "Save recovery codes in the vault (tag them clearly).",
-    "Prefer passkeys when available; keep passwords as fallback.",
-    "Review breach alerts monthly and rotate impacted logins.",
+    "Use a unique, strong master passphrase and enable biometric unlocking.",
+    "Activate two-factor authentication (2FA) for email, banking, payment, and social accounts.",
+    "Migrate reused passwords starting with your highest-value accounts.",
+    "Save recovery codes securely in your vault and label them clearly.",
+    "Prefer passkeys for supported services while keeping passwords as fallback.",
+    "Regularly review breach alerts and promptly rotate compromised credentials.",
   ];
 
   const faqs = [
     {
-      q: "What if I forget my master password?",
-      a: "We can’t reset it (zero-knowledge). Enable recovery options: emergency contact with wait period, printable recovery kit, or a secure key split across devices.",
+      q: "What happens if I forget my master password?",
+      a: "We cannot reset it due to zero-knowledge architecture. Set up recovery options like emergency contacts with wait periods, printable recovery kits, or secure key splits across devices.",
     },
     {
-      q: "Is storing passwords in a manager actually safe?",
-      a: "Yes—when done right. Your data stays encrypted locally; we sync only ciphertext. Compromise of our servers doesn’t reveal your secrets.",
+      q: "Is it safe to store passwords in a manager?",
+      a: "Absolutely. Your data is encrypted locally, and only ciphertext syncs with servers. Even if our servers are compromised, your secrets remain protected.",
     },
     {
-      q: "Should I use browser-built-in passwords?",
-      a: "Better than reuse, but dedicated managers add breach watch, phishing checks, secure sharing, health score, and cross-platform TOTP/passkeys.",
+      q: "Are built-in browser password managers sufficient?",
+      a: "While better than reusing passwords, dedicated managers offer breach monitoring, phishing protection, secure sharing, vault health scoring, and cross-platform support for TOTP and passkeys.",
     },
   ];
 
   return (
-    <div className="pw-section">
-      <h1 className="pw-heading" data-aos="zoom-in">
-        🔑 Password Manager
+    <main className="pw-section" role="main" aria-labelledby="pw-heading">
+      <h1 id="pw-heading" className="pw-heading" data-aos="zoom-in">
+        Password Manager
       </h1>
 
-      {sections.map((s, idx) => (
-        <div
+      {sections.map((section, idx) => (
+        <article
           key={idx}
           className={`pw-block ${idx % 2 === 0 ? "normal" : "reverse"}`}
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+          aria-labelledby={`section-title-${idx}`}
         >
           <div className="pw-media" data-aos="zoom-in-up">
-            {/* Only image now */}
             <img
-              src={s.media.img}
-              alt={s.title}
+              src={section.media.img}
+              alt={`${section.title} illustration`}
               loading="lazy"
               decoding="async"
               width="600"
@@ -165,49 +164,48 @@ export default function Passwords() {
           </div>
 
           <div className="pw-text" data-aos="fade-up">
-            <h2>{s.title}</h2>
-            {s.body.map((p, i) => (
-              <p key={i}>{p}</p>
+            <h2 id={`section-title-${idx}`}>{section.title}</h2>
+            {section.body.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
             ))}
             <ul className="pw-points">
-              {s.points.map((pt, j) => (
-                <li key={j}>{pt}</li>
+              {section.points.map((point, j) => (
+                <li key={j}>{point}</li>
               ))}
             </ul>
           </div>
-        </div>
+        </article>
       ))}
 
-      {/* Checklist */}
-      <div className="pw-extra" data-aos="fade-up">
-        <h2>✅ Quick Setup Checklist</h2>
+      <section className="pw-extra" data-aos="fade-up" aria-label="Quick setup checklist">
+        <h2>Quick Setup Checklist</h2>
         <ul className="pw-checklist">
-          {checklist.map((c, i) => (
-            <li key={i}>{c}</li>
+          {checklist.map((item, i) => (
+            <li key={i}>{item}</li>
           ))}
         </ul>
-      </div>
+      </section>
 
-      {/* FAQs */}
-      <div className="pw-faqs" data-aos="fade-up">
-        <h2>❓ FAQs</h2>
-        {faqs.map((f, i) => (
+      <section className="pw-faqs" data-aos="fade-up" aria-label="Frequently asked questions">
+        <h2>FAQs</h2>
+        {faqs.map((faq, i) => (
           <div className="pw-faq" key={i}>
-            <h3>{f.q}</h3>
-            <p>{f.a}</p>
+            <h3>{faq.q}</h3>
+            <p>{faq.a}</p>
           </div>
         ))}
-      </div>
+      </section>
 
-      {/* CTA */}
-      <div className="pw-cta" data-aos="zoom-in">
-        <h2>Upgrade your logins from chaos to control.</h2>
+      <section className="pw-cta" data-aos="zoom-in" aria-label="Call to action for password manager">
+        <h2>Upgrade Your Logins from Chaos to Control</h2>
         <p>
-          Generate, store, autofill, and rotate credentials the right way—plus breach
-          monitoring, 2FA, and passkeys built-in.
+          Generate, store, autofill, and rotate credentials securely—with breach monitoring, two-factor
+          authentication, and passkey support built-in.
         </p>
-        <button className="pw-btn">Enable Password Manager</button>
-      </div>
-    </div>
+        <button className="pw-btn" aria-label="Enable Password Manager">
+          Enable Password Manager
+        </button>
+      </section>
+    </main>
   );
 }

@@ -11,49 +11,50 @@ export default function FraudDetection() {
   const sections = [
     {
       img: "/Images/FraudMonitoring.webp",
-      title: "🚨 Real-Time Fraud Monitoring",
+      title: "Real-Time Fraud Monitoring",
       text: [
-        "DefendMePro constantly scans for suspicious transactions, account logins, and hidden red flags.",
-        "Fake invoices, refund fraud, and vendor impersonation are caught instantly before money is stolen.",
-        "Think of it as your 24/7 radar against financial scams.",
+        "DefendMePro continuously scans for suspicious transactions, unauthorized logins, and hidden fraud indicators.",
+        "Fake invoices, refund fraud, and vendor impersonation are detected instantly, preventing financial loss.",
+        "Think of it as your 24/7 radar against evolving financial scams.",
       ],
     },
     {
       img: "/Images/ProtectingYourHome.webp",
-      title: "💳 Protecting Your Money and Identity",
+      title: "Comprehensive Money and Identity Protection",
       text: [
-        "Scammers prey on trust — from fake bank calls to cloned payment pages.",
-        "Our system uses adaptive detection to stop threats across emails, texts, and even phone scams.",
-        "Because your money and identity deserve bulletproof protection.",
+        "Scammers exploit trust—from fake bank calls to cloned payment websites.",
+        "Our adaptive detection system protects you across emails, texts, phone calls, and online transactions.",
+        "Because your finances and identity deserve robust, multi-layered security.",
       ],
     },
     {
       img: "/Images/HumanExpertise.webp",
-      title: "🌐 AI + Human Expertise",
+      title: "Advanced AI Combined with Human Expertise",
       text: [
-        "AI scans thousands of signals in real time — but we don’t stop there.",
-        "Our human experts verify threats, ensuring accuracy and personal guidance.",
-        "This powerful combination means you never fight fraud alone.",
+        "AI analyzes thousands of signals in real-time to identify potential threats.",
+        "Our experienced human analysts verify alerts to ensure accuracy and provide personalized guidance.",
+        "This powerful synergy ensures you never face fraud risks alone.",
       ],
     },
   ];
 
   return (
-    <div className="fraud-section">
-      <h1 className="fraud-heading" data-aos="zoom-in">
-        🚫 Fraud Detection
+    <main className="fraud-section" aria-labelledby="fraud-heading" role="main">
+      <h1 id="fraud-heading" className="fraud-heading" data-aos="zoom-in">
+        Fraud Detection and Prevention
       </h1>
 
       {sections.map((item, index) => (
-        <div
+        <article
           key={index}
           className={`fraud-block ${index % 2 === 0 ? "normal" : "reverse"}`}
           data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+          aria-labelledby={`section-title-${index}`}
         >
           <div className="fraud-img" data-aos="zoom-in-up">
             <img
               src={item.img}
-              alt={item.title}
+              alt={`${item.title} illustration`}
               loading="lazy"
               decoding="async"
               width="600"
@@ -61,34 +62,33 @@ export default function FraudDetection() {
             />
           </div>
           <div className="fraud-text" data-aos="fade-up">
-            <h2>{item.title}</h2>
+            <h2 id={`section-title-${index}`}>{item.title}</h2>
             {item.text.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
           </div>
-        </div>
+        </article>
       ))}
 
-      <div className="fraud-extra" data-aos="fade-up">
-        <h2>🔎 Why Fraud Detection Matters</h2>
+      <section className="fraud-extra" data-aos="fade-up" aria-label="Why Fraud Detection Matters">
+        <h2>Why Fraud Detection Matters</h2>
         <p>
-          Every year, billions are lost to scams that antivirus and banks fail to detect.
-          Fraud isn’t about malware — it’s about psychology, urgency, and manipulation.
+          Billions of dollars are lost annually to scams that traditional antivirus and banking systems fail to catch.
+          Fraud is driven by psychological manipulation, urgency, and social engineering—not just malware.
         </p>
         <p>
-          DefendMePro goes beyond traditional tools. We monitor behavior, detect patterns,
-          and warn you before a scammer drains your savings or compromises your identity.
+          DefendMePro goes beyond conventional security by monitoring behavior, identifying suspicious patterns, and alerting you before scammers can access your money or personal information.
         </p>
         <ul>
-          <li>📌 Fake refund scams flagged in seconds</li>
-          <li>📌 Suspicious bank login attempts blocked instantly</li>
-          <li>📌 Real-time alerts across web, SMS, and calls</li>
-          <li>📌 Human experts available to guide you through confusion</li>
+          <li>Instant detection of fake refund and payment scams</li>
+          <li>Blocking of suspicious bank login attempts in real-time</li>
+          <li>Alerts across websites, SMS, emails, and phone calls</li>
+          <li>Access to human experts for personalized fraud prevention support</li>
         </ul>
         <blockquote className="fraud-quote">
-          “Fraud doesn’t wait. Neither should protection.”
+          “Fraud never sleeps. Neither should your protection.”
         </blockquote>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

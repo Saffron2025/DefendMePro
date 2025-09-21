@@ -11,42 +11,41 @@ export default function AlertsHub() {
   const sections = [
     {
       media: { img: "/Images/ScamFeeds.webp" },
-      title: "📡 Real-Time Scam Feeds (Localized)",
+      title: "Real-Time Local Scam Alerts",
       body: [
-        "Scams roll out in waves—city by city. Alerts Hub tracks your region and pushes timely warnings you can actually use.",
-        "From fake courier dues, electricity bill threats, and payment app clones—get explained alerts with simple steps: pause, verify, report.",
+        "Scam attacks spread in waves, often targeting specific cities. Our Alerts Hub tracks your location and sends timely, actionable warnings tailored to your region.",
+        "Receive alerts on threats like fake courier charges, electricity bill scams, and payment app impersonations, complete with simple, clear instructions to pause, verify, and report.",
       ],
       points: [
-        "Geo-aware alerts: see what’s trending near you",
-        "Short, plain-language breakdowns—no jargon",
-        "‘What to do now’ checklist on every alert",
+        "Geo-targeted alerts showing scams trending near you",
+        "Plain-language explanations without confusing jargon",
+        "Step-by-step ‘What to Do Now’ checklists with every alert",
       ],
     },
     {
       media: { img: "/Images/MultiChannel.webp" },
-      title: "🧭 Multi-Channel Delivery You Control",
+      title: "Customize How You Receive Alerts",
       body: [
-        "Choose how you’re notified—push, email, or in-app cards. No spam, only high-signal alerts that matter to your safety.",
-        "Mute categories you don’t need (e.g., crypto scams), boost ones you care about (e.g., banking or support impersonation).",
+        "Choose your preferred notification channels—push notifications, email, or in-app alert cards. No spam, only critical alerts relevant to your safety.",
+        "Filter alerts by category, mute irrelevant types like cryptocurrency scams, and prioritize those you care about most, such as banking or tech support impersonation.",
       ],
       points: [
-        "Granular categories & quiet hours",
-        "Inbox-friendly summaries",
-        "One-tap ‘Mark as learning’ to train your profile",
+        "Fine-tuned categories with configurable quiet hours",
+        "Inbox-friendly summary emails for easy reading",
+        "One-tap ‘Mark as Learning’ to personalize your alert profile",
       ],
     },
     {
-      // Video replaced by image here
       media: { img: "/Images/LiveWalk.webp" },
-      title: "🎥 See It in Action: Alert → Action",
+      title: "Watch Alerts in Action: From Notification to Safe Response",
       body: [
-        "A live walk-through of a trending refund scam wave: you’ll see the alert, the context, and the safe action sequence.",
-        "We also show how Decision Guardrails tilt you away from risk in the exact moment scammers push urgency.",
+        "See a step-by-step walkthrough of a current refund scam wave, illustrating how alerts provide context and guide you safely through each decision.",
+        "Our Decision Guardrails help you resist urgent scam pressure by offering safe alternatives exactly when you need them.",
       ],
       points: [
-        "Tap-through steps (verify number, validate URL, safe callback)",
-        "Save alert to Playbook for later",
-        "Request a human expert in one tap",
+        "Interactive steps like verifying caller ID, validating URLs, and making safe callbacks",
+        "Save important alerts to your personal Playbook for future reference",
+        "Instant access to human expert help with a single tap",
       ],
     },
   ];
@@ -54,51 +53,51 @@ export default function AlertsHub() {
   const feed = [
     {
       tag: "Bank Impersonation",
-      title: "Fake ‘account locked’ SMS surge",
+      title: "Surge in Fake ‘Account Locked’ SMS Messages",
       text:
-        "Short links to lookalike portals harvesting OTPs. Use official app to verify. Never click unknown shorteners.",
-      cta: "Open Bank App",
+        "Beware of short links leading to lookalike sites designed to steal your OTPs. Always verify using official banking apps. Never click on unknown shortened URLs.",
+      cta: "Open Official Bank App",
     },
     {
       tag: "Tech Support",
-      title: "Full-screen pop-up lock scams rising",
+      title: "Increase in Full-Screen Pop-Up Scam Alerts",
       text:
-        "Browsers getting hijacked by fake ‘virus detected’ pages. Don’t call numbers on the screen; force-quit browser.",
-      cta: "How to Force-Quit",
+        "Fake virus warnings hijack browsers and urge you to call fraudulent support numbers. Don’t call those numbers. Instead, force-quit your browser immediately.",
+      cta: "Learn How to Force-Quit",
     },
     {
       tag: "Payments",
-      title: "UPI request + call combo attacks",
+      title: "UPI Request and Call Combo Scam Attacks",
       text:
-        "Fraudsters send tiny UPI collect requests, then call to ‘help’. Decline and block. Verify via official support.",
-      cta: "See Safe Checklist",
+        "Scammers send small UPI collect requests, then call pretending to help. Always decline and block suspicious requests. Confirm all transactions via official support channels.",
+      cta: "View Safety Checklist",
     },
     {
       tag: "Investments",
-      title: "Quick-profit crypto groups on chat apps",
+      title: "Crypto ‘Quick Profit’ Groups on Messaging Apps",
       text:
-        "New groups promising guaranteed returns. Requesting wallet seed phrases. Never share recovery phrases—ever.",
-      cta: "Learn Seed Safety",
+        "New chat groups promise guaranteed returns but request wallet seed phrases. Never share your recovery phrases—ever.",
+      cta: "Learn About Seed Phrase Safety",
     },
   ];
 
   return (
-    <div className="alerts-section">
-      <h1 className="alerts-heading" data-aos="zoom-in">
-        📢 Scam Alerts Hub
+    <main className="alerts-section" role="main" aria-labelledby="alerts-heading">
+      <h1 id="alerts-heading" className="alerts-heading" data-aos="zoom-in">
+        Scam Alerts Hub
       </h1>
 
-      {sections.map((s, idx) => (
-        <div
+      {sections.map((section, idx) => (
+        <article
           key={idx}
           className={`alerts-block ${idx % 2 === 0 ? "normal" : "reverse"}`}
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+          aria-labelledby={`section-title-${idx}`}
         >
           <div className="alerts-media" data-aos="zoom-in-up">
-            {/* Only image now */}
             <img
-              src={s.media.img}
-              alt={s.title}
+              src={section.media.img}
+              alt={`${section.title} illustration`}
               loading="lazy"
               decoding="async"
               width="600"
@@ -107,39 +106,42 @@ export default function AlertsHub() {
           </div>
 
           <div className="alerts-text" data-aos="fade-up">
-            <h2>{s.title}</h2>
-            {s.body.map((p, i) => (
-              <p key={i}>{p}</p>
+            <h2 id={`section-title-${idx}`}>{section.title}</h2>
+            {section.body.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
             ))}
             <ul className="alerts-points">
-              {s.points.map((pt, j) => (
-                <li key={j}>{pt}</li>
+              {section.points.map((point, j) => (
+                <li key={j}>{point}</li>
               ))}
             </ul>
           </div>
-        </div>
+        </article>
       ))}
 
-      {/* Feed-style cards */}
-      <div className="alerts-feed">
+      <section className="alerts-feed" aria-label="Latest Scam Alerts Feed">
         {feed.map((item, i) => (
           <div className="alert-card" key={i} data-aos="fade-up" data-aos-delay={i * 120}>
             <span className="alert-tag">{item.tag}</span>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
-            <button className="alert-cta">{item.cta}</button>
+            <button className="alert-cta" aria-label={`Action button: ${item.cta}`}>
+              {item.cta}
+            </button>
           </div>
         ))}
-      </div>
+      </section>
 
-      <div className="alerts-cta" data-aos="zoom-in">
-        <h2>Turn on alerts. Stay ahead of scammers.</h2>
+      <section className="alerts-cta" data-aos="zoom-in" aria-label="Enable Scam Alerts Call to Action">
+        <h2>Stay Ahead of Scammers with Real-Time Alerts</h2>
         <p>
-          Enable localized alerts, pick your channels, and add Expert Help for critical cases.
-          Learn patterns once—avoid them for life.
+          Activate localized scam alerts, customize your notification channels, and access expert help when needed.
+          Learn scam patterns once and protect yourself for life.
         </p>
-        <button className="alerts-btn">Enable Alerts Hub</button>
-      </div>
-    </div>
+        <button className="alerts-btn" aria-label="Enable Scam Alerts Hub">
+          Enable Alerts Hub
+        </button>
+      </section>
+    </main>
   );
 }

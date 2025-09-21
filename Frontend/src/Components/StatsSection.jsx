@@ -42,8 +42,12 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section className="stats-section" aria-labelledby="stats-heading">
-      {/* ✅ Background video (optimized) */}
+    <section
+      className="stats-section"
+      aria-labelledby="stats-heading"
+      role="region"
+    >
+      {/* ✅ Background Video (SEO optimized) */}
       <video
         autoPlay
         loop
@@ -52,6 +56,7 @@ export default function StatsSection() {
         preload="metadata"
         className="bg-video"
         aria-hidden="true"
+        poster="/Images/stats-video-poster.jpg" // 👈 Add fallback image for SEO + LCP
       >
         <source src="/Videos/DMPVideos.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -60,8 +65,9 @@ export default function StatsSection() {
       {/* Overlay */}
       <div className="overlay" aria-hidden="true" />
 
-      {/* Content */}
+      {/* Main Content */}
       <div className="stats-content">
+        {/* ✅ Section Heading */}
         <motion.h2
           id="stats-heading"
           className="stats-title"
@@ -73,6 +79,7 @@ export default function StatsSection() {
           📊 The Reality in Numbers
         </motion.h2>
 
+        {/* ✅ Stats Grid */}
         <div className="stats-grid" role="list">
           {stats.map((stat, index) => (
             <motion.div
@@ -89,10 +96,24 @@ export default function StatsSection() {
                 ease: "easeOut",
               }}
             >
-              <h3 className="stat-number" aria-label={`${stat.number}${stat.suffix}`}>
+              {/* ✅ Animated Counter + fallback text */}
+              <h3
+                className="stat-number"
+                aria-label={`${stat.number}${stat.suffix}`}
+              >
                 {counters[index]}
                 {stat.suffix}
               </h3>
+
+              {/* 👇 Static fallback for bots/no-JS */}
+              <noscript>
+                <div className="stat-number">
+                  {stat.number}
+                  {stat.suffix}
+                </div>
+              </noscript>
+
+              {/* ✅ Stat Description */}
               <p className="stat-label">{stat.label}</p>
             </motion.div>
           ))}

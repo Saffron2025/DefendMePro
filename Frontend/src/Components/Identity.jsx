@@ -11,84 +11,83 @@ export default function Identity() {
   const sections = [
     {
       media: { img: "/Images/IdentityMonitoring.webp" },
-      title: "🧬 Always-On Identity Monitoring",
+      title: "Continuous Identity Monitoring",
       body: [
-        "Your identity is more than a number—it’s your credit, your accounts, your reputation. We continuously scan breach dumps, dark-web forums, paste sites and credential lists for exposure of your emails, phone numbers and IDs.",
-        "If your data appears where it shouldn’t, you get a high-signal alert with the breached fields, the first-seen timestamp and specific next steps.",
+        "Your identity is more than just numbers—it includes your credit, accounts, and reputation. We continuously scan breach databases, dark web forums, paste sites, and credential lists for exposure of your emails, phone numbers, and personal IDs.",
+        "If your data is found where it shouldn’t be, you receive a high-priority alert detailing the breached information, first-seen date, and clear next steps.",
       ],
       points: [
-        "Email/phone/username exposure watch",
-        "Leaked passwords & credential stuffing risk score",
-        "Breach context with first-seen sources",
+        "Monitoring for exposed email, phone, and usernames",
+        "Leaked password detection and credential stuffing risk scoring",
+        "Detailed breach context with initial discovery sources",
       ],
     },
     {
       media: { img: "/Images/Credit.webp" },
-      title: "💳 Credit & Account Takeover Defense",
+      title: "Credit and Account Takeover Protection",
       body: [
-        "Account takeover often starts with small changes—address edits, new device sign-ins, or micro-transactions. We correlate signals across your providers to catch takeover attempts early.",
-        "You’ll see what changed, where, and why it’s risky—plus a one-tap path to freeze, lock or contact the right provider.",
+        "Account takeovers often start with subtle changes such as address edits, new device sign-ins, or micro-transactions. We correlate signals across your accounts to detect takeover attempts early.",
+        "You get detailed insights on what changed, where it happened, why it’s suspicious, and one-tap options to freeze accounts, lock access, or contact providers.",
       ],
       points: [
-        "New device & location anomalies",
-        "Change-of-address / recovery-email edits",
-        "Micro-debit & card-testing detection",
+        "Detection of new devices and unusual locations",
+        "Alerts on address and recovery email changes",
+        "Micro-debit and card testing activity monitoring",
       ],
     },
     {
-      // Video replaced by image here
       media: { img: "/Images/WalkThrough.webp" },
-      title: "🎥 Walkthrough: From Leak → Lockdown",
+      title: "Step-by-Step Walkthrough: Leak to Lockdown",
       body: [
-        "Watch how a leaked password triggers a cascade of protections: you’re alerted, auto-generated replacements are suggested, high-risk accounts are flagged for 2FA upgrade, and optional credit freeze is guided step-by-step.",
+        "See how a leaked password triggers multiple layers of protection: immediate alerts, suggested strong password replacements, high-risk account flags for two-factor authentication (2FA) upgrades, and guided credit freeze options.",
       ],
       points: [
-        "Contextual recommendations (rotate, revoke, re-auth)",
-        "Auto-generated strong passwords & vault save",
-        "One-tap 2FA upgrade checklist",
+        "Contextual security recommendations including password rotation and account re-authentication",
+        "Auto-generated strong passwords with secure vault storage",
+        "One-tap 2FA upgrade checklist to enhance account security",
       ],
     },
     {
       media: { img: "/Images/Guardrails.webp" },
-      title: "🔒 Document & KYC Guardrails",
+      title: "Document and KYC Upload Protection",
       body: [
-        "Scammers frequently request ID scans and PAN/Aadhaar images. Decision Guardrails warn on unsafe upload flows, fake KYC links and lookalike portals.",
-        "We also watermark sensitive uploads (optional) and generate masked-ID redactions where accepted.",
+        "Scammers often target document uploads such as ID scans or PAN/Aadhaar images. Our decision guardrails warn you of unsafe upload flows, fake KYC portals, and phishing links.",
+        "Optional watermarking and masked-ID redaction help protect your sensitive documents during submission.",
       ],
       points: [
-        "Lookalike KYC portal detection",
-        "Redaction & watermark options",
-        "Verified submission links directory",
+        "Detection of lookalike and fraudulent KYC portals",
+        "Document watermarking and redaction features",
+        "Directory of verified submission links for safe uploads",
       ],
     },
   ];
 
   const checklist = [
-    "Enable 2FA on email + banking + payment apps.",
-    "Rotate reused passwords—start with high-value accounts.",
-    "Set up a credit freeze or fraud alert if you suspect misuse.",
-    "Use masked cards / limited-limit payment methods for new merchants.",
-    "Never share OTPs or recovery phrases—ever.",
-    "Verify support numbers from official sites only.",
+    "Enable two-factor authentication (2FA) on email, banking, and payment apps.",
+    "Change reused passwords, starting with your most valuable accounts.",
+    "Set up credit freezes or fraud alerts if you suspect unauthorized access.",
+    "Use masked or limited-limit payment cards for new merchants.",
+    "Never share one-time passwords (OTPs) or recovery phrases.",
+    "Verify customer support numbers only from official websites.",
   ];
 
   return (
-    <div className="identity-section">
-      <h1 className="identity-heading" data-aos="zoom-in">
-        🔐 Identity Theft Protection
+    <main className="identity-section" aria-labelledby="identity-heading" role="main">
+      <h1 id="identity-heading" className="identity-heading" data-aos="zoom-in">
+        Identity Theft Protection and Monitoring
       </h1>
 
-      {sections.map((s, idx) => (
-        <div
+      {sections.map((section, idx) => (
+        <article
           key={idx}
           className={`identity-block ${idx % 2 === 0 ? "normal" : "reverse"}`}
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+          aria-labelledby={`section-title-${idx}`}
         >
           <div className="identity-media" data-aos="zoom-in-up">
-            {/* Only image now */}
             <img
-              src={s.media.img}
-              alt={s.title}
+              src={section.media.img}
+              alt={`${section.title} illustration`}
               loading="lazy"
               decoding="async"
               width="600"
@@ -97,51 +96,47 @@ export default function Identity() {
           </div>
 
           <div className="identity-text" data-aos="fade-up">
-            <h2>{s.title}</h2>
-            {s.body.map((p, i) => (
-              <p key={i}>{p}</p>
+            <h2 id={`section-title-${idx}`}>{section.title}</h2>
+            {section.body.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
             ))}
             <ul className="identity-points">
-              {s.points.map((pt, j) => (
-                <li key={j}>{pt}</li>
+              {section.points.map((point, j) => (
+                <li key={j}>{point}</li>
               ))}
             </ul>
           </div>
-        </div>
+        </article>
       ))}
 
-      {/* Long-form helper area */}
-      <div className="identity-extra" data-aos="fade-up">
-        <h2>🛡️ What to Do If Your Identity Is Exposed</h2>
+      <section className="identity-extra" data-aos="fade-up" aria-label="Identity Exposure Guidance">
+        <h2>What To Do If Your Identity Is Compromised</h2>
         <p>
-          If a breach includes your email or password, assume credential-stuffing attempts will follow.
-          Change the password on the breached site, then anywhere else you reused it. Turn on 2FA wherever possible,
-          especially on your email and bank—those are crown jewels.
+          If your email or password is breached, assume attackers will attempt credential stuffing. Immediately change your password on the affected site and anywhere else you use the same password. Enable two-factor authentication (2FA) especially on your email and financial accounts.
         </p>
         <p>
-          If financial data is involved (cards, UPI, bank), contact the provider, freeze the instrument where possible,
-          and review recent transactions. For suspected SIM-swap attempts, set a carrier PIN. When in doubt, tap
-          <b> “Ask an Expert”</b>—a specialist will walk you through the safest path, step-by-step.
+          For financial data breaches, contact your provider, freeze your accounts if possible, and review recent transactions. Set a PIN with your carrier to protect against SIM swap attacks. When uncertain, contact our experts by tapping <strong>“Ask an Expert”</strong> for personalized assistance.
         </p>
 
         <div className="identity-checklist">
-          <h3>✅ Quick Hardening Checklist</h3>
+          <h3>Quick Security Checklist</h3>
           <ul>
-            {checklist.map((c, i) => (
-              <li key={i}>{c}</li>
+            {checklist.map((item, i) => (
+              <li key={i}>{item}</li>
             ))}
           </ul>
         </div>
-      </div>
+      </section>
 
-      <div className="identity-cta" data-aos="zoom-in">
-        <h2>Lock down your identity—before scammers try.</h2>
+      <section className="identity-cta" data-aos="zoom-in" aria-label="Enable Identity Protection Call to Action">
+        <h2>Protect Your Identity Before Fraud Happens</h2>
         <p>
-          Turn on breach monitoring, upgrade 2FA, and enable decision guardrails.
-          One weekend of setup saves years of headaches.
+          Enable continuous breach monitoring, strengthen two-factor authentication, and activate decision guardrails. Investing time now prevents costly identity theft in the future.
         </p>
-        <button className="identity-btn">Enable Identity Protection</button>
-      </div>
-    </div>
+        <button className="identity-btn" aria-label="Enable Identity Theft Protection">
+          Enable Identity Protection
+        </button>
+      </section>
+    </main>
   );
 }

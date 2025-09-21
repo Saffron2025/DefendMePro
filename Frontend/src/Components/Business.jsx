@@ -13,267 +13,281 @@ export default function Business() {
       media: { img: "/VPN/ModernSmall.webp" },
       title: "🏢 Built for Modern Small & Mid-Size Teams",
       body: [
-        "Invoice fraud, vendor impersonation, business email compromise (BEC), fake procurement, and remote-access abuse — SMEs are prime targets because processes are lean and approval chains are short.",
-        "DefendMePro blends human expertise, policy-driven guardrails, and endpoint controls so day-to-day work stays fast, but financial and identity risks are contained."
+        "Invoice fraud, vendor impersonation, business email compromise (BEC), fake procurement, and remote-access abuse are common threats targeting SMEs due to their lean processes and short approval chains.",
+        "DefendMePro combines human expertise, policy-driven guardrails, and endpoint controls to keep day-to-day work fast while containing financial and identity risks."
       ],
       points: [
-        "Scam & phishing defense beyond antivirus",
-        "Identity & payment workflow protection",
+        "Comprehensive scam and phishing defense beyond antivirus",
+        "Protection for identity and payment workflows",
         "Guided incident response within minutes"
       ]
     },
     {
       media: { img: "/DefendPro/BusinessOverview.webp" },
-      title: "🎥 See It in Action: BEC + Fake Vendor Play",
+      title: "🎥 See It in Action: BEC & Fake Vendor Prevention",
       body: [
-        "Live demo: attacker spoofs a vendor, submits urgent bank details change, pushes finance for wire. Our Safe-Pay overlays flag the request, validate IBAN/UPI beneficiary, and require a second person approval.",
-        "Email signal engine highlights lookalike domains, reply-to mismatches, and unusual timing/amounts, then nudges users with a ‘verify out-of-band’ script."
+        "Live demo showcasing how an attacker spoofs a vendor to submit urgent bank detail changes and pressures finance for wire transfers. Our Safe-Pay overlays flag suspicious requests, validate IBAN/UPI beneficiaries, and require dual approvals.",
+        "Email signal engine detects lookalike domains, reply-to mismatches, and unusual timing or amounts, prompting users with a ‘verify out-of-band’ script."
       ],
       points: [
-        "Safe-Pay overlays on wire/ACH/UPI pages",
-        "Lookalike domain & behavior signals",
-        "Two-person verification for changes"
+        "Safe-Pay overlays on wire, ACH, and UPI payment pages",
+        "Lookalike domain and behavior-based threat signals",
+        "Two-person verification for payment changes"
       ]
     },
     {
       media: { img: "/DefendPro/EndPoint.webp" },
-      title: "🛡️ Endpoint Defense That Fits Workflows",
+      title: "🛡️ Endpoint Defense Designed for Workflows",
       body: [
-        "Zero-day style protections (process restraint, script controls, and USB policy) without breaking legit tools like IDEs, browsers, conferencing, or CRM connectors.",
-        "Remote-access policy: unknown tools blocked; known tools gated via consent sheet, time-boxed sessions, clipboard/keyboard injection guard, and payment-screen auto-pause."
+        "Zero-day style protections including process restraint, script controls, and USB policy that do not disrupt legitimate tools like IDEs, browsers, conferencing, or CRM connectors.",
+        "Remote-access policies block unknown tools and gate known tools through consent sheets, time-boxed sessions, clipboard/keyboard injection guards, and auto-pause on payment screens."
       ],
       points: [
-        "Process-level restraint (risky spawns curbed)",
-        "PowerShell/Script controls with allowlists",
-        "RA approvals, logging, and session rules"
+        "Process-level restraint to curb risky process spawns",
+        "PowerShell and script controls with allowlists",
+        "Remote access approvals, logging, and session management"
       ]
     },
     {
       media: { img: "/DefendPro/Finance.webp" },
-      title: "💳 Finance Guardrails & Safe-Pay",
+      title: "💳 Finance Guardrails & Safe-Pay Features",
       body: [
-        "Most SME losses are process-level, not malware-level. We put rails where money moves: quotes, invoices, vendor changes, payroll adjustments, refunds.",
-        "Overlay confirms receiver identity, memo, currency, wallet age (crypto), and highlights unusual deltas vs historic patterns."
+        "Most SME losses happen due to process failures, not malware. We establish guardrails where money moves: quotes, invoices, vendor changes, payroll, and refunds.",
+        "Our overlays confirm receiver identity, memo correctness, currency type, wallet age (for crypto), and highlight unusual transaction deviations."
       ],
       points: [
-        "Beneficiary verification + memo sanity checks",
-        "High-risk flags on new/young wallets",
-        "Out-of-band verification prompt"
+        "Beneficiary verification and memo sanity checks",
+        "High-risk flags for new or young wallets",
+        "Out-of-band verification prompts"
       ]
     },
     {
       media: { img: "/DefendPro/EmailSaas.webp" },
-      title: "🔐 Identity, Email & SaaS Hygiene",
+      title: "🔐 Identity, Email & SaaS Hygiene Management",
       body: [
-        "Compromised inbox = company-wide blast radius. We monitor risky forwards, auto-delete rules, OAuth app sprawl, and exposed tokens.",
-        "On high-risk, we drive automatic flows: revoke sessions, rotate passwords/tokens, upgrade to passkeys/2FA, and notify admins."
+        "Compromised inboxes can impact your entire company. We monitor risky forwarding, auto-delete rules, OAuth app sprawl, and exposed tokens.",
+        "On detecting high-risk signals, automatic flows revoke sessions, rotate passwords and tokens, upgrade security with passkeys/2FA, and notify administrators."
       ],
       points: [
-        "Suspicious rules & forwarding detection",
-        "OAuth sprawl reports + revocation nudges",
-        "Admin-assisted passkey migrations"
+        "Detection of suspicious forwarding rules",
+        "OAuth app sprawl reports and revocation prompts",
+        "Admin-assisted passkey migration support"
       ]
     },
     {
       media: { img: "/DefendPro/PolicyPacks.webp" },
-      title: "🧾 Policy Packs: Ready-to-Run",
+      title: "🧾 Ready-to-Run Policy Packs",
       body: [
-        "Ship usable policy day one. We include short, plain-English policies your team can actually follow: Payment Change Policy, Vendor Verification SOP, Remote Support Rules, Data Handling, and Incident Response cards.",
-        "Every policy is one-page quick-read + a long version for compliance binders."
+        "Launch with practical, plain-English policies your team can follow from day one, including Payment Change Policy, Vendor Verification SOP, Remote Support Rules, Data Handling, and Incident Response cards.",
+        "Each policy is available as a quick-read one-pager plus a detailed version for compliance documentation."
       ],
       points: [
-        "Payment/Vendor SOP (1-pager + full)",
-        "Remote support + RA consent templates",
-        "Incident cards for front-line staff"
+        "Payment and Vendor SOPs (one-pager and full version)",
+        "Remote support and remote access consent templates",
+        "Incident response cards for frontline staff"
       ]
     },
     {
       media: { img: "/DefendPro/HumanHelp.webp" },
-      title: "👥 Human Help When It Matters",
+      title: "👥 Human Support When It Matters Most",
       body: [
-        "When something feels off, your team gets a human in minutes. We triage calmly, verify, and step into recovery flows if money/identity is at risk.",
-        "Post-incident, you get a compact evidence pack (headers, hashes, URLs, call notes) to attach to bank or police reports."
+        "If something seems suspicious, your team can reach a human expert within minutes for calm triage, verification, and assistance with recovery if funds or identities are at risk.",
+        "After incidents, receive a compact evidence pack (headers, hashes, URLs, call notes) for bank or police reporting."
       ],
       points: [
-        "7-days support, India-friendly hours",
-        "Scripted call/email verification steps",
-        "Evidence packs for escalations"
+        "7-day support with India-friendly hours",
+        "Scripted call and email verification steps",
+        "Evidence packs for escalation and reporting"
       ]
     }
   ];
 
   const onboarding = [
-    "Discovery: 30-40 min call to map tools (email, payments, CRM, dev), remote-access needs, device mix (Windows/Mac), and risk profile.",
-    "Pilot: roll out to finance + 1–2 adjacent teams; enable Safe-Pay overlays, browser guard, RA policy, and alerts.",
-    "Company-wide: staged rollout with two short micro-trainings; policy packs published to your wiki/handbook.",
-    "Tune & Review: monthly risk report, vendor change metrics, near-miss counts, and playbook refresh."
+    "Discovery: 30-40 minute call to map tools (email, payments, CRM, dev), remote-access needs, device mix (Windows/Mac), and risk profile.",
+    "Pilot: Deploy Safe-Pay overlays, browser guard, remote-access policies, and alerts for finance and 1–2 adjacent teams.",
+    "Company-wide rollout: staged deployment with two brief micro-trainings; policy packs published to your internal wiki or handbook.",
+    "Tune & Review: Monthly risk reports, vendor change metrics, near-miss counts, and playbook updates."
   ];
 
   const pricing = [
     {
       name: "Starter",
-      price: "₹349/user/mo",
+      price: "₹349/user/month",
       fit: "Up to 25 users | startups, agencies, boutiques",
       includes: [
-        "Browser Guard + Phishing Defense",
-        "Safe-Pay overlays (wire/ACH/UPI) – basic",
+        "Browser Guard and Phishing Defense",
+        "Basic Safe-Pay overlays (wire/ACH/UPI)",
         "Remote-access consent sheets",
         "Weekly Scam Playbooks",
-        "Email signal highlights (basic)",
-        "Email/chat support"
+        "Basic Email signal highlights",
+        "Email and chat support"
       ]
     },
     {
       name: "Growth",
-      price: "₹549/user/mo",
+      price: "₹549/user/month",
       fit: "25–150 users | growing SMEs",
       includes: [
         "All Starter features",
-        "Endpoint restraints + script controls",
-        "Safe-Pay (advanced rules & approvals)",
+        "Endpoint restraints and script controls",
+        "Advanced Safe-Pay rules and approvals",
         "Email risk rules (forwarding, rules, OAuth)",
-        "Admin dashboard + monthly risk reports",
-        "Priority support + onboarding help"
+        "Admin dashboard and monthly risk reports",
+        "Priority support and onboarding assistance"
       ],
       badge: "Most popular"
     },
     {
       name: "Plus",
-      price: "Custom",
-      fit: "150+ users | compliance or curated needs",
+      price: "Custom pricing",
+      fit: "150+ users | compliance-focused or curated needs",
       includes: [
         "All Growth features",
-        "Multi-entity / subsidiary support",
-        "Policy customization & audits support",
+        "Multi-entity and subsidiary support",
+        "Policy customization and audit support",
         "SAML/SCIM, MDM recipes",
-        "Dedicated TAM + playbook drills"
+        "Dedicated Technical Account Manager and playbook drills"
       ]
     }
   ];
 
   const checklist = [
-    "Two-person approval on payment changes.",
-    "Vendor bank change = out-of-band phone verification.",
-    "Remote access requires consent + recording.",
-    "No payments done over chats/calls — only via system.",
-    "Passkeys/2FA on email, payroll, banking, and CRM.",
-    "Quarterly tabletop: fake vendor + refund trap."
+    "Two-person approval required on all payment changes.",
+    "Vendor bank changes require out-of-band phone verification.",
+    "Remote access strictly requires consent and session recording.",
+    "Payments must only be processed via authorized systems, never through chats or calls.",
+    "Implement passkeys or 2FA on email, payroll, banking, and CRM systems.",
+    "Conduct quarterly tabletop exercises simulating fake vendor and refund traps."
   ];
 
   const faqs = [
     {
-      q: "Kya yeh antivirus replace karta hai?",
-      a: "Hum process-level and behavioral guardrails add karte hain (zero-day style) jo antivirus se aage jaate hain. Aapka existing AV reh sakta hai; overlap ko hum tune kar dete hain."
+      q: "Does this replace antivirus software?",
+      a: "No. DefendMePro adds process-level and behavioral guardrails (zero-day style) that complement existing antivirus solutions. We tune overlaps to ensure smooth integration."
     },
     {
-      q: "Rollout me kitna time lagta hai?",
-      a: "Small teams: 1–2 days pilot + 3–5 days staged rollout. Mid-size: 2–3 weeks including policy sign-offs and micro-trainings."
+      q: "How long does rollout take?",
+      a: "Small teams can expect a 1–2 day pilot followed by 3–5 days for staged rollout. Mid-size teams typically complete deployment in 2–3 weeks, including policy approvals and micro-trainings."
     },
     {
-      q: "Remote teams & contractors cover hote hain?",
-      a: "Haan. Per-role policies + device posture checks + RA rules contractors par apply hote hain. Access least-privilege ke saath diya jata hai."
+      q: "Are remote teams and contractors covered?",
+      a: "Yes. Role-based policies, device posture checks, and remote access rules apply to contractors as well. Access is granted with least privilege principles."
     },
     {
-      q: "Compliance help milti hai?",
-      a: "We provide policy packs and evidence trails that help with internal/external reviews. Formal audits/attestations (ISO/SOC) ke liye Plus tier me guidance hoti hai."
+      q: "Do you assist with compliance?",
+      a: "We provide policy packs and evidence trails to aid internal and external audits. Formal audit support for ISO, SOC, and other standards is available in the Plus tier."
     }
   ];
 
   return (
-    <div className="biz-section">
+    <main className="biz-section" role="main" aria-label="Business security solutions">
       <h1 className="biz-heading" data-aos="zoom-in">
         💼 DefendMePro for Business
       </h1>
 
-      {sections.map((s, idx) => (
-        <div
+      {sections.map((section, idx) => (
+        <section
           key={idx}
           className={`biz-block ${idx % 2 === 0 ? "normal" : "reverse"}`}
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+          aria-labelledby={`section-title-${idx}`}
         >
           <div className="biz-media" data-aos="zoom-in-up">
             <img
-              src={s.media.img}
-              alt={s.title}
+              src={section.media.img}
+              alt={section.title}
               loading="lazy"
               width="480"
               height="300"
+              decoding="async"
+              fetchpriority="low"
             />
           </div>
 
           <div className="biz-text" data-aos="fade-up">
-            <h2>{s.title}</h2>
-            {s.body.map((p, i) => (
-              <p key={i}>{p}</p>
+            <h2 id={`section-title-${idx}`}>{section.title}</h2>
+            {section.body.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
             ))}
             <ul className="biz-points">
-              {s.points.map((pt, j) => (
-                <li key={j}>{pt}</li>
+              {section.points.map((point, j) => (
+                <li key={j}>{point}</li>
               ))}
             </ul>
           </div>
-        </div>
+        </section>
       ))}
 
-      <div className="biz-extra" data-aos="fade-up">
-        <h2>🚀 Onboarding in Four Steps</h2>
+      <section className="biz-extra" data-aos="fade-up" aria-labelledby="onboarding-title">
+        <h2 id="onboarding-title">🚀 Onboarding in Four Simple Steps</h2>
         <ol className="biz-steps">
           {onboarding.map((step, i) => (
             <li key={i}>{step}</li>
           ))}
         </ol>
-      </div>
+      </section>
 
-      <div className="biz-pricing" data-aos="zoom-in">
-        <h2>💳 Pricing</h2>
-        <div className="biz-tiers">
-          {pricing.map((p, i) => (
-            <div className={`biz-tier ${p.badge ? "highlight" : ""}`} key={i}>
-              {p.badge && <span className="biz-badge">{p.badge}</span>}
-              <h3>{p.name}</h3>
-              <p className="biz-price">{p.price}</p>
-              <p className="biz-fit">{p.fit}</p>
+      <section className="biz-pricing" data-aos="zoom-in" aria-labelledby="pricing-title">
+        <h2 id="pricing-title">💳 Pricing Plans</h2>
+        <div className="biz-tiers" role="list">
+          {pricing.map((plan, i) => (
+            <article
+              key={i}
+              className={`biz-tier ${plan.badge ? "highlight" : ""}`}
+              role="listitem"
+              aria-label={`${plan.name} plan`}
+            >
+              {plan.badge && <span className="biz-badge">{plan.badge}</span>}
+              <h3>{plan.name}</h3>
+              <p className="biz-price">{plan.price}</p>
+              <p className="biz-fit">{plan.fit}</p>
               <ul>
-                {p.includes.map((x, j) => (
-                  <li key={j}>{x}</li>
+                {plan.includes.map((feature, j) => (
+                  <li key={j}>{feature}</li>
                 ))}
               </ul>
-              <button className="biz-btn">Talk to Sales</button>
-            </div>
+              <button className="biz-btn" aria-label={`Talk to sales about the ${plan.name} plan`}>
+                Talk to Sales
+              </button>
+            </article>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="biz-check" data-aos="fade-up">
-        <h2>✅ Minimum Viable Business Safety</h2>
+      <section className="biz-check" data-aos="fade-up" aria-labelledby="checklist-title">
+        <h2 id="checklist-title">✅ Minimum Viable Business Safety Checklist</h2>
         <ul className="biz-checklist">
-          {checklist.map((c, i) => (
-            <li key={i}>{c}</li>
+          {checklist.map((item, i) => (
+            <li key={i}>{item}</li>
           ))}
         </ul>
-      </div>
+      </section>
 
-      <div className="biz-faqs" data-aos="fade-up">
-        <h2>❓ FAQs</h2>
-        {faqs.map((f, i) => (
-          <div className="biz-faq" key={i}>
-            <h3>{f.q}</h3>
-            <p>{f.a}</p>
-          </div>
+      <section className="biz-faqs" data-aos="fade-up" aria-labelledby="faqs-title">
+        <h2 id="faqs-title">❓ Frequently Asked Questions</h2>
+        {faqs.map((faq, i) => (
+          <article className="biz-faq" key={i}>
+            <h3>{faq.q}</h3>
+            <p>{faq.a}</p>
+          </article>
         ))}
-      </div>
+      </section>
 
-      <div className="biz-cta" data-aos="zoom-in">
-        <h2>Give your business a safer default.</h2>
+      <section className="biz-cta" data-aos="zoom-in" aria-label="Call to action">
+        <h2>Give Your Business a Safer Default</h2>
         <p>
           Guardrails where they matter: inbox, payments, identity, and remote-access. 
-          Book a 30-minute discovery to map your risk and roll out fast.
+          Book a 30-minute discovery call to map your risks and accelerate rollout.
         </p>
         <div className="biz-cta-actions">
-          <a className="biz-btn primary" href="/contact#sales">📅 Book a Discovery Call</a>
-          <a className="biz-btn ghost" href="/contact">✉️ Contact Sales</a>
+          <a className="biz-btn primary" href="/contact#sales" aria-label="Book a discovery call with sales">
+            📅 Book a Discovery Call
+          </a>
+          <a className="biz-btn ghost" href="/contact" aria-label="Contact sales team">
+            ✉️ Contact Sales
+          </a>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

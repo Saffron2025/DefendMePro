@@ -1,11 +1,17 @@
 import React from "react";
 import "../Styles/Solutions.css";
 import { motion } from "framer-motion";
-import { ShieldCheck, LockKeyhole, AlertTriangle, Headphones } from "lucide-react";
-import { useNavigate } from 'react-router-dom';
+import {
+  ShieldCheck,
+  LockKeyhole,
+  AlertTriangle,
+  Headphones,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async"; // ✅ Meta tags
 
 export default function Solutions() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const solutions = [
     {
@@ -13,30 +19,44 @@ export default function Solutions() {
       title: "Fraud & Scam Detection",
       desc: "AI-driven monitoring to detect scams, phishing attempts, and identity theft before they harm you.",
       img: "/Images/FraudScamProtection.webp",
+      alt: "Illustration showing AI monitoring for fraud and scam detection",
     },
     {
       icon: <LockKeyhole size={60} />,
       title: "Identity & Privacy Shield",
       desc: "Complete protection for your personal info with VPN, dark web monitoring, and encrypted browsing.",
       img: "/Images/IdentityPrivacyShield.webp",
+      alt: "Image representing identity protection and VPN",
     },
     {
       icon: <AlertTriangle size={60} />,
       title: "Real-Time Scam Alerts",
       desc: "Instant notifications for fraud attempts so you can act before it’s too late.",
       img: "/Images/Notification.webp",
+      alt: "Icon showing scam alert notifications in real time",
     },
     {
       icon: <Headphones size={60} />,
       title: "24/7 Expert Support",
       desc: "Dedicated security professionals ready to guide you whenever you need help.",
       img: "/Images/24Support.webp",
+      alt: "Support agent ready to help users 24/7",
     },
   ];
 
   return (
     <div className="solutions-page">
-      {/* ✅ Hero Section with Background Video */}
+      {/* ✅ Meta Tags */}
+      <Helmet>
+        <title>Powerful Scam Protection Solutions | DefendMePro</title>
+        <meta
+          name="description"
+          content="Explore DefendMePro's advanced security solutions like scam detection, privacy shield, real-time alerts, and 24/7 support."
+        />
+        <link rel="canonical" href="https://www.defendmepro.com/solutions" />
+      </Helmet>
+
+      {/* ✅ Hero Section */}
       <section className="solutions-hero" aria-label="DefendMePro Hero Section">
         <video
           autoPlay
@@ -44,6 +64,7 @@ export default function Solutions() {
           loop
           playsInline
           preload="metadata"
+          poster="/Images/solution-poster.jpg" // 👈 Add fallback
           className="hero-video"
           aria-hidden="true"
         >
@@ -63,13 +84,14 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* ✅ Zig-Zag Solutions Section */}
+      {/* ✅ Zig-Zag Solutions */}
       {solutions.map((s, i) => (
         <section
           key={i}
           className={`solution-block ${i % 2 === 0 ? "normal" : "reverse"}`}
           aria-labelledby={`solution-title-${i}`}
         >
+          {/* Image */}
           <motion.div
             className="solution-img"
             initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
@@ -79,13 +101,15 @@ export default function Solutions() {
           >
             <img
               src={s.img}
-              alt={s.title}
+              alt={s.alt}
               loading="lazy"
               width="100%"
               height="auto"
+              decoding="async"
             />
           </motion.div>
 
+          {/* Text */}
           <motion.div
             className="solution-text"
             initial={{ opacity: 0, x: i % 2 === 0 ? 100 : -100 }}
@@ -93,7 +117,9 @@ export default function Solutions() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="solution-icon">{s.icon}</div>
+            <div className="solution-icon" aria-hidden="true">
+              {s.icon}
+            </div>
             <h2 id={`solution-title-${i}`}>{s.title}</h2>
             <p>{s.desc}</p>
           </motion.div>
@@ -101,8 +127,11 @@ export default function Solutions() {
       ))}
 
       {/* ✅ Timeline Section */}
-      <section className="solutions-timeline" aria-label="How DefendMePro Works">
-        <h2>How DefendMePro Works</h2>
+      <section
+        className="solutions-timeline"
+        aria-labelledby="timeline-heading"
+      >
+        <h2 id="timeline-heading">How DefendMePro Works</h2>
         <div className="timeline" role="list">
           <div className="step" role="listitem">🔍 Detect</div>
           <div className="line" aria-hidden="true"></div>
@@ -112,11 +141,17 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* ✅ CTA Section */}
+      {/* ✅ Call to Action */}
       <section className="solutions-cta" aria-label="Call to Action Section">
         <div className="cta-overlay" aria-hidden="true"></div>
         <h2>🚀 Stay Ahead of Scams</h2>
-        <button className="cta-btn" type="button" onClick={() => navigate('/contact')}>Start Free Trial</button>
+        <button
+          className="cta-btn"
+          type="button"
+          onClick={() => navigate("/contact")}
+        >
+          Start Free Trial
+        </button>
       </section>
     </div>
   );

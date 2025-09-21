@@ -10,98 +10,98 @@ export default function ScamProtection() {
 
   const sections = [
     {
-      media: { img: "/Images//CallSMSFraud.webp" },
-      title: "📱 Call & SMS Scam Shield",
+      media: { img: "/Images/CallSMSFraud.webp" },
+      title: "Call and SMS Scam Protection",
       points: [
-        "Known scam numbers auto-silenced. Unknown callers analyzed with behavioral heuristics.",
-        "Smishing (SMS phishing) patterns detected—short links, payment lures, fake OTP traps.",
-        "Real-time nudge: “Pause & Verify” cards when a risky call or text appears.",
+        "Automatically silence known scam phone numbers and analyze unknown callers using behavioral heuristics.",
+        "Detect smishing (SMS phishing) tactics including short links, payment scams, and fake OTP traps.",
+        "Receive real-time ‘Pause & Verify’ prompts when risky calls or messages are detected.",
       ],
       body: [
-        "Scammers rely on urgency. We slow the moment down with clear, on-screen guidance and a one-tap ‘Verify’ option.",
-        "Our signals combine crowd intel + carrier lookups + velocity analysis to stop repeat scam waves in your area.",
+        "Scammers create urgency to trick you. We slow down the process with clear on-screen guidance and a one-tap verification option.",
+        "Our detection uses crowd intelligence, carrier data, and call frequency analysis to block scam waves locally and instantly.",
       ],
     },
     {
       media: { img: "/Images/BrowserLevel.webp" },
-      title: "🌐 Browser-Level Phishing Protection",
+      title: "Browser-Level Phishing Protection",
       points: [
-        "Realtime domain risk scoring: lookalike URLs, brand impersonation, fresh-registered domains.",
-        "On-page trap detection: fake captcha overlays, pixel-perfect login clones, support-chat imposters.",
-        "One-click quarantine: suspicious tab gets sandboxed with copy/paste disabled.",
+        "Real-time domain risk scoring to detect lookalike URLs, brand impersonation, and newly registered malicious domains.",
+        "On-page phishing traps detected, such as fake captchas, pixel-perfect login clones, and fraudulent support chatbots.",
+        "One-click quarantine isolates suspicious browser tabs with clipboard and copy-paste restrictions.",
       ],
       body: [
-        "Phishing beats antivirus because it tricks people—not machines. We flag visual and linguistic cues that typical blockers miss.",
-        "Every warning card explains the ‘why’ in plain language, so users learn while staying safe.",
+        "Phishing bypasses antivirus by targeting human trust. We flag visual and linguistic cues that traditional blockers miss.",
+        "Each warning explains risks clearly, helping users learn and stay safe online.",
       ],
     },
     {
       media: { img: "/Images/SystemHardening.webp" },
-      title: "🛠️ System Hardening Against Remote Takeovers",
+      title: "System Hardening Against Remote Access Attacks",
       points: [
-        "Remote tools (AnyDesk/TeamViewer) blocked by default unless explicitly allowed.",
-        "Clipboard & keystroke protection on risky screens (refund forms, wallet imports).",
-        "Pop-up freeze breaker: closes fake full-screen alerts + blocks rogue scripts.",
+        "Remote access tools like AnyDesk and TeamViewer are blocked by default unless explicitly approved.",
+        "Clipboard and keystroke protections activate on sensitive screens such as refund forms and wallet imports.",
+        "Fake full-screen pop-ups are closed automatically, and rogue scripts are blocked to prevent freezes and scams.",
       ],
       body: [
-        "Social-engineering often ends in a remote session. We cut that path proactively while preserving legit IT support flows with whitelisting.",
+        "Social engineering often ends with unauthorized remote sessions. We proactively block these risks while allowing legitimate IT support through whitelisting.",
       ],
     },
     {
-      media: { img: "/Images/LIveDemo.webp" }, // changed from video to image only
-      title: "🎥 Live Demo: How a Refund Scam Tries to Hook You",
+      media: { img: "/Images/LIveDemo.webp" },
+      title: "Live Demo: How Refund Scams Try to Trick You",
       points: [
-        "Fake refund overpayment → pressure to ‘return’ money via gift cards/crypto.",
-        "Fake bank portal screensharing to force urgent action.",
-        "We intervene at each step with contextual blocks & human hand-off.",
+        "Fake refund overpayments pressure victims to return money via gift cards or cryptocurrency.",
+        "Scammers use fake bank portals and screen sharing to force urgent actions.",
+        "DefendMePro intervenes at every step with contextual blocks and immediate access to human experts.",
       ],
       body: [
-        "Watch how DefendMePro intercepts the flow: URL warns, clipboard locks, and a human expert pops in if you request help.",
+        "See how DefendMePro stops scams in real-time: URL warnings, clipboard locks, and expert support when you need it.",
       ],
     },
   ];
 
   const extras = [
     {
-      title: "📢 Real-Time Scam Alerts, Localized",
+      title: "Real-Time Local Scam Alerts",
       text: [
-        "Scam waves spread city-by-city. Our alerts hub highlights what’s trending near you: fake courier dues, power bill scams, ed-loan waivers.",
-        "Pick channels you prefer—email, push, or in-app cards. Zero spam, only actionable warnings.",
+        "Scam waves spread regionally. Our Alerts Hub highlights the latest threats near you, such as fake courier fees, power bill scams, and loan waiver frauds.",
+        "Choose your preferred notification channels — email, push notifications, or in-app alerts. No spam, only actionable warnings.",
       ],
     },
     {
-      title: "🧭 Decision Guardrails, Not Just Blocks",
+      title: "Smart Decision Support, Not Just Blocks",
       text: [
-        "We don’t just say ‘No’. We show safer alternates: verified support numbers, official payment paths, and a 30-second checklist.",
-        "Goal: protect the moment of trust. You stay in control—only better informed.",
+        "We don’t just block threats — we provide safer alternatives like verified support numbers, official payment links, and step-by-step checklists.",
+        "Our goal is to protect moments of trust, helping you stay in control with clear information.",
       ],
     },
     {
-      title: "👥 Human Experts, 7 Days a Week",
+      title: "Expert Support Available 7 Days a Week",
       text: [
-        "Unsure? Tap ‘Ask an Expert’. A trained specialist guides you—no scripts, no bots.",
-        "From verifying emails to walking you out of a remote-access trap, we’ve got your back.",
+        "Need help? Tap ‘Ask an Expert’ to connect with a trained specialist for personalized guidance — no bots or scripts.",
+        "From verifying suspicious emails to escaping remote access traps, our experts have you covered.",
       ],
     },
   ];
 
   return (
-    <div className="scam-section">
-      <h1 className="scam-heading" data-aos="zoom-in">
-        ⚠️ Scam Protection
+    <main className="scam-section" aria-labelledby="scam-heading" role="main">
+      <h1 id="scam-heading" className="scam-heading" data-aos="zoom-in">
+        Scam Protection and Prevention
       </h1>
 
-      {sections.map((s, idx) => (
-        <div
+      {sections.map((section, idx) => (
+        <article
           key={idx}
           className={`scam-block ${idx % 2 === 0 ? "normal" : "reverse"}`}
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
+          aria-labelledby={`section-title-${idx}`}
         >
           <div className="scam-media" data-aos="zoom-in-up">
-            {/* Only image now, no video */}
             <img
-              src={s.media.img}
-              alt={s.title}
+              src={section.media.img}
+              alt={`${section.title} illustration`}
               loading="lazy"
               decoding="async"
               width="600"
@@ -110,43 +110,48 @@ export default function ScamProtection() {
           </div>
 
           <div className="scam-text" data-aos="fade-up">
-            <h2>{s.title}</h2>
+            <h2 id={`section-title-${idx}`}>{section.title}</h2>
             <ul className="scam-points">
-              {s.points.map((p, i) => (
-                <li key={i}>{p}</li>
+              {section.points.map((point, i) => (
+                <li key={i}>{point}</li>
               ))}
             </ul>
-            {s.body.map((b, j) => (
-              <p key={j}>{b}</p>
+            {section.body.map((paragraph, j) => (
+              <p key={j}>{paragraph}</p>
             ))}
           </div>
-        </div>
+        </article>
       ))}
 
-      <div className="scam-extra-grid">
-        {extras.map((e, i) => (
+      <section
+        className="scam-extra-grid"
+        aria-label="Additional Scam Protection Features"
+      >
+        {extras.map((extra, i) => (
           <div
             className="scam-card"
             key={i}
             data-aos="fade-up"
             data-aos-delay={i * 120}
           >
-            <h3>{e.title}</h3>
-            {e.text.map((t, k) => (
-              <p key={k}>{t}</p>
+            <h3>{extra.title}</h3>
+            {extra.text.map((text, k) => (
+              <p key={k}>{text}</p>
             ))}
           </div>
         ))}
-      </div>
+      </section>
 
-      <div className="scam-cta" data-aos="zoom-in">
-        <h2>Stay two steps ahead of scammers.</h2>
+      <section className="scam-cta" data-aos="zoom-in" aria-label="Call to Action">
+        <h2>Stay Two Steps Ahead of Scammers</h2>
         <p>
-          Enable Scam Protection, turn on Alerts Hub, and add one-tap Expert
-          Help. Small guardrails at the right moment prevent big losses.
+          Activate Scam Protection, enable real-time Alerts Hub, and access
+          one-tap Expert Help. Small guardrails at critical moments prevent major losses.
         </p>
-        <button className="scam-btn">Enable Protection</button>
-      </div>
-    </div>
+        <button className="scam-btn" aria-label="Enable Scam Protection">
+          Enable Protection
+        </button>
+      </section>
+    </main>
   );
 }
