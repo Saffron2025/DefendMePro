@@ -1,42 +1,53 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-import { Helmet } from "react-helmet-async";  // Added for SEO meta tags
+import { Helmet } from "react-helmet-async";
 import "aos/dist/aos.css";
 import "../Styles/Reality.css";
 
 export default function Reality() {
   useEffect(() => {
     AOS.init({ duration: 1100, once: true, easing: "ease-out-cubic" });
+
+    // Manual image preloading for super fast load
+    const imagesToPreload = [
+      "/Images/CyberCrime.webp",
+      "/Images/oldAmerican.webp",
+      "/Images/Antivirus.webp",
+    ];
+    imagesToPreload.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
-  // JSON-LD structured data to boost SEO
   const jsonLD = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "The Reality in Numbers: Cybercrime and Scam Statistics 2024",
-    "description": "Explore the latest statistics on cybercrime losses, FBI complaints, senior fraud, and the limitations of traditional antivirus software in 2024.",
-    "image": [
+    headline: "The Reality in Numbers: Cybercrime and Scam Statistics 2024",
+    description:
+      "Explore the latest statistics on cybercrime losses, FBI complaints, senior fraud, and the limitations of traditional antivirus software in 2024.",
+    image: [
       "https://saffronguru.com/Images/CyberCrime.webp",
       "https://saffronguru.com/Images/oldAmerican.webp",
-      "https://saffronguru.com/Images/Antivirus.webp"
+      "https://saffronguru.com/Images/Antivirus.webp",
     ],
-    "author": {
+    author: {
       "@type": "Organization",
-      "name": "Saffron Shield"
+      name: "Saffron Shield",
     },
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "Saffron Shield",
-      "logo": {
+      name: "Saffron Shield",
+      logo: {
         "@type": "ImageObject",
-        "url": "https://saffronguru.com/Images/logo.png"
-      }
+        url: "https://saffronguru.com/Images/logo.png",
+      },
     },
-    "datePublished": "2024-01-01",
-    "mainEntityOfPage": {
+    datePublished: "2024-01-01",
+    mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://saffronguru.com/resources?section=reality"
-    }
+      "@id": "https://saffronguru.com/resources?section=reality",
+    },
   };
 
   return (
@@ -49,6 +60,11 @@ export default function Reality() {
         />
         <link rel="canonical" href="https://saffronguru.com/resources?section=reality" />
         <script type="application/ld+json">{JSON.stringify(jsonLD)}</script>
+
+        {/* Preload important images for fast loading */}
+        <link rel="preload" as="image" href="/Images/CyberCrime.webp" />
+        <link rel="preload" as="image" href="/Images/oldAmerican.webp" />
+        <link rel="preload" as="image" href="/Images/Antivirus.webp" />
       </Helmet>
 
       {/* Background FX */}
@@ -132,7 +148,7 @@ export default function Reality() {
           <img
             src="/Images/oldAmerican.webp"
             alt="Older adult using a digital device"
-            loading="lazy"
+            loading="eager"
             decoding="async"
             width="900"
             height="600"
@@ -159,7 +175,7 @@ export default function Reality() {
           <img
             src="/Images/Antivirus.webp"
             alt="Traditional antivirus software interface"
-            loading="lazy"
+            loading="eager"
             decoding="async"
             width="900"
             height="600"

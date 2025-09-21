@@ -7,6 +7,18 @@ import "../Styles/BuiltDMP.css";
 export default function BuiltDMP() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
+
+    // Manual image preloading
+    const imagesToPreload = [
+      "/Images/dmp1.webp",
+      "/Images/Backend.webp",
+      "/Images/WeeklyScam.webp",
+      "/Images/Malware.webp",
+    ];
+    imagesToPreload.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
   const sections = [
@@ -60,6 +72,12 @@ export default function BuiltDMP() {
           rel="canonical"
           href="https://saffronguru.com/resources?section=built-dmp"
         />
+
+        {/* Preload images */}
+        <link rel="preload" as="image" href="/Images/dmp1.webp" />
+        <link rel="preload" as="image" href="/Images/Backend.webp" />
+        <link rel="preload" as="image" href="/Images/WeeklyScam.webp" />
+        <link rel="preload" as="image" href="/Images/Malware.webp" />
       </Helmet>
 
       <h1 id="built-heading" className="built-heading" data-aos="zoom-in">
@@ -77,7 +95,7 @@ export default function BuiltDMP() {
             <img
               src={item.img}
               alt={`${item.title} illustration`}
-              loading="lazy"
+              loading="eager"          // Changed from lazy to eager
               decoding="async"
               width="600"
               height="400"

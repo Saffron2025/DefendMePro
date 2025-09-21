@@ -6,6 +6,22 @@ import "../Styles/VPN.css";
 export default function VPN() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
+
+    // Preload all images to reduce late loading
+    const imagePaths = [
+      "/VPN/Tunnels.webp",
+      "/VPN/Private.webp",
+      "/VPN/Spilt.webp",
+      "/VPN/MultiHop.webp",
+      "/VPN/Tracker.webp",
+      "/VPN/PublicWiFi.webp",
+      "/VPN/Switching.webp",
+    ];
+
+    imagePaths.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
   const sections = [
@@ -138,13 +154,15 @@ export default function VPN() {
           className={`vpn-block ${idx % 2 === 0 ? "normal" : "reverse"}`}
           data-aos={idx % 2 === 0 ? "fade-right" : "fade-left"}
         >
-          <div className="vpn-media" data-aos="zoom-in-up">
+          <div className="vpn-media" data-aos="zoom-in-up" style={{ minHeight: 300 }}>
             <img
               src={section.media.img}
               alt={section.title}
               loading="lazy"
               decoding="async"
-              style={{ width: "100%", height: "auto" }}
+              width={800} // set real width if you know it, or estimate
+              height={450} // set real height or estimate
+              style={{ width: "100%", height: "auto", display: "block" }}
             />
           </div>
 

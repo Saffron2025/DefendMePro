@@ -128,9 +128,11 @@ export default function Antivirus() {
             <img
               src={section.media.img}
               alt={section.title}
-              loading="lazy"
+              loading={idx === 0 ? "eager" : "lazy"}
               decoding="async"
               style={{ width: "100%", height: "auto" }}
+              width={600}
+              height={400}
             />
           </div>
 

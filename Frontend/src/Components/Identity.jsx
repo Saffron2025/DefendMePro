@@ -3,6 +3,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "../Styles/Identity.css";
 
+// Static imports for images (adjust paths as per your folder structure)
+import IdentityMonitoringImg from "../../public/Images/IdentityMonitoring.webp";
+import CreditImg from "../../public/Images/Credit.webp";
+import WalkThroughImg from "../../public/Images/WalkThrough.webp";
+import GuardrailsImg from "../../public/Images/Guardrails.webp";
+
 export default function Identity() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -10,7 +16,7 @@ export default function Identity() {
 
   const sections = [
     {
-      media: { img: "/Images/IdentityMonitoring.webp" },
+      media: { img: IdentityMonitoringImg },
       title: "Continuous Identity Monitoring",
       body: [
         "Your identity is more than just numbers—it includes your credit, accounts, and reputation. We continuously scan breach databases, dark web forums, paste sites, and credential lists for exposure of your emails, phone numbers, and personal IDs.",
@@ -23,7 +29,7 @@ export default function Identity() {
       ],
     },
     {
-      media: { img: "/Images/Credit.webp" },
+      media: { img: CreditImg },
       title: "Credit and Account Takeover Protection",
       body: [
         "Account takeovers often start with subtle changes such as address edits, new device sign-ins, or micro-transactions. We correlate signals across your accounts to detect takeover attempts early.",
@@ -36,7 +42,7 @@ export default function Identity() {
       ],
     },
     {
-      media: { img: "/Images/WalkThrough.webp" },
+      media: { img: WalkThroughImg },
       title: "Step-by-Step Walkthrough: Leak to Lockdown",
       body: [
         "See how a leaked password triggers multiple layers of protection: immediate alerts, suggested strong password replacements, high-risk account flags for two-factor authentication (2FA) upgrades, and guided credit freeze options.",
@@ -48,7 +54,7 @@ export default function Identity() {
       ],
     },
     {
-      media: { img: "/Images/Guardrails.webp" },
+      media: { img: GuardrailsImg },
       title: "Document and KYC Upload Protection",
       body: [
         "Scammers often target document uploads such as ID scans or PAN/Aadhaar images. Our decision guardrails warn you of unsafe upload flows, fake KYC portals, and phishing links.",
@@ -88,7 +94,7 @@ export default function Identity() {
             <img
               src={section.media.img}
               alt={`${section.title} illustration`}
-              loading="lazy"
+              loading={idx === 0 ? "eager" : "lazy"} // First image eager, rest lazy
               decoding="async"
               width="600"
               height="400"

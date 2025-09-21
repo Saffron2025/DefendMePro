@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-import { Helmet } from "react-helmet-async"; // Added for SEO metadata
+import { Helmet } from "react-helmet-async";
 import "aos/dist/aos.css";
 import "../Styles/FallsShort.css";
 
@@ -14,26 +14,31 @@ export default function FallsShort() {
       img: "/Images/FallsShort1.webp",
       title: "Pop-Up Scams Slip Through",
       text: "Fake full-screen pop-ups freeze your device and display urgent warnings with support numbers. Antivirus doesn’t block them, leaving users tricked into paying huge fake service fees.",
+      eager: true, // First image loads eager
     },
     {
       img: "/Images/Refund.webp",
       title: "Refund & Impersonation Scams",
       text: "Cybercriminals impersonate Amazon, Microsoft, or your bank. They pressure you to act fast, but security tools don’t detect phone or voice scams.",
+      eager: false,
     },
     {
       img: "/Images/TrustBank.webp",
       title: "Pixel-Perfect Fake Websites",
       text: "Phishing sites clone PayPal, banks, and more. Antivirus ignores them since no malware is downloaded, but credentials get stolen instantly.",
+      eager: false,
     },
     {
       img: "/Images/Urgent.webp",
       title: "Remote Access Traps",
       text: "Tools like AnyDesk and TeamViewer are useful, but scammers misuse them to hijack your device. Antivirus doesn’t flag these apps as dangerous.",
+      eager: false,
     },
     {
       img: "/Images/Antivirus2.webp",
       title: "Always Behind the Curve",
       text: "Traditional antivirus relies on outdated virus signatures. Scammers innovate daily — by the time updates roll out, victims are already trapped.",
+      eager: false,
     },
   ];
 
@@ -70,11 +75,12 @@ export default function FallsShort() {
             <div className="falls-img" data-aos="zoom-in-up">
               <img
                 src={item.img}
-                alt={item.title + " illustration"}
-                loading="lazy"
+                alt={`${item.title} illustration`}
+                loading={item.eager ? "eager" : "lazy"} // Eager for first image only
                 decoding="async"
                 width="600"
                 height="400"
+                style={{ display: "block", maxWidth: "100%", height: "auto" }}
               />
             </div>
             <div className="falls-content" data-aos="fade-up">

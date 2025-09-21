@@ -3,6 +3,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "../Styles/AlertsHub.css";
 
+// Static imports for images (adjust path as per your setup)
+import ScamFeedsImg from "../../public/Images/ScamFeeds.webp";
+import MultiChannelImg from "../../public/Images/MultiChannel.webp";
+import LiveWalkImg from "../../public/Images/LiveWalk.webp";
+
 export default function AlertsHub() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -10,7 +15,7 @@ export default function AlertsHub() {
 
   const sections = [
     {
-      media: { img: "/Images/ScamFeeds.webp" },
+      media: { img: ScamFeedsImg },
       title: "Real-Time Local Scam Alerts",
       body: [
         "Scam attacks spread in waves, often targeting specific cities. Our Alerts Hub tracks your location and sends timely, actionable warnings tailored to your region.",
@@ -23,7 +28,7 @@ export default function AlertsHub() {
       ],
     },
     {
-      media: { img: "/Images/MultiChannel.webp" },
+      media: { img: MultiChannelImg },
       title: "Customize How You Receive Alerts",
       body: [
         "Choose your preferred notification channels—push notifications, email, or in-app alert cards. No spam, only critical alerts relevant to your safety.",
@@ -36,7 +41,7 @@ export default function AlertsHub() {
       ],
     },
     {
-      media: { img: "/Images/LiveWalk.webp" },
+      media: { img: LiveWalkImg },
       title: "Watch Alerts in Action: From Notification to Safe Response",
       body: [
         "See a step-by-step walkthrough of a current refund scam wave, illustrating how alerts provide context and guide you safely through each decision.",
@@ -98,7 +103,7 @@ export default function AlertsHub() {
             <img
               src={section.media.img}
               alt={`${section.title} illustration`}
-              loading="lazy"
+              loading={idx === 0 ? "eager" : "lazy"} // First image eager, others lazy
               decoding="async"
               width="600"
               height="400"

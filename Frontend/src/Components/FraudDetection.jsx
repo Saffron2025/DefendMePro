@@ -1,21 +1,27 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
+import { Helmet } from "react-helmet-async";
 import "aos/dist/aos.css";
 import "../Styles/FraudDetection.css";
-
-// ✅ Import images properly (not as static strings)
-import FraudMonitoring from "../../public/Images/FraudMonitoring.webp";
-import ProtectingYourHome from "../../public/Images/ProtectingYourHome.webp";
-import HumanExpertise from "../../public/Images/HumanExpertise.webp";
 
 export default function FraudDetection() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
+
+    // Preload images manually to hint browser
+    [
+      "/Images/FraudMonitoring.webp",
+      "/Images/ProtectingYourHome.webp",
+      "/Images/HumanExpertise.webp",
+    ].forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
   const sections = [
     {
-      img: FraudMonitoring,
+      img: "/Images/FraudMonitoring.webp",
       title: "Real-Time Fraud Monitoring",
       text: [
         "DefendMePro continuously scans for suspicious transactions, unauthorized logins, and hidden fraud indicators.",
@@ -24,7 +30,7 @@ export default function FraudDetection() {
       ],
     },
     {
-      img: ProtectingYourHome,
+      img: "/Images/ProtectingYourHome.webp",
       title: "Comprehensive Money and Identity Protection",
       text: [
         "Scammers exploit trust—from fake bank calls to cloned payment websites.",
@@ -33,7 +39,7 @@ export default function FraudDetection() {
       ],
     },
     {
-      img: HumanExpertise,
+      img: "/Images/HumanExpertise.webp",
       title: "Advanced AI Combined with Human Expertise",
       text: [
         "AI analyzes thousands of signals in real-time to identify potential threats.",
@@ -45,6 +51,13 @@ export default function FraudDetection() {
 
   return (
     <main className="fraud-section" aria-labelledby="fraud-heading" role="main">
+      <Helmet>
+        {/* Preload images to speed up loading */}
+        <link rel="preload" as="image" href="/Images/FraudMonitoring.webp" />
+        <link rel="preload" as="image" href="/Images/ProtectingYourHome.webp" />
+        <link rel="preload" as="image" href="/Images/HumanExpertise.webp" />
+      </Helmet>
+
       <h1 id="fraud-heading" className="fraud-heading" data-aos="zoom-in">
         Fraud Detection and Prevention
       </h1>
@@ -60,7 +73,7 @@ export default function FraudDetection() {
             <img
               src={item.img}
               alt={`${item.title} illustration`}
-              loading={index === 0 ? "eager" : "lazy"} // ✅ First image loads eagerly
+              loading={index === 0 ? "eager" : "lazy"} // first image eager, rest lazy
               decoding="async"
               width="600"
               height="400"

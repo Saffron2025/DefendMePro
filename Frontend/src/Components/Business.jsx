@@ -6,6 +6,21 @@ import "../Styles/Business.css";
 export default function Business() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
+
+    // Optional: Preload images so browser caches them early
+    const paths = [
+      "/VPN/ModernSmall.webp",
+      "/DefendPro/BusinessOverview.webp",
+      "/DefendPro/EndPoint.webp",
+      "/DefendPro/Finance.webp",
+      "/DefendPro/EmailSaas.webp",
+      "/DefendPro/PolicyPacks.webp",
+      "/DefendPro/HumanHelp.webp",
+    ];
+    paths.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
   const sections = [
@@ -197,10 +212,10 @@ export default function Business() {
               src={section.media.img}
               alt={section.title}
               loading="lazy"
-              width="480"
-              height="300"
+              width={480}
+              height={300}
               decoding="async"
-              fetchpriority="low"
+              style={{ width: "100%", height: "auto", display: "block" }}
             />
           </div>
 
@@ -276,8 +291,7 @@ export default function Business() {
       <section className="biz-cta" data-aos="zoom-in" aria-label="Call to action">
         <h2>Give Your Business a Safer Default</h2>
         <p>
-          Guardrails where they matter: inbox, payments, identity, and remote-access. 
-          Book a 30-minute discovery call to map your risks and accelerate rollout.
+          Guardrails where they matter: inbox, payments, identity, and remote-access. Book a 30-minute discovery call to map your risks and accelerate rollout.
         </p>
         <div className="biz-cta-actions">
           <a className="biz-btn primary" href="/contact#sales" aria-label="Book a discovery call with sales">

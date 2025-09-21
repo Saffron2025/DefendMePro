@@ -3,6 +3,13 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "../Styles/ZeroDay.css";
 
+// Optional: Static imports for images (agar ho sake)
+import ZeroImg from "../../public/Images/zero.webp";
+import CriticalAppsImg from "../../public/Images/CriticalApps.webp";
+import ZeroDayWalkthroughImg from "../../public/Images/ZeroDayWalkthrough.webp";
+import PlayNiceImg from "../../public/Images/PlayNice.webp";
+import RansomwareImg from "../../public/Images/Ransomware.webp";
+
 export default function ZeroDay() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -10,7 +17,7 @@ export default function ZeroDay() {
 
   const sections = [
     {
-      media: { img: "/Images/zero.webp" },
+      media: { img: ZeroImg },
       title: "Advanced Protection Against Zero-Day Threats",
       body: [
         "Zero-day attacks exploit unknown vulnerabilities, bypassing traditional signature-based defenses and patch cycles.",
@@ -23,7 +30,7 @@ export default function ZeroDay() {
       ],
     },
     {
-      media: { img: "/Images/CriticalApps.webp" },
+      media: { img: CriticalAppsImg },
       title: "Application Containment and Isolation",
       body: [
         "Critical applications like browsers, email clients, and document editors run under strict policies to prevent silent macro execution, unauthorized PowerShell use, and malicious dropper chains.",
@@ -36,7 +43,7 @@ export default function ZeroDay() {
       ],
     },
     {
-      media: { img: "/Images/ZeroDayWalkthrough.webp" },
+      media: { img: ZeroDayWalkthroughImg },
       title: "Live Demonstration: Blocking Unknown Malicious Behavior",
       body: [
         "See how DefendMePro stops an unsigned loader from running in the Downloads folder. The loader attempts living-off-the-land techniques and probes for credentials.",
@@ -49,7 +56,7 @@ export default function ZeroDay() {
       ],
     },
     {
-      media: { img: "/Images/PlayNice.webp" },
+      media: { img: PlayNiceImg },
       title: "Seamless Integration with Existing Antivirus and EDR",
       body: [
         "DefendMePro complements your existing antivirus and endpoint detection systems by acting as a behavioral firewall, catching threats that signature-based engines may miss.",
@@ -62,7 +69,7 @@ export default function ZeroDay() {
       ],
     },
     {
-      media: { img: "/Images/Ransomware.webp" },
+      media: { img: RansomwareImg },
       title: "Ransomware Kill-Switch and Recovery Assistance",
       body: [
         "When ransomware-like behavior is detected—such as mass file writes, shadow copy deletion, or rapid file extension changes—DefendMePro immediately halts the process.",
@@ -102,7 +109,7 @@ export default function ZeroDay() {
             <img
               src={section.media.img}
               alt={`${section.title} illustration`}
-              loading="lazy"
+              loading={idx === 0 ? "eager" : "lazy"} // First image eager, rest lazy
               decoding="async"
               width="600"
               height="400"

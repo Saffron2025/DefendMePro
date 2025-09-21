@@ -3,6 +3,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "../Styles/ScamProtection.css";
 
+// Import images for better bundling (Adjust path as per your project structure)
+import CallSMSFraudImg from "../../public/Images/CallSMSFraud.webp";
+import BrowserLevelImg from "../../public/Images/BrowserLevel.webp";
+import SystemHardeningImg from "../../public/Images/SystemHardening.webp";
+import LiveDemoImg from "../../public/Images/LIveDemo.webp";
+
 export default function ScamProtection() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -10,7 +16,7 @@ export default function ScamProtection() {
 
   const sections = [
     {
-      media: { img: "/Images/CallSMSFraud.webp" },
+      media: { img: CallSMSFraudImg },
       title: "Call and SMS Scam Protection",
       points: [
         "Automatically silence known scam phone numbers and analyze unknown callers using behavioral heuristics.",
@@ -23,7 +29,7 @@ export default function ScamProtection() {
       ],
     },
     {
-      media: { img: "/Images/BrowserLevel.webp" },
+      media: { img: BrowserLevelImg },
       title: "Browser-Level Phishing Protection",
       points: [
         "Real-time domain risk scoring to detect lookalike URLs, brand impersonation, and newly registered malicious domains.",
@@ -36,7 +42,7 @@ export default function ScamProtection() {
       ],
     },
     {
-      media: { img: "/Images/SystemHardening.webp" },
+      media: { img: SystemHardeningImg },
       title: "System Hardening Against Remote Access Attacks",
       points: [
         "Remote access tools like AnyDesk and TeamViewer are blocked by default unless explicitly approved.",
@@ -48,7 +54,7 @@ export default function ScamProtection() {
       ],
     },
     {
-      media: { img: "/Images/LIveDemo.webp" },
+      media: { img: LiveDemoImg },
       title: "Live Demo: How Refund Scams Try to Trick You",
       points: [
         "Fake refund overpayments pressure victims to return money via gift cards or cryptocurrency.",
@@ -102,7 +108,7 @@ export default function ScamProtection() {
             <img
               src={section.media.img}
               alt={`${section.title} illustration`}
-              loading="lazy"
+              loading={idx === 0 ? "eager" : "lazy"} // First image eager, others lazy
               decoding="async"
               width="600"
               height="400"
