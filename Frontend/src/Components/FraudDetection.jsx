@@ -3,6 +3,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "../Styles/FraudDetection.css";
 
+// ✅ Import images properly (not as static strings)
+import FraudMonitoring from "../../public/Images/FraudMonitoring.webp";
+import ProtectingYourHome from "../../public/Images/ProtectingYourHome.webp";
+import HumanExpertise from "../../public/Images/HumanExpertise.webp";
+
 export default function FraudDetection() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -10,7 +15,7 @@ export default function FraudDetection() {
 
   const sections = [
     {
-      img: "/Images/FraudMonitoring.webp",
+      img: FraudMonitoring,
       title: "Real-Time Fraud Monitoring",
       text: [
         "DefendMePro continuously scans for suspicious transactions, unauthorized logins, and hidden fraud indicators.",
@@ -19,7 +24,7 @@ export default function FraudDetection() {
       ],
     },
     {
-      img: "/Images/ProtectingYourHome.webp",
+      img: ProtectingYourHome,
       title: "Comprehensive Money and Identity Protection",
       text: [
         "Scammers exploit trust—from fake bank calls to cloned payment websites.",
@@ -28,7 +33,7 @@ export default function FraudDetection() {
       ],
     },
     {
-      img: "/Images/HumanExpertise.webp",
+      img: HumanExpertise,
       title: "Advanced AI Combined with Human Expertise",
       text: [
         "AI analyzes thousands of signals in real-time to identify potential threats.",
@@ -55,7 +60,7 @@ export default function FraudDetection() {
             <img
               src={item.img}
               alt={`${item.title} illustration`}
-              loading="lazy"
+              loading={index === 0 ? "eager" : "lazy"} // ✅ First image loads eagerly
               decoding="async"
               width="600"
               height="400"
