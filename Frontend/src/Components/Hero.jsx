@@ -7,7 +7,7 @@ import "../Styles/Hero.css";
 
 export default function Hero() {
   const subtitleText =
-    "DefendMePro shield from scams, identity theft, fraud, and digital traps that traditional security misses.";
+"DefendMePro is your ultimate digital shield—protecting you against scams, identity theft, financial fraud, and sophisticated online traps that traditional security systems often fail to detect."
 
   const [displayedText, setDisplayedText] = useState("");
   const indexRef = useRef(0);
