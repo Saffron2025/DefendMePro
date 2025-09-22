@@ -30,7 +30,7 @@ export default function Hero() {
     <section className="hero-section">
       {/* ✅ SEO Meta Tags */}
       <Helmet>
-        <title>DefendMePro | Real-World Scam & Fraud Protection</title>
+        {/* <title>DefendMePro | Real-World Scam & Fraud Protection</title> */}
         <meta
           name="description"
           content="DefendMePro shields you from scams, identity theft, fraud, and digital traps that traditional security misses."
@@ -39,7 +39,7 @@ export default function Hero() {
         <link rel="canonical" href="https://www.defendmepro.com/" />
 
         {/* ✅ Open Graph / Social Media Tags */}
-        <meta property="og:title" content="DefendMePro | Real-World Protection" />
+        {/* <meta property="og:title" content="DefendMePro | Real-World Protection" /> */}
         <meta
           property="og:description"
           content="Protect yourself from scams, fraud, and identity theft with DefendMePro."

@@ -48,7 +48,7 @@ export default function Solutions() {
     <div className="solutions-page">
       {/* ✅ Meta Tags */}
       <Helmet>
-        <title>Powerful Scam Protection Solutions | DefendMePro</title>
+        {/* <title>Powerful Scam Protection Solutions | DefendMePro</title> */}
         <meta
           name="description"
           content="Explore DefendMePro's advanced security solutions like scam detection, privacy shield, real-time alerts, and 24/7 support."

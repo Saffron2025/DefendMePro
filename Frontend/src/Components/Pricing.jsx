@@ -47,7 +47,7 @@ export default function Pricing() {
     <section className="pricing-section" aria-label="Pricing Plans Section">
       {/* ✅ Meta Tags */}
       <Helmet>
-        <title>Affordable Scam Protection Plans | DefendMePro Pricing</title>
+        {/* <title>Affordable Scam Protection Plans | DefendMePro Pricing</title> */}
         <meta
           name="description"
           content="Compare DefendMePro's pricing plans. Choose from Basic, Pro, or Business Shield and stay protected from fraud, scams, and identity theft."
