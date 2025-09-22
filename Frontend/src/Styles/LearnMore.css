@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&family=Poppins:wght@600;700&display=swap');
 
+
+
+:root {
+  --navbar-height: 120px; /* agar navbar bada/chhota ho to bas ye badalna */
+}
 .learn-more-container {
-  padding-top: 90px;  /* Adjust this if your navbar height changes */
+  padding-top: var(--navbar-height);  /* ✅ Navbar ke niche se start hoga */
+
   max-width: 900px;
   margin: 0 auto 4rem auto;
   padding-left: 2.5rem;

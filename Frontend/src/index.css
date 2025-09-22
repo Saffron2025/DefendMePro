@@ -3,6 +3,8 @@ body {
   font-family: "Orbitron", "Share Tech Mono", monospace, sans-serif;
   color: #00ffea;
   background: #000; /* Optional */
+    padding-top: 100px;  /* navbar height jitni bhi ho, utni set kar */
+
 }
 
 /* ✨ SECTION-WISE FONT CONSISTENCY */
