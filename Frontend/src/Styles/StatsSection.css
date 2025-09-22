@@ -1,21 +1,43 @@
-/* Use a clean, easy-to-read font */
+/* Section container */
 .stats-section {
   position: relative;
   padding: 4rem 2rem;
-  color: #222222; /* Dark text for readability */
+  color: #222222;
   text-align: center;
-  font-family: 'Arial', sans-serif; /* Simple, classic font */
-  background-color: #f5f5f5; /* Light neutral background */
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
   overflow: hidden;
 }
 
-/* Remove background video and overlay for simplicity */
+/* ✅ Background Video */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: none !important;
+  z-index: -1;
+}
 
-/* Content wrapper */
+/* ✅ Overlay to dim video if needed */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2); /* optional: tweak brightness */
+  z-index: 0;
+}
+
+/* ✅ Content */
 .stats-content {
   position: relative;
   max-width: 900px;
   margin: 0 auto;
+  z-index: 1;
 }
 
 /* Title */
@@ -23,18 +45,13 @@
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 3rem;
-  color: #2c3e50; /* Dark blueish color, easy on eyes */
-  text-shadow: none;
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
-  animation: none;
+  color: #2c3e50;
 }
 
 /* Stats grid */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* slightly bigger cards */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
 }
 
@@ -46,25 +63,19 @@
   text-align: center;
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: none;
 }
 
-.stat-card:hover {
-  transform: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Counter */
-.stat-card h3 {
+/* Number */
+.stat-number {
   font-size: 3rem;
   font-weight: 800;
-  color: #1a1a1a; /* Very dark text */
+  color: #1a1a1a;
   margin-bottom: 0.75rem;
 }
 
 /* Label */
-.stat-card p {
+.stat-label {
   font-size: 1.3rem;
-  color: #555555; /* Medium-dark grey */
+  color: #555555;
   margin: 0;
 }

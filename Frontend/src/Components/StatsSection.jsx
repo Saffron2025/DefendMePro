@@ -47,7 +47,7 @@ export default function StatsSection() {
       aria-labelledby="stats-heading"
       role="region"
     >
-      {/* ✅ Background Video (SEO optimized) */}
+      {/* ✅ Background Video */}
       <video
         autoPlay
         loop
@@ -56,18 +56,17 @@ export default function StatsSection() {
         preload="metadata"
         className="bg-video"
         aria-hidden="true"
-        poster="/Images/stats-video-poster.jpg" // 👈 Add fallback image for SEO + LCP
+        poster="/Images/stats-video-poster.jpg"
       >
         <source src="/Videos/DMPVideos.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Overlay */}
+      {/* ✅ Overlay */}
       <div className="overlay" aria-hidden="true" />
 
-      {/* Main Content */}
+      {/* ✅ Content */}
       <div className="stats-content">
-        {/* ✅ Section Heading */}
         <motion.h2
           id="stats-heading"
           className="stats-title"
@@ -79,7 +78,6 @@ export default function StatsSection() {
           📊 The Reality in Numbers
         </motion.h2>
 
-        {/* ✅ Stats Grid */}
         <div className="stats-grid" role="list">
           {stats.map((stat, index) => (
             <motion.div
@@ -96,7 +94,6 @@ export default function StatsSection() {
                 ease: "easeOut",
               }}
             >
-              {/* ✅ Animated Counter + fallback text */}
               <h3
                 className="stat-number"
                 aria-label={`${stat.number}${stat.suffix}`}
@@ -105,7 +102,6 @@ export default function StatsSection() {
                 {stat.suffix}
               </h3>
 
-              {/* 👇 Static fallback for bots/no-JS */}
               <noscript>
                 <div className="stat-number">
                   {stat.number}
@@ -113,7 +109,6 @@ export default function StatsSection() {
                 </div>
               </noscript>
 
-              {/* ✅ Stat Description */}
               <p className="stat-label">{stat.label}</p>
             </motion.div>
           ))}
