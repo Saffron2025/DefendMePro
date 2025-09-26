@@ -141,7 +141,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to="/Download-Now" onClick={closeAllMenus} className={({ isActive }) => isActive ? "active" : ""}>
-                Downlad Now
+                Download Now
               </NavLink>
             </li>
             <li>
