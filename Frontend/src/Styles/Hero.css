@@ -171,12 +171,14 @@
   font-weight: 500;
   color: #00ffffcc;
   letter-spacing: 0.1em;
-  text-shadow:
-    0 0 3px #00ffffaa;
+  text-shadow: 0 0 3px #00ffffaa;
   user-select: none;
-    overflow-wrap: break-word;
 
+  /* 👇 Ye 2 line bug fix karengi */
+  white-space: pre-wrap;   /* line automatic wrap ho jayegi */
+  word-break: break-word;  /* bade words cut ho kar next line pe chale jayenge */
 }
+
 
 /* Buttons with low glow */
 .hero-btn {
@@ -193,7 +195,7 @@
   transition: all 0.25s ease-in-out;
   box-shadow:
     0 0 8px #00ffff66;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   user-select: none;
   position: relative;
   overflow: hidden;
@@ -212,7 +214,7 @@
   transition: all 0.25s ease-in-out;
   box-shadow:
     0 0 8px #00ffff66;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   user-select: none;
   position: relative;
   overflow: hidden;

@@ -12,19 +12,21 @@ export default function Hero() {
   const [displayedText, setDisplayedText] = useState("");
   const indexRef = useRef(0);
   const intervalRef = useRef(null);
+useEffect(() => {
+  let index = 0;
 
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      if (indexRef.current < subtitleText.length) {
-        setDisplayedText((prev) => prev + subtitleText.charAt(indexRef.current));
-        indexRef.current += 1;
-      } else {
-        clearInterval(intervalRef.current);
-      }
-    }, 50);
+  const interval = setInterval(() => {
+    setDisplayedText(subtitleText.slice(0, index + 1));
+    index++;
 
-    return () => clearInterval(intervalRef.current);
-  }, []);
+    if (index === subtitleText.length) {
+      clearInterval(interval);
+    }
+  }, 50);
+
+  return () => clearInterval(interval);
+}, []);
+
 
   return (
     <section className="hero-section">
