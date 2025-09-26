@@ -9,7 +9,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
-  const darkNavRoutes = ["/about", "/learn-more", "/Download-Now"];
+  const darkNavRoutes = ["/about", "/learn-more", "/Download-Now", "/contact"];
   const isDarkNavbar = darkNavRoutes.includes(location.pathname);
   const dropdownRef = useRef(null);
 
