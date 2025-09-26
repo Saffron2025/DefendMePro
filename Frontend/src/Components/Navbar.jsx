@@ -137,6 +137,12 @@ const Navbar = () => {
               <NavLink to="/about" onClick={closeAllMenus} className={({ isActive }) => isActive ? "active" : ""}>
                 About
               </NavLink>
+               
+            </li>
+            <li>
+              <NavLink to="/Download-Now" onClick={closeAllMenus} className={({ isActive }) => isActive ? "active" : ""}>
+                Downlad Now
+              </NavLink>
             </li>
             <li>
   <NavLink

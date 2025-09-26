@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/* Page Layout */
+.page {
+  font-family: "Poppins", Arial, sans-serif;
+  background: #fdfdfd;
+  color: #1a1a1a;
+  padding: 60px 20px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Title */
+.title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #00264d;
+  margin-bottom: 20px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+}
+
+/* Extra description for old-age users */
+.description {
+  font-size: 1.2rem;
+  max-width: 680px;
+  margin: 0 auto 40px;
+  color: #444;
+}
+
+/* Highlighted word */
+.highlight {
+  color: #0052cc;
+  font-weight: 600;
+}
+
+/* Download Button */
+.download-btn {
+  background: #0052cc;
+  color: white;
+  border: none;
+  font-size: 1.6rem;
+  padding: 18px 55px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.download-btn:hover {
+  background: #003d99;
+  transform: scale(1.05);
+}
+
+/* Instructions */
+.instructions {
+  margin-top: 60px;
+  text-align: left;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  color: #222;
+}
+.instructions h2 {
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+  color: #00264d;
+}
+.instructions ol {
+  padding-left: 25px;
+  line-height: 2.1;
+}
+
+/* Benefits Section */
+.benefits {
+  margin-top: 60px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.benefits h2 {
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+  color: #00264d;
+}
+.benefits ul {
+  font-size: 1.2rem;
+  list-style: none;
+  padding-left: 0;
+}
+.benefits li {
+  margin-bottom: 12px;
+  color: #333;
+}
+
+/* Footer */
+.footer {
+  margin-top: 60px;
+  font-size: 1rem;
+  color: #666;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}

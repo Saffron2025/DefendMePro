@@ -25,6 +25,7 @@ import SpamProtection from "./Components/SpamProtection";
 import Support from "./Components/Support";
 import Business from "./Components/Business";
 import LearnMore from "./Pages/LearnMore";
+import DownLoadNow from "./Pages/DownLoadNow";
 
 // ✅ Title Manager Component
 function TitleManager() {
@@ -172,6 +173,7 @@ export default function App() {
             <Route path="/support" element={<Support />} />
             <Route path="/business" element={<Business />} />
             <Route path="/learn-more" element={<LearnMore />} />
+            <Route path="/Download-Now" element={<DownLoadNow/>}/>
           </Routes>
         </main>
       </ConditionalBackground>
