@@ -1,12 +1,7 @@
 import React from "react";
 import "../Styles/whyChooseUs.css";
 import { motion } from "framer-motion";
-import {
-  ShieldCheck,
-  AlertTriangle,
-  GlobeLock,
-  Headphones,
-} from "lucide-react";
+import { ShieldCheck, AlertTriangle, GlobeLock, Headphones } from "lucide-react";
 
 export default function WhyChooseUs() {
   const features = [
@@ -33,27 +28,23 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section
-      className="why-section"
-      aria-label="Reasons to choose DefendMePro's scam protection services"
-    >
+    <section className="why-section" aria-label="Reasons to choose DefendMePro">
       <div className="why-container">
-        {/* Background image (purely visual) */}
+        {/* 📷 Left Side Image */}
         <div className="why-image" aria-hidden="true" />
 
+        {/* ✨ Right Side Content */}
         <div className="why-content">
-          {/* ✅ Semantic h2 heading */}
           <motion.h2
             className="why-title"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            ⚡ Why Choose DefendMePro
+            Why Choose DefendMePro
           </motion.h2>
 
-          {/* ✅ Feature Grid with ARIA roles */}
           <div className="why-grid" role="list">
             {features.map((item, index) => {
               const Icon = item.icon;
@@ -63,26 +54,14 @@ export default function WhyChooseUs() {
                   className="why-card"
                   role="listitem"
                   tabIndex={0}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.15,
-                    ease: "easeOut",
-                    type: "tween",
-                  }}
+                  transition={{ duration: 0.5, delay: index * 0.15 }}
                 >
-                  {/* ✅ Decorative Icon */}
-                  <div
-                    className="why-icon"
-                    aria-hidden="true"
-                    role="presentation"
-                  >
-                    <Icon size={60} strokeWidth={1.5} />
+                  <div className="why-icon" aria-hidden="true">
+                    <Icon size={45} strokeWidth={1.6} />
                   </div>
-
-                  {/* ✅ Proper heading structure */}
                   <h3 className="why-card-title">{item.title}</h3>
                   <p className="why-card-desc">{item.desc}</p>
                 </motion.div>

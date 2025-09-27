@@ -164,20 +164,40 @@
   }
 }
 
-/* Subtitle with subtle glow */
 .hero-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 3rem;
-  font-weight: 500;
-  color: #00ffffcc;
-  letter-spacing: 0.1em;
-  text-shadow: 0 0 3px #00ffffaa;
-  user-select: none;
+  font-weight: 600;
+  color: #ffffff !important; /* 🔥 White text */
+  letter-spacing: 0.08em;
+  font-family: 'Share Tech Mono', monospace;
+  
+  /* White Glow Effect */
+  text-shadow:
+    0 0 5px #ffffffaa,
+    0 0 10px #ffffff88,
+    0 0 20px #ffffff66;
 
-  /* 👇 Ye 2 line bug fix karengi */
-  white-space: pre-wrap;   /* line automatic wrap ho jayegi */
-  word-break: break-word;  /* bade words cut ho kar next line pe chale jayenge */
+  user-select: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+
+  /* Typing effect look */
+  border-right: 2px solid #ffffff; /* cursor bhi white */
+  animation: typingGlow 3s steps(40, end), blinkGlow 0.8s infinite;
+  overflow: hidden;
 }
+
+@keyframes typingGlow {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkGlow {
+  0%, 50% { border-color: #ffffff; }
+  51%, 100% { border-color: transparent; }
+}
+
 
 
 /* Buttons with low glow */
