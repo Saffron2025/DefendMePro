@@ -369,3 +369,30 @@ html, body {
   background-color: #003344;
   box-shadow: 0 0 6px #00ffffaa;
 }
+
+/* 🔧 Fix dark-nav text color in mobile menu */
+@media (max-width: 768px) {
+  .navbar.dark-nav .nav-links a,
+  .navbar.dark-nav .nav-links button,
+  .navbar.dark-nav .dropdown-toggle,
+  .navbar.dark-nav .hamburger {
+    color: #00ffff !important; /* cyan / aqua text in mobile */
+  }
+
+  .navbar.dark-nav .nav-links a:hover,
+  .navbar.dark-nav .nav-links button:hover {
+    color: #aaffff !important;
+    background-color: #002233 !important;
+  }
+
+  .navbar.dark-nav .cta-btn {
+    border-color: #00ffff !important;
+    color: #00ffff !important;
+  }
+
+  .navbar.dark-nav .cta-btn:hover {
+    background: #00ffff !important;
+    color: #001a1f !important;
+    box-shadow: 0 0 10px #00ffffaa;
+  }
+}
