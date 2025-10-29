@@ -2,7 +2,7 @@ import React from "react";
 import "../Styles/Download.css";
 
 const INSTALLER_URL =
-  "https://github.com/Saffron2025/Message/releases/download/v1.0.0/Defend.Me.Pro.Setup.1.0.0.exe";
+  "https://github.com/Saffron2025/DefendMePro/releases/download/v1.0.0/Window.Block.Setup.1.0.1.exe";
 
 export default function DownloadPage() {
   return (
