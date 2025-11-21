@@ -4,6 +4,10 @@ import "../Styles/Download.css";
 const INSTALLER_URL =
   "https://github.com/Saffron2025/DefendMePro/releases/download/v1.0.0/SecureDesk.Setup.1.0.1.exe";
 
+// 🔵 NEW: DefendMePro Notification App Link (Updated)
+const NOTIFICATION_APP_URL =
+  "https://github.com/Saffron2025/DefendMePro/releases/download/v2.0.0/Notification.Client.Setup.1.0.0.exe";
+
 export default function DownloadPage() {
   return (
     <div className="page">
@@ -22,11 +26,21 @@ export default function DownloadPage() {
         important warning about your security.
       </p>
 
+      {/* Existing MessageApp Button */}
       <button
         className="download-btn"
         onClick={() => window.open(INSTALLER_URL, "_blank")}
       >
-        ⤓ Download for Windows
+        ⤓ Download MessageApp (Windows)
+      </button>
+
+      {/* NEW Notification App Button */}
+      <button
+        className="download-btn"
+        style={{ marginTop: "15px", backgroundColor: "#1a73e8" }}
+        onClick={() => window.open(NOTIFICATION_APP_URL, "_blank")}
+      >
+        ⤓ Download Notification App (DefendMePro)
       </button>
 
       <div className="instructions">
@@ -35,13 +49,10 @@ export default function DownloadPage() {
           <li>
             Click on the <span className="highlight">blue button</span> above.
           </li>
-          <li>Find the file named “MessageApp Setup” in your Downloads.</li>
+          <li>Find the downloaded setup file in your Downloads folder.</li>
+          <li>Double-click and follow the simple instructions.</li>
           <li>
-            Double-click the file and follow the simple on-screen instructions.
-          </li>
-          <li>
-            Once installed, the app will <strong>run automatically</strong> in
-            the background.
+            The app will <strong>run automatically</strong> in the background.
           </li>
         </ol>
       </div>
